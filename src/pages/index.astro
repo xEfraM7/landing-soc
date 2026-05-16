@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/layout/Header.astro';
+import Footer from '@components/layout/Footer.astro';
+import Hero from '@features/hero/Hero.astro';
+import Personas from '@features/personas/Personas.astro';
+import HowItWorks from '@features/how-it-works/HowItWorks.astro';
+import Differentiators from '@features/differentiators/Differentiators.astro';
+import Faq from '@features/faq/Faq.astro';
+import Cta from '@features/cta/Cta.astro';
+---
+
+<BaseLayout>
+  <Header slot="header" />
+  <Hero />
+  <Personas />
+  <HowItWorks />
+  <Differentiators />
+  <Faq />
+  <Cta />
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,138 @@
+---
+import Container from '@components/ui/Container.astro';
+import Button from '@components/ui/Button.astro';
+import Icon from '@components/ui/Icon.astro';
+---
+
+<header class="site-header">
+  <Container>
+    <nav class="nav" aria-label="Principal">
+      <a href="#top" class="brand" aria-label="VenTech — inicio">
+        <span class="brand__mark" aria-hidden="true">
+          <Icon name="shield" size={20} strokeWidth={1.75} />
+        </span>
+        <span class="brand__name">
+          <span class="brand__name-main">SOC</span><span class="brand__name-sub">Unified</span>
+        </span>
+      </a>
+
+      <ul class="links" role="list">
+        <li><a href="#platform">Plataforma</a></li>
+        <li><a href="#how-it-works">Cómo funciona</a></li>
+        <li><a href="#differentiators">Por qué</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="actions">
+        <Button href="#cta" variant="primary" size="md" iconAfter="arrow-right">
+          Pregunta por nuestros servicios
+        </Button>
+      </div>
+    </nav>
+  </Container>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    background: rgba(10, 14, 26, 0.72);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-block: 0.9rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--fg-strong);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .brand__mark {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(180deg, var(--brand-500), var(--brand-700));
+    color: #fff;
+    box-shadow: 0 6px 18px var(--brand-glow), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .brand__name {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  .brand__name-main {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .brand__name-sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--fg-default);
+    font-size: 1.05rem;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .links a {
+    color: var(--fg-default);
+    font-size: 0.9rem;
+    transition: color 160ms var(--ease-out);
+  }
+
+  .links a:hover {
+    color: var(--fg-strong);
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .link-quiet {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+  }
+
+  .link-quiet:hover {
+    color: var(--fg-strong);
+  }
+
+  @media (max-width: 880px) {
+    .links {
+      display: none;
+    }
+    .link-quiet {
+      display: none;
+    }
+  }
+</style>

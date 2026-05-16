@@ -1,0 +1,123 @@
+---
+import Icon from '@components/ui/Icon.astro';
+import type { IconName } from '@assets/icons';
+
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'md' | 'lg';
+  iconAfter?: IconName;
+  iconBefore?: IconName;
+  type?: 'button' | 'submit';
+  class?: string;
+  target?: string;
+  rel?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  iconAfter,
+  iconBefore,
+  type = 'button',
+  class: className,
+  target,
+  rel,
+} = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+const extraProps = href
+  ? { href, target, rel: rel ?? (target === '_blank' ? 'noopener noreferrer' : undefined) }
+  : { type };
+---
+
+<Tag class:list={['btn', `btn--${variant}`, `btn--${size}`, className]} {...extraProps}>
+  {iconBefore && <Icon name={iconBefore} size={size === 'lg' ? 18 : 16} />}
+  <span class="btn__label"><slot /></span>
+  {iconAfter && <Icon name={iconAfter} size={size === 'lg' ? 18 : 16} />}
+</Tag>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      background 200ms var(--ease-out),
+      border-color 200ms var(--ease-out),
+      transform 160ms var(--ease-out),
+      box-shadow 220ms var(--ease-out),
+      color 200ms var(--ease-out);
+  }
+
+  .btn--md {
+    padding: 0.7rem 1.1rem;
+  }
+
+  .btn--lg {
+    padding: 0.9rem 1.4rem;
+    font-size: 1rem;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  /* Primary — solid brand with glow ring */
+  .btn--primary {
+    background: linear-gradient(180deg, var(--brand-500), var(--brand-600));
+    color: #fff;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.18) inset,
+      0 8px 24px var(--brand-glow);
+  }
+
+  .btn--primary:hover {
+    background: linear-gradient(180deg, var(--brand-400), var(--brand-500));
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.22) inset,
+      0 12px 32px var(--brand-glow-strong);
+  }
+
+  /* Secondary — ghost outline */
+  .btn--secondary {
+    background: var(--bg-elev-1);
+    color: var(--fg-strong);
+    border-color: var(--border-strong);
+  }
+
+  .btn--secondary:hover {
+    background: var(--bg-elev-2);
+    border-color: var(--brand-400);
+    color: var(--fg-strong);
+  }
+
+  /* Ghost — no border, no background until hover */
+  .btn--ghost {
+    background: transparent;
+    color: var(--fg-default);
+    padding-inline: 0.7rem;
+  }
+
+  .btn--ghost:hover {
+    background: var(--bg-elev-1);
+    color: var(--fg-strong);
+  }
+
+  .btn__label {
+    display: inline-flex;
+  }
+</style>

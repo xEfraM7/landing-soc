@@ -1,0 +1,77 @@
+---
+export interface Props {
+  variant?: 'default' | 'feature' | 'bento' | 'persona';
+  as?: 'div' | 'article' | 'li';
+  class?: string;
+}
+
+const { variant = 'default', as: Tag = 'div', class: className } = Astro.props;
+---
+
+<Tag class:list={['card', `card--${variant}`, className]}>
+  <slot />
+</Tag>
+
+<style>
+  .card {
+    position: relative;
+    background: var(--bg-elev-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 2.4vw, 2rem);
+    box-shadow: var(--shadow-inset);
+    transition:
+      border-color 220ms var(--ease-out),
+      transform 220ms var(--ease-out),
+      background 220ms var(--ease-out);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      600px circle at var(--mx, 50%) var(--my, 0%),
+      rgba(59, 130, 246, 0.08),
+      transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 280ms var(--ease-out);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+    background: var(--bg-elev-2);
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  /* Feature variant — slightly larger padding + brand accent line on hover */
+  .card--feature {
+    padding: clamp(1.75rem, 2.6vw, 2.5rem);
+  }
+
+  /* Bento variant — supports grid-area + larger content; sits flush */
+  .card--bento {
+    padding: clamp(1.75rem, 2.4vw, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: 100%;
+  }
+
+  /* Persona — tighter typography, bordered top accent */
+  .card--persona {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

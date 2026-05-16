@@ -1,0 +1,135 @@
+---
+type Severity = 'critical' | 'high' | 'medium' | 'low' | 'ok';
+type Tone = 'neutral' | 'brand' | 'cyan' | Severity;
+
+interface Props {
+  tone?: Tone;
+  size?: 'sm' | 'md';
+  mono?: boolean;
+  withDot?: boolean;
+  pulse?: boolean;
+  class?: string;
+}
+
+const {
+  tone = 'neutral',
+  size = 'sm',
+  mono = false,
+  withDot = false,
+  pulse = false,
+  class: className,
+} = Astro.props;
+---
+
+<span
+  class:list={[
+    'badge',
+    `badge--${tone}`,
+    `badge--${size}`,
+    mono && 'badge--mono',
+    className,
+  ]}
+>
+  {withDot && <span class:list={['badge__dot', pulse && 'badge__dot--pulse']}></span>}
+  <slot />
+</span>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-strong);
+    background: var(--bg-elev-2);
+    color: var(--fg-default);
+    white-space: nowrap;
+  }
+
+  .badge--md {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .badge--mono {
+    font-family: var(--font-mono);
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+  }
+
+  .badge--neutral {
+    background: var(--bg-elev-2);
+    color: var(--fg-default);
+    border-color: var(--border-strong);
+  }
+
+  .badge--brand {
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--brand-300);
+    border-color: var(--border-brand);
+  }
+
+  .badge--cyan {
+    background: var(--accent-cyan-soft);
+    color: var(--accent-cyan);
+    border-color: rgba(34, 211, 238, 0.3);
+  }
+
+  .badge--critical {
+    background: var(--sev-critical-bg);
+    color: var(--sev-critical);
+    border-color: rgba(244, 63, 94, 0.3);
+  }
+
+  .badge--high {
+    background: var(--sev-high-bg);
+    color: var(--sev-high);
+    border-color: rgba(251, 146, 60, 0.3);
+  }
+
+  .badge--medium {
+    background: var(--sev-medium-bg);
+    color: var(--sev-medium);
+    border-color: rgba(250, 204, 21, 0.3);
+  }
+
+  .badge--low {
+    background: var(--sev-low-bg);
+    color: var(--sev-low);
+    border-color: rgba(56, 189, 248, 0.3);
+  }
+
+  .badge--ok {
+    background: var(--sev-ok-bg);
+    color: var(--sev-ok);
+    border-color: rgba(52, 211, 153, 0.3);
+  }
+
+  .badge__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .badge__dot--pulse {
+    animation: badge-pulse 2s var(--ease-in-out) infinite;
+  }
+
+  @keyframes badge-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 currentColor;
+    }
+    50% {
+      box-shadow: 0 0 0 4px transparent;
+    }
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+export interface Props {
+  eyebrow?: string;
+  title: string;
+  lead?: string;
+  align?: 'left' | 'center';
+  id?: string;
+  as?: 'h2' | 'h3';
+}
+
+const {
+  eyebrow,
+  title,
+  lead,
+  align = 'left',
+  id,
+  as: Heading = 'h2',
+} = Astro.props;
+---
+
+<header class:list={['heading', `heading--${align}`]} id={id}>
+  {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+  <Heading class="heading__title">
+    <Fragment set:html={title} />
+  </Heading>
+  {lead && <p class="heading__lead">{lead}</p>}
+</header>
+
+<style>
+  .heading {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 760px;
+  }
+
+  .heading--center {
+    margin-inline: auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .heading__title {
+    color: var(--fg-strong);
+  }
+
+  .heading__lead {
+    color: var(--fg-muted);
+    font-size: clamp(1rem, 1.4vw, 1.125rem);
+    line-height: 1.55;
+    max-width: 60ch;
+  }
+
+  .heading :global(em) {
+    font-style: italic;
+    color: var(--brand-300);
+  }
+
+  .heading :global(.accent) {
+    color: var(--accent-cyan);
+    font-style: italic;
+  }
+</style>

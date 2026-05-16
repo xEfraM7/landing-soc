@@ -1,0 +1,64 @@
+---
+import '@styles/global.css';
+import { buildTitle, defaultSeo, siteName } from '@utils/seo';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = defaultSeo.title,
+  description = defaultSeo.description,
+  image = '/og-image.png',
+} = Astro.props;
+
+const pageTitle = title === defaultSeo.title ? title : buildTitle(title);
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0e1a" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, Astro.site).toString()} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, Astro.site).toString()} />
+  </head>
+  <body>
+    <slot name="header" />
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main>
+          <slot />
+        </main>
+        <slot name="footer" />
+      </div>
+    </div>
+
+    <script>
+      import '@/scripts/smooth-scroll';
+    </script>
+  </body>
+</html>

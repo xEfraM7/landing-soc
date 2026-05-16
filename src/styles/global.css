@@ -1,0 +1,301 @@
+/* ============================================================
+   Landing SOC — Design Tokens
+   Enterprise Security aesthetic: deep navy + brand blue + cyan accent,
+   editorial serif display, modern sans body, mono for telemetry.
+   ============================================================ */
+
+@import '@fontsource-variable/geist';
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+:root {
+  /* --- Surfaces -------------------------------------------------- */
+  --bg-base: #0a0e1a;
+  --bg-elev-1: #0f1524;
+  --bg-elev-2: #161e33;
+  --bg-elev-3: #1d263f;
+
+  /* --- Borders -------------------------------------------------- */
+  --border: rgba(148, 163, 209, 0.10);
+  --border-strong: rgba(148, 163, 209, 0.18);
+  --border-brand: rgba(59, 130, 246, 0.35);
+
+  /* --- Brand ---------------------------------------------------- */
+  --brand-700: #1d4ed8;
+  --brand-600: #2563eb;
+  --brand-500: #3b82f6;
+  --brand-400: #60a5fa;
+  --brand-300: #93c5fd;
+  --brand-glow: rgba(59, 130, 246, 0.35);
+  --brand-glow-strong: rgba(59, 130, 246, 0.55);
+
+  /* --- Accent --------------------------------------------------- */
+  --accent-cyan: #22d3ee;
+  --accent-cyan-soft: rgba(34, 211, 238, 0.18);
+
+  /* --- Foreground ----------------------------------------------- */
+  --fg-strong: #f1f5f9;
+  --fg-default: #cbd5e1;
+  --fg-muted: #7c8aa8;
+  --fg-faint: #4b5775;
+
+  /* --- Severity ------------------------------------------------- */
+  --sev-critical: #f43f5e;
+  --sev-critical-bg: rgba(244, 63, 94, 0.12);
+  --sev-high: #fb923c;
+  --sev-high-bg: rgba(251, 146, 60, 0.12);
+  --sev-medium: #facc15;
+  --sev-medium-bg: rgba(250, 204, 21, 0.12);
+  --sev-low: #38bdf8;
+  --sev-low-bg: rgba(56, 189, 248, 0.12);
+  --sev-ok: #34d399;
+  --sev-ok-bg: rgba(52, 211, 153, 0.14);
+
+  /* --- Typography ----------------------------------------------- */
+  --font-display: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Geist Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* --- Radius --------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 9999px;
+
+  /* --- Shadows -------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 0 1px var(--brand-glow), 0 12px 40px var(--brand-glow);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* --- Layout --------------------------------------------------- */
+  --container-max: 1200px;
+  --section-pad-y: clamp(4rem, 8vw, 7rem);
+  --header-h: 64px;
+
+  /* --- Motion --------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ============================================================
+   Reset / Base
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Native smooth-scroll disabled — GSAP ScrollSmoother handles scrolling.
+     scroll-margin-top on [id] sections (below) provides the offset for
+     anchor links so they don't sit beneath the fixed header. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Anchor offset for fixed header — respected by ScrollSmoother and by
+   native scrolling fallback for users with prefers-reduced-motion. */
+:where(section[id], [id]) {
+  scroll-margin-top: var(--header-h);
+}
+
+/* ScrollSmoother takes over layout: wrapper becomes fixed viewport-sized
+   and content is translated. Default styles keep native scroll working
+   before the script initializes, avoiding FOUC. */
+#smooth-wrapper {
+  position: relative;
+}
+
+#smooth-content {
+  will-change: transform;
+  padding-top: var(--header-h);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-feature-settings: 'ss01', 'cv11';
+  color: var(--fg-default);
+  line-height: 1.55;
+  font-size: 16px;
+  min-height: 100%;
+}
+
+/* Global atmosphere: solid base + fixed-attachment dot pattern.
+   Lives on <html> so it sits behind ScrollSmoother's fixed wrapper. */
+html {
+  background-color: var(--bg-base);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(148, 163, 209, 0.05) 1px,
+    transparent 0
+  );
+  background-size: 32px 32px;
+  background-attachment: fixed;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography defaults */
+h1, h2, h3, h4 {
+  color: var(--fg-strong);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.4vw, 3.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+h3 {
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+  color: var(--fg-default);
+}
+
+a {
+  color: var(--brand-400);
+  text-decoration: none;
+  transition: color 160ms var(--ease-out);
+}
+
+a:hover {
+  color: var(--brand-300);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--brand-400);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* Reusable elements ------------------------------------------------ */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-400);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--brand-400);
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+}
+
+.text-italic {
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+/* Live pulse dot — used in dashboard mockup + integrations strip */
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 0 0 var(--accent-cyan);
+  animation: live-pulse 2s var(--ease-in-out) infinite;
+}
+
+@keyframes live-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(34, 211, 238, 0);
+  }
+}
+
+/* Subtle fade-in for sections as they enter viewport — purely declarative,
+   no JS. Uses CSS animation that fires once on initial paint. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: reveal 700ms var(--ease-out) forwards;
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Selection */
+::selection {
+  background: var(--brand-glow-strong);
+  color: var(--fg-strong);
+}
+
+/* Scrollbar — subtle, branded */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elev-2);
+  border: 3px solid var(--bg-base);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-elev-3);
+}
