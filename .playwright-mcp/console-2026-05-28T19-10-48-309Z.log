@@ -1,0 +1,26 @@
+[    1091ms] [ERROR] Error: <linearGradient> attribute x1: Expected length, "-nan". @ https://repteam.net/:0
+[    1091ms] [ERROR] Error: <linearGradient> attribute y1: Expected length, "-nan". @ https://repteam.net/:0
+[    1091ms] [ERROR] Error: <linearGradient> attribute x2: Expected length, "-nan". @ https://repteam.net/:0
+[    1091ms] [ERROR] Error: <linearGradient> attribute y2: Expected length, "-nan". @ https://repteam.net/:0
+[    1091ms] [ERROR] Error: <linearGradient> attribute x1: Expected length, "-nan". @ https://repteam.net/:0
+[    1091ms] [ERROR] Error: <linearGradient> attribute y1: Expected length, "-nan". @ https://repteam.net/:0
+[    1091ms] [ERROR] Error: <linearGradient> attribute x2: Expected length, "-nan". @ https://repteam.net/:0
+[    1091ms] [ERROR] Error: <linearGradient> attribute y2: Expected length, "-nan". @ https://repteam.net/:0
+[    2175ms] [ERROR] Error: <linearGradient> attribute x1: Expected length, "-nan". @ https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:0
+[    2175ms] [ERROR] Error: <linearGradient> attribute y1: Expected length, "-nan". @ https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:0
+[    2175ms] [ERROR] Error: <linearGradient> attribute x2: Expected length, "-nan". @ https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:0
+[    2175ms] [ERROR] Error: <linearGradient> attribute y2: Expected length, "-nan". @ https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:0
+[    2175ms] [ERROR] Error: <linearGradient> attribute x1: Expected length, "-nan". @ https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:0
+[    2175ms] [ERROR] Error: <linearGradient> attribute y1: Expected length, "-nan". @ https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:0
+[    2175ms] [ERROR] Error: <linearGradient> attribute x2: Expected length, "-nan". @ https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:0
+[    2175ms] [ERROR] Error: <linearGradient> attribute y2: Expected length, "-nan". @ https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:0
+[    2208ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rv (https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:1:30569)
+    at https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:1:117126
+    at uf (https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:1:119854)
+    at uu (https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:1:112250)
+    at https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:1:108288
+    at https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:1:108295
+    at i8 (https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:1:108392)
+    at uD (https://repteam.net/_next/static/chunks/4bd1b696-663509c65ba5eb26.js:1:129030)
+    at MessagePort.T (https://repteam.net/_next/static/chunks/517-36c06a93bde702e7.js:1:124694)

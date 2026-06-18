@@ -1,42 +1,29 @@
 ---
 import Container from '@components/ui/Container.astro';
 import Button from '@components/ui/Button.astro';
-import Badge from '@components/ui/Badge.astro';
+import { siteContent } from '@data/site.content';
+
+const { heading, lead, primaryCta, secondaryCta } = siteContent.cta;
 ---
 
-<section id="cta" class="cta" aria-labelledby="cta-title">
+<section id="contacto" class="cta" aria-labelledby="cta-title">
   <div class="cta__bg" aria-hidden="true">
+    <div class="cta__grid"></div>
     <div class="cta__glow cta__glow--a"></div>
     <div class="cta__glow cta__glow--b"></div>
-    <div class="cta__grid"></div>
+    <div class="cta__glow cta__glow--c"></div>
   </div>
+
   <Container>
-    <div class="card">
-      <Badge tone="cyan" mono withDot pulse>Disponible · onboarding asistido</Badge>
-
-      <h2 id="cta-title" class="title">
-        Unifica tu SOC <em>hoy</em>.<br />
-        De la alerta a la contención —<br />
-        <span class="accent">sin cambiar de pestaña.</span>
+    <div class="cta__inner">
+      <h2 id="cta-title" class="cta__title">
+        <span class="text-gradient">{heading}</span>
       </h2>
-
-      <p class="lead">
-        Cuéntanos cómo opera tu equipo de seguridad y te respondemos con los próximos pasos —
-        cómo integramos tus fuentes y qué cubrimos desde el día uno. Sin compromiso, sin tarjeta.
-      </p>
-
-      <div class="actions">
-        <Button href="mailto:hello@ventech.local?subject=Consulta%20servicios%20VenTech" variant="primary" size="lg" iconAfter="arrow-right">
-          Pregunta por nuestros servicios
-        </Button>
-        <Button href="#how-it-works" variant="secondary" size="lg">
-          Ver cómo funciona
-        </Button>
+      <p class="cta__lead">{lead}</p>
+      <div class="cta__actions">
+        <Button href={primaryCta.href} variant="primary" size="md">{primaryCta.label}</Button>
+        <Button href={secondaryCta.href} variant="secondary" size="md">{secondaryCta.label}</Button>
       </div>
-
-      <p class="finep text-mono">
-        hello@ventech.local · respuesta en menos de un día hábil
-      </p>
     </div>
   </Container>
 </section>
@@ -47,7 +34,7 @@ import Badge from '@components/ui/Badge.astro';
     padding-block: clamp(5rem, 9vw, 8rem);
     overflow: hidden;
     isolation: isolate;
-    border-top: 1px solid var(--border);
+    text-align: center;
   }
 
   .cta__bg {
@@ -61,113 +48,75 @@ import Badge from '@components/ui/Badge.astro';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(to right, rgba(148, 163, 209, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(148, 163, 209, 0.06) 1px, transparent 1px);
+      linear-gradient(to right, rgba(250, 250, 250, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(250, 250, 250, 0.04) 1px, transparent 1px);
     background-size: 56px 56px;
     mask-image: radial-gradient(ellipse at 50% 50%, black, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black, transparent 70%);
   }
 
   .cta__glow {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-  }
-  .cta__glow--a {
-    width: 500px;
-    height: 500px;
-    top: -120px;
-    left: -100px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.55), transparent 60%);
-  }
-  .cta__glow--b {
-    width: 460px;
-    height: 460px;
-    bottom: -150px;
-    right: -120px;
-    background: radial-gradient(circle, rgba(34, 211, 238, 0.5), transparent 60%);
+    filter: blur(70px);
+    contain: strict;
   }
 
-  .card {
-    position: relative;
-    max-width: 880px;
-    margin-inline: auto;
-    text-align: center;
+  .cta__glow--a {
+    width: 420px;
+    height: 420px;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, var(--brand-glow-strong), transparent 60%);
+  }
+
+  .cta__glow--b {
+    width: 320px;
+    height: 320px;
+    bottom: -100px;
+    left: 20%;
+    background: radial-gradient(circle, var(--brand-glow), transparent 60%);
+    opacity: 0.6;
+  }
+
+  .cta__glow--c {
+    width: 280px;
+    height: 280px;
+    bottom: -80px;
+    right: 15%;
+    background: radial-gradient(circle, rgba(255, 50, 65, 0.30), transparent 60%);
+    opacity: 0.5;
+  }
+
+  .cta__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.75rem;
-    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
-    background:
-      linear-gradient(180deg, rgba(15, 21, 36, 0.6), rgba(22, 30, 51, 0.6));
-    border: 1px solid var(--border-strong);
-    border-radius: var(--radius-2xl);
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.04) inset,
-      var(--shadow-lg);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    gap: 1.5rem;
+    max-width: 700px;
+    margin-inline: auto;
   }
 
-  .card::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      rgba(59, 130, 246, 0.55),
-      transparent 40%,
-      transparent 60%,
-      rgba(34, 211, 238, 0.45)
-    );
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
-  .title {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(2rem, 4.4vw, 3.25rem);
-    line-height: 1.05;
+  .cta__title {
+    font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1.2;
     letter-spacing: -0.02em;
-    color: var(--fg-strong);
-    margin: 0;
   }
 
-  .title em {
-    font-style: italic;
-    color: transparent;
-    background: linear-gradient(135deg, var(--brand-300), var(--accent-cyan));
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-
-  .accent {
-    color: var(--accent-cyan);
-    font-style: italic;
-  }
-
-  .lead {
-    color: var(--fg-muted);
-    max-width: 56ch;
-    font-size: clamp(1rem, 1.4vw, 1.1rem);
+  .cta__lead {
+    color: var(--fg-default);
+    font-size: 1.05rem;
     line-height: 1.6;
+    max-width: 38rem;
   }
 
-  .actions {
+  .cta__actions {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .finep {
-    font-size: 0.75rem;
-    color: var(--fg-muted);
-    letter-spacing: 0.04em;
-    margin: 0;
+    margin-top: 0.5rem;
   }
 </style>

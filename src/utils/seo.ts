@@ -1,3 +1,5 @@
+import { siteContent } from '@data/site.content';
+
 export interface SeoMeta {
   title: string;
   description: string;
@@ -6,16 +8,14 @@ export interface SeoMeta {
   type?: 'website' | 'article';
 }
 
-const SITE_NAME = 'VenTech';
-const DEFAULT_DESCRIPTION =
-  'Todas las herramientas de deteccion y proteccion en un solo panel: detecta, investiga y responde a amenazas en tiempo real.';
+const SITE_NAME = siteContent.brand.name;
 
 export const buildTitle = (title: string, suffix = SITE_NAME): string =>
   title === suffix ? title : `${title} | ${suffix}`;
 
 export const defaultSeo: SeoMeta = {
-  title: `${SITE_NAME} — Plataforma SOC unificada para MSSPs y equipos de seguridad`,
-  description: DEFAULT_DESCRIPTION,
+  title: siteContent.seo.title,
+  description: siteContent.seo.description,
   type: 'website',
 };
 

@@ -1,35 +1,35 @@
 ---
 import Container from '@components/ui/Container.astro';
-import SectionHeading from '@components/ui/SectionHeading.astro';
-import Card from '@components/ui/Card.astro';
 import Icon from '@components/ui/Icon.astro';
-import { personas } from './personas.data';
+import { siteContent } from '@data/site.content';
+
+const { eyebrow, heading, lead, items } = siteContent.personas;
 ---
 
-<section id="platform" class="personas" aria-labelledby="personas-title">
+<section id="perfiles" class="personas" aria-labelledby="personas-title">
   <Container>
-    <SectionHeading
-      eyebrow="Para quién es"
-      title="Pensado para los <em>cuatro perfiles</em> que hacen funcionar un SOC."
-      lead="Una sola plataforma que respeta los flujos reales de operadores, analistas, líderes y respondedores. Sin que uno tenga que adaptarse al otro."
-      id="personas-title"
-    />
+    <header class="personas__head">
+      <span class="eyebrow-pill">
+        <span class="eyebrow-pill__dot"></span>
+        {eyebrow}
+      </span>
+      <h2 id="personas-title" class="personas__title">
+        <span class="text-gradient">{heading}</span>
+      </h2>
+      <p class="personas__lead">{lead}</p>
+    </header>
 
-    <ul class="grid" role="list">
-      {personas.map((p, idx) => (
-        <Card variant="persona" as="li" class="persona">
-          <div class="persona__head">
-            <div class="persona__icon" aria-hidden="true">
-              <Icon name={p.icon} size={22} strokeWidth={1.5} />
-            </div>
-            <span class="persona__index text-mono">0{idx + 1}</span>
+    <ul class="personas__grid" role="list">
+      {items.map((item) => (
+        <li class="persona">
+          <div class="persona__icon" aria-hidden="true">
+            <span class="persona__glow"></span>
+            <Icon name={item.icon} size={22} />
           </div>
-          <div class="persona__body">
-            <span class="persona__short text-mono">{p.short}</span>
-            <h3 class="persona__role">{p.role}</h3>
-            <p class="persona__pain">{p.pain}</p>
-          </div>
-        </Card>
+          <span class="persona__tag">{item.tag}</span>
+          <h3 class="persona__title">{item.title}</h3>
+          <p class="persona__body">{item.body}</p>
+        </li>
       ))}
     </ul>
   </Container>
@@ -40,71 +40,107 @@ import { personas } from './personas.data';
     padding-block: var(--section-pad-y);
   }
 
-  .grid {
-    list-style: none;
+  .personas__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .personas__title {
+    margin: 0.75rem 0 0;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .personas__lead {
+    color: var(--fg-default);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 36rem;
+  }
+
+  .personas__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     margin: 3rem 0 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
+    list-style: none;
+  }
+
+  @media (min-width: 720px) {
+    .personas__grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   .persona {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    min-height: 280px;
+    gap: 0.75rem;
+    padding: 1.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    isolation: isolate;
+    transition:
+      background 300ms var(--ease-out),
+      border-color 300ms var(--ease-out);
   }
 
-  .persona__head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .persona:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-strong);
   }
 
   .persona__icon {
+    position: relative;
     display: grid;
     place-items: center;
     width: 44px;
     height: 44px;
-    border-radius: var(--radius-md);
-    background: rgba(59, 130, 246, 0.12);
-    border: 1px solid var(--border-brand);
-    color: var(--brand-300);
+    color: var(--brand-500);
   }
 
-  .persona__index {
+  .persona__glow {
+    position: absolute;
+    inset: 0;
+    background: var(--brand-glow-soft);
+    border-radius: 50%;
+    filter: blur(18px);
+    z-index: -1;
+  }
+
+  .persona__tag {
+    width: fit-content;
+    font-family: var(--font-mono);
     font-size: 0.7rem;
-    color: var(--fg-faint);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--brand-500);
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+  }
+
+  .persona__title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--fg-strong);
   }
 
   .persona__body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    margin-top: auto;
-  }
-
-  .persona__short {
-    font-size: 0.7rem;
-    color: var(--accent-cyan);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .persona__role {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 1.1;
-    color: var(--fg-strong);
-    letter-spacing: -0.01em;
-  }
-
-  .persona__pain {
-    font-size: 0.92rem;
-    color: var(--fg-muted);
-    line-height: 1.55;
+    color: var(--fg-default);
+    font-size: 0.9rem;
+    line-height: 1.6;
   }
 </style>

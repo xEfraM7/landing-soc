@@ -1,0 +1,525 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - link [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+        - navigation "Main" [ref=e13]:
+          - list [ref=e15]:
+            - listitem [ref=e16]:
+              - link "How it Works" [ref=e17] [cursor=pointer]:
+                - /url: /#how
+            - listitem [ref=e18]:
+              - button "Services" [ref=e19] [cursor=pointer]:
+                - text: Services
+                - img [ref=e20]
+            - listitem [ref=e22]:
+              - link "About us" [ref=e23] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e24]:
+              - link "Consultant" [ref=e25] [cursor=pointer]:
+                - /url: /contact-us
+      - generic [ref=e26]:
+        - link "pr Persian" [ref=e27] [cursor=pointer]:
+          - /url: /fa
+          - img "pr"
+          - text: Persian
+        - link "Contact Us" [ref=e28] [cursor=pointer]:
+          - /url: /contact-us
+          - text: Contact Us
+          - img [ref=e29]
+  - main [ref=e31]:
+    - main [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - img
+          - generic [ref=e35]:
+            - generic [ref=e42] [cursor=pointer]: Build for the future
+            - heading "Next-Level Security, Unmatched Reliability." [level=1] [ref=e43]
+            - paragraph [ref=e45]: Empowering businesses with next-gen networking and security solutions, ensuring seamless connectivity, robust protection, and unmatched performance.
+            - generic [ref=e47]:
+              - link "Get Started" [ref=e48] [cursor=pointer]:
+                - /url: /contact-us
+              - link "How it works" [ref=e49] [cursor=pointer]:
+                - /url: "#how"
+            - generic [ref=e53]:
+              - img "rep-hero"
+        - generic [ref=e56]:
+          - heading "We use Vanguard Companies & Services" [level=2] [ref=e57]
+          - generic [ref=e59]:
+            - generic [ref=e61]:
+              - img [ref=e62]
+              - img [ref=e72]
+              - img [ref=e81]
+              - img [ref=e87]
+              - img [ref=e100]
+              - img [ref=e110]
+              - img [ref=e113]
+              - img [ref=e121]
+              - img [ref=e127]
+              - img [ref=e138]
+            - generic [ref=e149]:
+              - img [ref=e150]
+              - img [ref=e160]
+              - img [ref=e169]
+              - img [ref=e175]
+              - img [ref=e188]
+              - img [ref=e198]
+              - img [ref=e201]
+              - img [ref=e209]
+              - img [ref=e215]
+              - img [ref=e226]
+            - generic [ref=e237]:
+              - img [ref=e238]
+              - img [ref=e248]
+              - img [ref=e257]
+              - img [ref=e263]
+              - img [ref=e276]
+              - img [ref=e286]
+              - img [ref=e289]
+              - img [ref=e297]
+              - img [ref=e303]
+              - img [ref=e314]
+            - generic [ref=e325]:
+              - img [ref=e326]
+              - img [ref=e336]
+              - img [ref=e345]
+              - img [ref=e351]
+              - img [ref=e364]
+              - img [ref=e374]
+              - img [ref=e377]
+              - img [ref=e385]
+              - img [ref=e391]
+              - img [ref=e402]
+          - generic [ref=e413]:
+            - generic [ref=e415]:
+              - img [ref=e416]
+              - img [ref=e418]
+              - img [ref=e430]
+              - img [ref=e434]
+              - img [ref=e452]
+              - img [ref=e454]
+              - img [ref=e470]
+              - img [ref=e483]
+              - img [ref=e485]
+              - img [ref=e497]
+            - generic [ref=e501]:
+              - img [ref=e502]
+              - img [ref=e504]
+              - img [ref=e516]
+              - img [ref=e520]
+              - img [ref=e538]
+              - img [ref=e540]
+              - img [ref=e556]
+              - img [ref=e569]
+              - img [ref=e571]
+              - img [ref=e583]
+            - generic [ref=e587]:
+              - img [ref=e588]
+              - img [ref=e590]
+              - img [ref=e602]
+              - img [ref=e606]
+              - img [ref=e624]
+              - img [ref=e626]
+              - img [ref=e642]
+              - img [ref=e655]
+              - img [ref=e657]
+              - img [ref=e669]
+            - generic [ref=e673]:
+              - img [ref=e674]
+              - img [ref=e676]
+              - img [ref=e688]
+              - img [ref=e692]
+              - img [ref=e710]
+              - img [ref=e712]
+              - img [ref=e728]
+              - img [ref=e741]
+              - img [ref=e743]
+              - img [ref=e755]
+        - generic [ref=e758]:
+          - generic [ref=e760]:
+            - generic [ref=e762] [cursor=pointer]: Features
+            - heading "Comprehensive Security & Networking Solutions" [level=2] [ref=e763]:
+              - text: Comprehensive Security
+              - text: "& Networking Solutions"
+            - paragraph [ref=e764]: performance, reliability, and protection—our solutions keep your business connected and secure without the complexity.
+          - generic [ref=e766]:
+            - generic [ref=e768]:
+              - img [ref=e775]
+              - generic [ref=e790]:
+                - img [ref=e792]
+                - generic [ref=e810]:
+                  - heading "Always-On Protectionc" [level=4] [ref=e811]
+                  - paragraph [ref=e812]: 24/7 monitoring to keep your systems safe and running smoothly.
+            - generic [ref=e814]:
+              - generic [ref=e819]:
+                - img [ref=e821]
+                - generic [ref=e838]:
+                  - heading "Fast, Reliable Networking" [level=4] [ref=e839]
+                  - paragraph [ref=e840]: Optimized connections for seamless performance and uninterrupted operations.
+              - generic [ref=e841]:
+                - generic [ref=e846]:
+                  - paragraph [ref=e848]: We use AI to help you create content that resonates with your audience. Our tools are designed to optimize your content creation and engagement like never before. Transform your social media strategy with Luro AI's cutting-edge features. Reach your audience with the right message at the right time. Create content faster and smarter with Luro AI. Transform your social media strategy with Luro AI's cutting-edge features. Create content faster and smarter with Luro AI. Transform your social media strategy with Luro AI's cutting-edge features. Create content faster and smarter with Luro AI.
+                  - img [ref=e850]
+                - generic [ref=e865]:
+                  - img [ref=e866]
+                  - img [ref=e875]
+                  - img [ref=e884]
+                  - img [ref=e888]
+              - generic [ref=e902]:
+                - generic [ref=e903]:
+                  - heading "Strong Security, Simple Protection" [level=4] [ref=e904]
+                  - paragraph [ref=e905]: Keep your business safe from cyber threats with easy-to-manage security solutions.
+                - img [ref=e907]
+            - generic [ref=e946]:
+              - generic [ref=e951]:
+                - img [ref=e953]
+                - generic [ref=e968]:
+                  - heading "Flexible & Scalable Solutions" [level=4] [ref=e969]
+                  - paragraph [ref=e970]: Security and networking that grow with your business.
+              - generic [ref=e975]:
+                - img [ref=e977]
+                - generic [ref=e1017]:
+                  - heading "Smarter Threat Detection" [level=4] [ref=e1018]
+                  - paragraph [ref=e1019]: Identify and stop cyber risks before they become a problem.
+        - generic [ref=e1020]:
+          - generic [ref=e1022]:
+            - generic [ref=e1024] [cursor=pointer]: Solutions
+            - heading "Networking" [level=2] [ref=e1025]
+            - paragraph [ref=e1026]: At Rep, we offer a comprehensive range of networking services.
+          - generic [ref=e1029]:
+            - generic [ref=e1031]:
+              - img [ref=e1033]
+              - generic [ref=e1037]: Infrastructure
+              - paragraph [ref=e1038]: Build a secure, high-performance IT foundation with our tailored infrastructure solutions. We ensure seamless connectivity, scalability, and reliability to support your business operations without downtime or security risks.
+            - generic [ref=e1040]:
+              - img [ref=e1042]
+              - generic [ref=e1047]: CCTV
+              - paragraph [ref=e1048]: Protect your business with advanced CCTV solutions. Our high-resolution cameras, remote monitoring, and intelligent analytics provide real-time surveillance, deterring threats and ensuring safety for your assets and personnel.
+            - generic [ref=e1050]:
+              - img [ref=e1052]
+              - generic [ref=e1061]: VoIP
+              - paragraph [ref=e1062]: Enhance communication with crystal-clear VoIP solutions. Our secure, cost-effective voice services ensure reliable connections, seamless integrations, and advanced features for businesses of all sizes, improving collaboration and efficiency.
+            - generic [ref=e1064]:
+              - img [ref=e1066]
+              - generic [ref=e1074]: Data Center
+              - paragraph [ref=e1075]: Optimize performance and security with our data center solutions. From efficient cooling to secure storage and high-speed connectivity, we design and implement scalable environments tailored to your business needs.
+            - generic [ref=e1077]:
+              - img [ref=e1079]
+              - generic [ref=e1084]: Virtualization
+              - paragraph [ref=e1085]: Maximize efficiency with our virtualization solutions. Reduce hardware costs, enhance security, and improve scalability with flexible, cloud-ready environments designed to optimize performance and resource utilization.
+            - generic [ref=e1087]:
+              - img [ref=e1089]
+              - generic [ref=e1098]: Routing & Switching
+              - paragraph [ref=e1099]: Ensure fast, reliable network performance with advanced routing and switching solutions. We provide seamless connectivity, traffic optimization, and security to keep your business running smoothly and efficiently.
+        - generic [ref=e1100]:
+          - generic [ref=e1102]:
+            - generic [ref=e1104] [cursor=pointer]: Solutions
+            - heading "Security" [level=2] [ref=e1105]
+            - paragraph [ref=e1106]: At Rep, we offer a comprehensive range of Security services.
+          - generic [ref=e1109]:
+            - generic [ref=e1111]:
+              - img [ref=e1113]
+              - generic [ref=e1117]: Firewalls
+              - paragraph [ref=e1118]: Protect your network with advanced firewalls that block unauthorized access, filter traffic, and prevent cyber threats. Our solutions provide robust security without compromising performance or connectivity.
+            - generic [ref=e1120]:
+              - img [ref=e1122]
+              - generic [ref=e1127]: Intrusion Detection and Prevention
+              - paragraph [ref=e1128]: Stay ahead of cyber threats with real-time intrusion detection and prevention. Our solutions monitor, analyze, and stop malicious activity before it impacts your business operations.
+            - generic [ref=e1130]:
+              - img [ref=e1132]
+              - generic [ref=e1141]: VPN Solutions
+              - paragraph [ref=e1142]: Ensure secure remote access with our VPN solutions. Encrypt data, protect communications, and enable seamless connectivity for remote teams without sacrificing security or performance.
+            - generic [ref=e1144]:
+              - img [ref=e1146]
+              - generic [ref=e1154]: Infrastructure and Physical Security
+              - paragraph [ref=e1155]: Safeguard your digital and physical assets with integrated security solutions. From access control to cybersecurity, we provide a comprehensive approach to protecting your infrastructure.
+            - generic [ref=e1157]:
+              - img [ref=e1159]
+              - generic [ref=e1164]: Availability and Resiliency
+              - paragraph [ref=e1165]: Keep your business running with high-availability solutions. Our resiliency strategies minimize downtime, ensure redundancy, and protect critical systems from failures or cyberattacks.
+        - generic [ref=e1166]:
+          - generic [ref=e1168]:
+            - generic [ref=e1170] [cursor=pointer]: Our Customers
+            - heading "What our customers say" [level=2] [ref=e1171]
+            - paragraph [ref=e1172]: We are proud to have helped thousands of customers across the globe. Here are some of their stories
+          - generic [ref=e1175]:
+            - generic [ref=e1176]:
+              - generic [ref=e1177]:
+                - figure [ref=e1178] [cursor=pointer]:
+                  - generic [ref=e1180]:
+                    - generic [ref=e1181]: Mobile 140
+                    - paragraph [ref=e1182]: www.mobile140.com
+                  - blockquote [ref=e1183]: Mobile 140 is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+                - figure [ref=e1184] [cursor=pointer]:
+                  - generic [ref=e1186]:
+                    - generic [ref=e1187]: Polywin
+                    - paragraph [ref=e1188]: www.polywin.ir
+                  - blockquote [ref=e1189]: Polywin Co., based in Alborz, Iran, specializes in the production and supply of polyethylene and polypropylene pipes, fittings, and valves, offering laboratory testing and training services since its establishment in 2016.
+                - figure [ref=e1190] [cursor=pointer]:
+                  - generic [ref=e1192]:
+                    - generic [ref=e1193]: Sampa
+                    - paragraph [ref=e1194]: www.iransampa.ir
+                  - blockquote [ref=e1195]: IranSampa is involved in industrial and production activities, focusing on molding and production saloons. The company also maintains an active online presence to shareinformation through its website.
+                - figure [ref=e1196] [cursor=pointer]:
+                  - generic [ref=e1198]:
+                    - generic [ref=e1199]: Janja Mine
+                    - paragraph [ref=e1200]: www.janjamine.com
+                  - blockquote [ref=e1201]: Janja Mine in Iran is a major copper and gold mining project located in Sistan and Baluchistan, with proven reserves of 312 million metric tons and significant economic potential for job creation and regional development.
+                - figure [ref=e1202] [cursor=pointer]:
+                  - generic [ref=e1204]:
+                    - generic [ref=e1205]: Alborz Media
+                    - paragraph [ref=e1206]: "@ankitsharma"
+                  - blockquote [ref=e1207]: broadcasting channel, potentially focusing on content production, news, or entertainment within the region.
+              - generic [ref=e1208]:
+                - figure [ref=e1209] [cursor=pointer]:
+                  - generic [ref=e1211]:
+                    - generic [ref=e1212]: Mobile 140
+                    - paragraph [ref=e1213]: www.mobile140.com
+                  - blockquote [ref=e1214]: Mobile 140 is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+                - figure [ref=e1215] [cursor=pointer]:
+                  - generic [ref=e1217]:
+                    - generic [ref=e1218]: Polywin
+                    - paragraph [ref=e1219]: www.polywin.ir
+                  - blockquote [ref=e1220]: Polywin Co., based in Alborz, Iran, specializes in the production and supply of polyethylene and polypropylene pipes, fittings, and valves, offering laboratory testing and training services since its establishment in 2016.
+                - figure [ref=e1221] [cursor=pointer]:
+                  - generic [ref=e1223]:
+                    - generic [ref=e1224]: Sampa
+                    - paragraph [ref=e1225]: www.iransampa.ir
+                  - blockquote [ref=e1226]: IranSampa is involved in industrial and production activities, focusing on molding and production saloons. The company also maintains an active online presence to shareinformation through its website.
+                - figure [ref=e1227] [cursor=pointer]:
+                  - generic [ref=e1229]:
+                    - generic [ref=e1230]: Janja Mine
+                    - paragraph [ref=e1231]: www.janjamine.com
+                  - blockquote [ref=e1232]: Janja Mine in Iran is a major copper and gold mining project located in Sistan and Baluchistan, with proven reserves of 312 million metric tons and significant economic potential for job creation and regional development.
+                - figure [ref=e1233] [cursor=pointer]:
+                  - generic [ref=e1235]:
+                    - generic [ref=e1236]: Alborz Media
+                    - paragraph [ref=e1237]: "@ankitsharma"
+                  - blockquote [ref=e1238]: broadcasting channel, potentially focusing on content production, news, or entertainment within the region.
+              - generic [ref=e1239]:
+                - figure [ref=e1240] [cursor=pointer]:
+                  - generic [ref=e1242]:
+                    - generic [ref=e1243]: Mobile 140
+                    - paragraph [ref=e1244]: www.mobile140.com
+                  - blockquote [ref=e1245]: Mobile 140 is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+                - figure [ref=e1246] [cursor=pointer]:
+                  - generic [ref=e1248]:
+                    - generic [ref=e1249]: Polywin
+                    - paragraph [ref=e1250]: www.polywin.ir
+                  - blockquote [ref=e1251]: Polywin Co., based in Alborz, Iran, specializes in the production and supply of polyethylene and polypropylene pipes, fittings, and valves, offering laboratory testing and training services since its establishment in 2016.
+                - figure [ref=e1252] [cursor=pointer]:
+                  - generic [ref=e1254]:
+                    - generic [ref=e1255]: Sampa
+                    - paragraph [ref=e1256]: www.iransampa.ir
+                  - blockquote [ref=e1257]: IranSampa is involved in industrial and production activities, focusing on molding and production saloons. The company also maintains an active online presence to shareinformation through its website.
+                - figure [ref=e1258] [cursor=pointer]:
+                  - generic [ref=e1260]:
+                    - generic [ref=e1261]: Janja Mine
+                    - paragraph [ref=e1262]: www.janjamine.com
+                  - blockquote [ref=e1263]: Janja Mine in Iran is a major copper and gold mining project located in Sistan and Baluchistan, with proven reserves of 312 million metric tons and significant economic potential for job creation and regional development.
+                - figure [ref=e1264] [cursor=pointer]:
+                  - generic [ref=e1266]:
+                    - generic [ref=e1267]: Alborz Media
+                    - paragraph [ref=e1268]: "@ankitsharma"
+                  - blockquote [ref=e1269]: broadcasting channel, potentially focusing on content production, news, or entertainment within the region.
+              - generic [ref=e1270]:
+                - figure [ref=e1271] [cursor=pointer]:
+                  - generic [ref=e1273]:
+                    - generic [ref=e1274]: Mobile 140
+                    - paragraph [ref=e1275]: www.mobile140.com
+                  - blockquote [ref=e1276]: Mobile 140 is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+                - figure [ref=e1277] [cursor=pointer]:
+                  - generic [ref=e1279]:
+                    - generic [ref=e1280]: Polywin
+                    - paragraph [ref=e1281]: www.polywin.ir
+                  - blockquote [ref=e1282]: Polywin Co., based in Alborz, Iran, specializes in the production and supply of polyethylene and polypropylene pipes, fittings, and valves, offering laboratory testing and training services since its establishment in 2016.
+                - figure [ref=e1283] [cursor=pointer]:
+                  - generic [ref=e1285]:
+                    - generic [ref=e1286]: Sampa
+                    - paragraph [ref=e1287]: www.iransampa.ir
+                  - blockquote [ref=e1288]: IranSampa is involved in industrial and production activities, focusing on molding and production saloons. The company also maintains an active online presence to shareinformation through its website.
+                - figure [ref=e1289] [cursor=pointer]:
+                  - generic [ref=e1291]:
+                    - generic [ref=e1292]: Janja Mine
+                    - paragraph [ref=e1293]: www.janjamine.com
+                  - blockquote [ref=e1294]: Janja Mine in Iran is a major copper and gold mining project located in Sistan and Baluchistan, with proven reserves of 312 million metric tons and significant economic potential for job creation and regional development.
+                - figure [ref=e1295] [cursor=pointer]:
+                  - generic [ref=e1297]:
+                    - generic [ref=e1298]: Alborz Media
+                    - paragraph [ref=e1299]: "@ankitsharma"
+                  - blockquote [ref=e1300]: broadcasting channel, potentially focusing on content production, news, or entertainment within the region.
+            - generic [ref=e1301]:
+              - generic [ref=e1302]:
+                - figure [ref=e1303] [cursor=pointer]:
+                  - generic [ref=e1305]:
+                    - generic [ref=e1306]: Novin Media
+                    - paragraph [ref=e1307]: www.novinmedia.com
+                  - blockquote [ref=e1308]: began its operations in 2014 to supply accessories for LG Electronics in Iran. It then continued as the exclusive importer of LG Bluetooth headsets, introducing this new product to Iran for the first time.
+                - figure [ref=e1309] [cursor=pointer]:
+                  - generic [ref=e1311]:
+                    - generic [ref=e1312]: Shahrab
+                    - paragraph [ref=e1313]: www.shahrab.com
+                  - blockquote [ref=e1314]: The primary focus of Shahrab is on providing water and wastewater treatment solutions and systems for various industries. They worked with clients such as the National Iranian Gas Company, National Iranian Oil Engineering & Construction Company, and the Pars Oil and Gas Company.
+                - figure [ref=e1315] [cursor=pointer]:
+                  - generic [ref=e1317]:
+                    - generic [ref=e1318]: Amadeh Laziz
+                    - paragraph [ref=e1319]: www.amadehlaziz.com
+                  - blockquote [ref=e1320]: "It specializes in producing and distributing ready and semi-ready food products across Iran and neighboring countries. The company's flagship brand, Elite, was launched in 2006 and has become a market leader in the region for ready food products. Over time expanded to nine brands: Elite, Copa, Fit & Fun, Aroma, Tempo, Tam Tam, Molinari, and Amadeh Laziz."
+                - figure [ref=e1321] [cursor=pointer]:
+                  - generic [ref=e1323]:
+                    - generic [ref=e1324]: Sapel
+                    - paragraph [ref=e1325]: www.sapel.ir
+                  - blockquote [ref=e1326]: Sapel is a prominent Iranian company with nearly half a century of experience in the plastic industry. Established in 1979, it specializes in producing blow molding containers and injection units.
+                - figure [ref=e1327] [cursor=pointer]:
+                  - generic [ref=e1329]:
+                    - generic [ref=e1330]: Alborz Engineering
+                    - paragraph [ref=e1331]: www.alborz-nezam.ir
+                  - blockquote [ref=e1332]: Alborz Province Engineering System Organization a crucial institution in Iran responsible for overseeing and managing the engineering aspects of construction projects. It issues licenses to engineers and engineering firms to ensure the quality and safety of buildings.
+                - figure [ref=e1333] [cursor=pointer]:
+                  - generic [ref=e1335]:
+                    - generic [ref=e1336]: insito
+                    - paragraph [ref=e1337]: www.insito.ir
+                  - blockquote [ref=e1338]: insito is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+              - generic [ref=e1339]:
+                - figure [ref=e1340] [cursor=pointer]:
+                  - generic [ref=e1342]:
+                    - generic [ref=e1343]: Novin Media
+                    - paragraph [ref=e1344]: www.novinmedia.com
+                  - blockquote [ref=e1345]: began its operations in 2014 to supply accessories for LG Electronics in Iran. It then continued as the exclusive importer of LG Bluetooth headsets, introducing this new product to Iran for the first time.
+                - figure [ref=e1346] [cursor=pointer]:
+                  - generic [ref=e1348]:
+                    - generic [ref=e1349]: Shahrab
+                    - paragraph [ref=e1350]: www.shahrab.com
+                  - blockquote [ref=e1351]: The primary focus of Shahrab is on providing water and wastewater treatment solutions and systems for various industries. They worked with clients such as the National Iranian Gas Company, National Iranian Oil Engineering & Construction Company, and the Pars Oil and Gas Company.
+                - figure [ref=e1352] [cursor=pointer]:
+                  - generic [ref=e1354]:
+                    - generic [ref=e1355]: Amadeh Laziz
+                    - paragraph [ref=e1356]: www.amadehlaziz.com
+                  - blockquote [ref=e1357]: "It specializes in producing and distributing ready and semi-ready food products across Iran and neighboring countries. The company's flagship brand, Elite, was launched in 2006 and has become a market leader in the region for ready food products. Over time expanded to nine brands: Elite, Copa, Fit & Fun, Aroma, Tempo, Tam Tam, Molinari, and Amadeh Laziz."
+                - figure [ref=e1358] [cursor=pointer]:
+                  - generic [ref=e1360]:
+                    - generic [ref=e1361]: Sapel
+                    - paragraph [ref=e1362]: www.sapel.ir
+                  - blockquote [ref=e1363]: Sapel is a prominent Iranian company with nearly half a century of experience in the plastic industry. Established in 1979, it specializes in producing blow molding containers and injection units.
+                - figure [ref=e1364] [cursor=pointer]:
+                  - generic [ref=e1366]:
+                    - generic [ref=e1367]: Alborz Engineering
+                    - paragraph [ref=e1368]: www.alborz-nezam.ir
+                  - blockquote [ref=e1369]: Alborz Province Engineering System Organization a crucial institution in Iran responsible for overseeing and managing the engineering aspects of construction projects. It issues licenses to engineers and engineering firms to ensure the quality and safety of buildings.
+                - figure [ref=e1370] [cursor=pointer]:
+                  - generic [ref=e1372]:
+                    - generic [ref=e1373]: insito
+                    - paragraph [ref=e1374]: www.insito.ir
+                  - blockquote [ref=e1375]: insito is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+              - generic [ref=e1376]:
+                - figure [ref=e1377] [cursor=pointer]:
+                  - generic [ref=e1379]:
+                    - generic [ref=e1380]: Novin Media
+                    - paragraph [ref=e1381]: www.novinmedia.com
+                  - blockquote [ref=e1382]: began its operations in 2014 to supply accessories for LG Electronics in Iran. It then continued as the exclusive importer of LG Bluetooth headsets, introducing this new product to Iran for the first time.
+                - figure [ref=e1383] [cursor=pointer]:
+                  - generic [ref=e1385]:
+                    - generic [ref=e1386]: Shahrab
+                    - paragraph [ref=e1387]: www.shahrab.com
+                  - blockquote [ref=e1388]: The primary focus of Shahrab is on providing water and wastewater treatment solutions and systems for various industries. They worked with clients such as the National Iranian Gas Company, National Iranian Oil Engineering & Construction Company, and the Pars Oil and Gas Company.
+                - figure [ref=e1389] [cursor=pointer]:
+                  - generic [ref=e1391]:
+                    - generic [ref=e1392]: Amadeh Laziz
+                    - paragraph [ref=e1393]: www.amadehlaziz.com
+                  - blockquote [ref=e1394]: "It specializes in producing and distributing ready and semi-ready food products across Iran and neighboring countries. The company's flagship brand, Elite, was launched in 2006 and has become a market leader in the region for ready food products. Over time expanded to nine brands: Elite, Copa, Fit & Fun, Aroma, Tempo, Tam Tam, Molinari, and Amadeh Laziz."
+                - figure [ref=e1395] [cursor=pointer]:
+                  - generic [ref=e1397]:
+                    - generic [ref=e1398]: Sapel
+                    - paragraph [ref=e1399]: www.sapel.ir
+                  - blockquote [ref=e1400]: Sapel is a prominent Iranian company with nearly half a century of experience in the plastic industry. Established in 1979, it specializes in producing blow molding containers and injection units.
+                - figure [ref=e1401] [cursor=pointer]:
+                  - generic [ref=e1403]:
+                    - generic [ref=e1404]: Alborz Engineering
+                    - paragraph [ref=e1405]: www.alborz-nezam.ir
+                  - blockquote [ref=e1406]: Alborz Province Engineering System Organization a crucial institution in Iran responsible for overseeing and managing the engineering aspects of construction projects. It issues licenses to engineers and engineering firms to ensure the quality and safety of buildings.
+                - figure [ref=e1407] [cursor=pointer]:
+                  - generic [ref=e1409]:
+                    - generic [ref=e1410]: insito
+                    - paragraph [ref=e1411]: www.insito.ir
+                  - blockquote [ref=e1412]: insito is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+              - generic [ref=e1413]:
+                - figure [ref=e1414] [cursor=pointer]:
+                  - generic [ref=e1416]:
+                    - generic [ref=e1417]: Novin Media
+                    - paragraph [ref=e1418]: www.novinmedia.com
+                  - blockquote [ref=e1419]: began its operations in 2014 to supply accessories for LG Electronics in Iran. It then continued as the exclusive importer of LG Bluetooth headsets, introducing this new product to Iran for the first time.
+                - figure [ref=e1420] [cursor=pointer]:
+                  - generic [ref=e1422]:
+                    - generic [ref=e1423]: Shahrab
+                    - paragraph [ref=e1424]: www.shahrab.com
+                  - blockquote [ref=e1425]: The primary focus of Shahrab is on providing water and wastewater treatment solutions and systems for various industries. They worked with clients such as the National Iranian Gas Company, National Iranian Oil Engineering & Construction Company, and the Pars Oil and Gas Company.
+                - figure [ref=e1426] [cursor=pointer]:
+                  - generic [ref=e1428]:
+                    - generic [ref=e1429]: Amadeh Laziz
+                    - paragraph [ref=e1430]: www.amadehlaziz.com
+                  - blockquote [ref=e1431]: "It specializes in producing and distributing ready and semi-ready food products across Iran and neighboring countries. The company's flagship brand, Elite, was launched in 2006 and has become a market leader in the region for ready food products. Over time expanded to nine brands: Elite, Copa, Fit & Fun, Aroma, Tempo, Tam Tam, Molinari, and Amadeh Laziz."
+                - figure [ref=e1432] [cursor=pointer]:
+                  - generic [ref=e1434]:
+                    - generic [ref=e1435]: Sapel
+                    - paragraph [ref=e1436]: www.sapel.ir
+                  - blockquote [ref=e1437]: Sapel is a prominent Iranian company with nearly half a century of experience in the plastic industry. Established in 1979, it specializes in producing blow molding containers and injection units.
+                - figure [ref=e1438] [cursor=pointer]:
+                  - generic [ref=e1440]:
+                    - generic [ref=e1441]: Alborz Engineering
+                    - paragraph [ref=e1442]: www.alborz-nezam.ir
+                  - blockquote [ref=e1443]: Alborz Province Engineering System Organization a crucial institution in Iran responsible for overseeing and managing the engineering aspects of construction projects. It issues licenses to engineers and engineering firms to ensure the quality and safety of buildings.
+                - figure [ref=e1444] [cursor=pointer]:
+                  - generic [ref=e1446]:
+                    - generic [ref=e1447]: insito
+                    - paragraph [ref=e1448]: www.insito.ir
+                  - blockquote [ref=e1449]: insito is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+        - generic [ref=e1456]:
+          - heading "Elevate your experience with us" [level=2] [ref=e1457]:
+            - text: Elevate your
+            - text: experience with us
+          - paragraph [ref=e1458]: Ready to get started? Sign up now and start your journey with us. We are here to help you grow.
+          - generic [ref=e1459]:
+            - link "Get Started" [ref=e1460] [cursor=pointer]:
+              - /url: /contact-us
+            - link "Learn More" [ref=e1461] [cursor=pointer]:
+              - /url: "#"
+  - contentinfo [ref=e1464]:
+    - generic [ref=e1466]:
+      - generic [ref=e1469]:
+        - img [ref=e1471]
+        - paragraph [ref=e1475]: Empower your business with our Solutions tools.
+        - button "Get Started" [ref=e1476] [cursor=pointer]:
+          - link "Get Started" [ref=e1477]:
+            - /url: /contact-us
+      - generic [ref=e1478]:
+        - generic [ref=e1479]:
+          - heading "Product" [level=4] [ref=e1480]
+          - list [ref=e1481]:
+            - listitem [ref=e1482]:
+              - link "Home" [ref=e1483] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e1484]:
+              - link "Features" [ref=e1485] [cursor=pointer]:
+                - /url: /#how
+            - listitem [ref=e1486]:
+              - link "Networking" [ref=e1487] [cursor=pointer]:
+                - /url: /#networking
+            - listitem [ref=e1488]:
+              - link "Security" [ref=e1489] [cursor=pointer]:
+                - /url: /#security
+        - generic [ref=e1490]:
+          - heading "Resources" [level=4] [ref=e1491]
+          - list [ref=e1492]:
+            - listitem [ref=e1493]:
+              - link "Blog" [ref=e1494] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1495]:
+              - link "Help Center" [ref=e1496] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1497]:
+              - link "Contact us" [ref=e1498] [cursor=pointer]:
+                - /url: /contact-us
+    - paragraph [ref=e1501]: © 2026 REP. All rights reserved.
+  - alert [ref=e1502]

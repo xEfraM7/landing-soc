@@ -7,12 +7,15 @@ Documento maestro de contexto del proyecto. **Debe actualizarse en cada cambio r
 ## 1. Resumen del proyecto
 
 - **Nombre:** landing-soc
-- **Tipo:** Landing page estática
+- **Producto:** **CyberEM** — plataforma SOC (detección, investigación y respuesta ante amenazas) para empresas y MSPs.
+- **Tipo:** Landing page estática (español)
 - **Framework:** [Astro](https://docs.astro.build) 4.x
 - **Lenguaje:** TypeScript (modo strict)
 - **Gestor de paquetes:** **pnpm** (obligatorio, ver `packageManager` en `package.json`)
 - **Estilos:** CSS plano con variables CSS en `src/styles/global.css` (scoped styles por componente vía `<style>` de Astro)
-- **Estado actual:** Estructura base. Sin contenido real, sin integraciones, sin adapter de despliegue.
+- **Aesthetic direction:** Dark `zinc-950` (#09090b) + acento rojo-coral (#ff3241). Tipografía Geist Variable, layouts max-w-6xl, secciones py-20, patrones border-grid + tarjetas + glows.
+- **Source of truth:** **todo el copy del sitio vive en `src/data/site.content.ts`** (alias `@data`). Los componentes no llevan texto hardcodeado: importan su slice de `siteContent`.
+- **Estado actual:** Landing de CyberEM con 6 secciones (Hero, Problema/Solución, Perfiles, Diferenciadores, Equipo/Conócenos, CTA).
 
 ---
 
@@ -25,7 +28,7 @@ Estos principios son **vinculantes** para cualquier cambio en el código.
 - Nombres descriptivos en variables, funciones, componentes y archivos. Nada de `data`, `tmp`, `foo`.
 - Funciones y componentes pequeños, con **una sola responsabilidad**.
 - Cada componente `.astro` debe ser autocontenido y exponer una API clara vía `Props`.
-- No mezclar lógica de presentación con lógica de negocio: la lógica reutilizable vive en `src/utils/`, los datos en `*.data.ts` dentro de la feature.
+- No mezclar lógica de presentación con lógica de negocio: la lógica reutilizable vive en `src/utils/`, y **todo el contenido textual del sitio vive en el source of truth `src/data/site.content.ts`** (no hardcodear copy en los componentes).
 - Comentarios solo cuando el *por qué* no sea obvio. No comentar lo que el código ya dice.
 - Tipar siempre las `Props` con `interface Props`.
 - Eliminar código muerto inmediatamente. Nada de `// TODO` huérfanos ni archivos `*.old`.
@@ -34,17 +37,17 @@ Estos principios son **vinculantes** para cualquier cambio en el código.
 ### 2.2 DRY (Don't Repeat Yourself)
 
 - Si una pieza de UI aparece dos veces, **se extrae** a `src/components/ui/` o `src/components/layout/`.
-- Datos repetidos (listas de servicios, links, copys) viven en un único archivo `*.data.ts` dentro de la feature correspondiente.
+- **Source of truth único de contenido:** todos los textos, listas, navegación, SEO y datos de secciones viven en `src/data/site.content.ts` (objeto `siteContent`, tipado por sección). Cada feature importa su slice (`siteContent.hero`, `siteContent.personas`, …). **No** se crean archivos `*.data.ts` por feature ni se hardcodea copy en el markup.
 - Tokens visuales (colores, fuentes, spacing) **solo** en `src/styles/global.css` como variables CSS. Prohibido hardcodear colores en componentes.
 - Helpers reutilizables (SEO, formateo, slugs, etc.) en `src/utils/`.
-- Rutas de import largas se sustituyen por los alias `@components`, `@features`, `@layouts`, `@styles`, `@utils`, `@assets`, `@/*` (definidos en `tsconfig.json`).
+- Rutas de import largas se sustituyen por los alias `@components`, `@features`, `@layouts`, `@styles`, `@utils`, `@assets`, `@data`, `@/*` (definidos en `tsconfig.json`).
 
 ### 2.3 Estructura: **por tipo + feature**
 
 Combinación de dos criterios de organización:
 
 - **Por tipo:** elementos transversales que sirven a toda la app — `layouts/`, `pages/`, `styles/`, `utils/`, `assets/`, y componentes reutilizables en `components/`.
-- **Por feature:** cada sección de la landing es una carpeta autocontenida dentro de `src/features/` con su componente, datos y, si aplica, sus estilos y subcomponentes.
+- **Por feature:** cada sección de la landing es una carpeta autocontenida dentro de `src/features/` con su componente y, si aplica, sus estilos y subcomponentes. El **contenido** no vive en la feature, sino en `src/data/site.content.ts`.
 
 **Reglas:**
 
@@ -64,55 +67,41 @@ landing-soc/
 ├── docs/
 │   └── superpowers/specs/        # Specs de diseño aprobados
 ├── src/
+│   ├── data/                     # [TIPO] SOURCE OF TRUTH — todo el contenido del sitio
+│   │   └── site.content.ts       #   - `siteContent`: brand, seo, nav, hero, problem, solution,
+│   │                             #     personas, differentiators, team, cta, footer (tipado por sección)
 │   ├── pages/                    # [TIPO] Rutas (cada archivo = una URL). Requerido por Astro.
-│   │   └── index.astro           #   - Orquesta layout + 10 features de la landing
+│   │   └── index.astro           #   - Orquesta layout + 6 features de la landing
 │   ├── layouts/                  # [TIPO] Layouts compartidos (HTML base, wrappers)
-│   │   └── BaseLayout.astro      #   - <head> + SEO meta + slots header/main/footer
+│   │   └── BaseLayout.astro      #   - <html lang="es"> + <head> + SEO meta + slots header/main/footer
 │   ├── components/               # [TIPO] Componentes reutilizables (no atados a una feature)
 │   │   ├── ui/                   #   - Primitivos visuales
-│   │   │   ├── Button.astro      #     · variantes primary/secondary/ghost + icon
-│   │   │   ├── Container.astro
+│   │   │   ├── Button.astro      #     · primary (rojo #ff3241) / secondary (zinc outline) / ghost
+│   │   │   ├── Container.astro   #     · max-w 1152px + px 24/48px
 │   │   │   ├── SectionHeading.astro
-│   │   │   ├── Card.astro        #     · variantes default/feature/bento/persona
-│   │   │   ├── Badge.astro       #     · neutral/brand/cyan + severidad SOC
+│   │   │   ├── Card.astro        #     · variantes default/feature/bento/persona (legacy)
+│   │   │   ├── Badge.astro       #     · neutral/brand/cyan + severidad (legacy)
 │   │   │   └── Icon.astro        #     · renderiza SVG inline desde assets/icons.ts
 │   │   └── layout/               #   - Composición de página
-│   │       ├── Header.astro      #     · sticky con backdrop blur + nav + CTA
-│   │       └── Footer.astro      #     · 4 columnas + status pill
-│   ├── features/                 # [FEATURE] Secciones autocontenidas (10 features)
-│   │   ├── hero/
+│   │       ├── Header.astro      #     · pill flotante (top-4) con nav desde siteContent.nav
+│   │       └── Footer.astro      #     · brand + columnas desde siteContent.footer
+│   ├── features/                 # [FEATURE] 6 secciones autocontenidas (orden: top→bottom)
+│   │   ├── hero/                 #   - Badge + H1 + lead + 2 CTAs + 4 highlights + mockup SOC
 │   │   │   └── Hero.astro
-│   │   ├── integrations/
-│   │   │   ├── Integrations.astro
-│   │   │   └── integrations.data.ts
-│   │   ├── personas/
-│   │   │   ├── Personas.astro
-│   │   │   └── personas.data.ts
-│   │   ├── how-it-works/
-│   │   │   ├── HowItWorks.astro
-│   │   │   └── how-it-works.data.ts
-│   │   ├── features/             #   - 6 bloques de funcionalidades (bento)
-│   │   │   ├── Features.astro
-│   │   │   ├── FeatureVisual.astro
-│   │   │   └── features.data.ts
-│   │   ├── differentiators/
-│   │   │   ├── Differentiators.astro
-│   │   │   └── differentiators.data.ts
-│   │   ├── metrics/
-│   │   │   ├── Metrics.astro
-│   │   │   └── metrics.data.ts
-│   │   ├── tech-stack/
-│   │   │   ├── TechStack.astro
-│   │   │   └── tech-stack.data.ts
-│   │   ├── faq/
-│   │   │   ├── Faq.astro
-│   │   │   └── faq.data.ts
-│   │   └── cta/
+│   │   ├── problem-solution/     #   - "El Problema" (#problema) + "Nuestra Solución" (#solucion, 3 pilares)
+│   │   │   └── ProblemSolution.astro
+│   │   ├── personas/             #   - "Pensado para los cuatro perfiles" — grid de 4 tarjetas (#perfiles)
+│   │   │   └── Personas.astro
+│   │   ├── differentiators/      #   - "Diferenciadores" — border-grid 6 ítems numerados (#diferenciadores)
+│   │   │   └── Differentiators.astro
+│   │   ├── team/                 #   - "Conócenos" + "Acerca de nosotros" + tarjetas de equipo (#equipo)
+│   │   │   └── Team.astro
+│   │   └── cta/                  #   - CTA final con glows (#contacto)
 │   │       └── Cta.astro
 │   ├── styles/                   # [TIPO] Estilos globales y tokens
 │   │   └── global.css            #   - Variables CSS (surfaces, brand, severidad, tipografía)
 │   ├── utils/                    # [TIPO] Helpers puros y reutilizables
-│   │   └── seo.ts                #   - buildTitle + defaultSeo
+│   │   └── seo.ts                #   - buildTitle + defaultSeo (derivados de siteContent.seo)
 │   ├── scripts/                  # [TIPO] Scripts client-side bundleados por Astro
 │   │   └── smooth-scroll.ts      #   - Init GSAP ScrollSmoother + respeta reduced-motion
 │   └── assets/                   # [TIPO] Assets procesados por Astro
@@ -128,7 +117,7 @@ landing-soc/
 **Cómo añadir una nueva feature:**
 
 1. Crear `src/features/<nombre-feature>/`.
-2. Dentro, el componente principal `<NombreFeature>.astro` y opcionalmente `*.data.ts`, subcomponentes locales.
+2. Dentro, el componente principal `<NombreFeature>.astro` y subcomponentes locales si aplica. **El contenido NO va aquí:** añade su slice tipado a `src/data/site.content.ts` y consúmelo con `import { siteContent } from '@data/site.content'`.
 3. Importarla desde `src/pages/index.astro` (o la página correspondiente) usando el alias `@features/<nombre>/...`.
 4. Si algún elemento se vuelve reutilizable por otra feature, **moverlo** a `src/components/` y actualizar imports.
 5. **Actualizar la sección 3 de este CLAUDE.md** con la nueva carpeta.
@@ -148,6 +137,7 @@ Definidos en `tsconfig.json`. Úsalos siempre en lugar de rutas relativas largas
 | `@styles/*`     | `src/styles/*`    |
 | `@utils/*`      | `src/utils/*`     |
 | `@assets/*`     | `src/assets/*`    |
+| `@data/*`       | `src/data/*`      |
 
 ---
 
@@ -169,7 +159,7 @@ pnpm astro add <pkg>    # Añadir integraciones / adapters de Astro
 ## 6. Convenciones de código
 
 - **Componentes Astro:** PascalCase (`Hero.astro`, `Button.astro`).
-- **Archivos de datos:** kebab-case + `.data.ts` (`services.data.ts`).
+- **Contenido:** un único `src/data/site.content.ts` (objeto `siteContent` tipado por sección). No crear `*.data.ts` por feature.
 - **Utils:** camelCase (`seo.ts`, `formatDate.ts`).
 - **CSS:** clases en kebab-case. Estilos *scoped* dentro del componente; globales solo en `src/styles/global.css`.
 - **Props:** siempre declaradas vía `interface Props` con tipos explícitos y valores por defecto donde aplique.
@@ -194,7 +184,8 @@ pnpm astro add <pkg>    # Añadir integraciones / adapters de Astro
 ## 8. Pendientes conocidos
 
 - [ ] Definir adapter de despliegue (Vercel / Netlify / Cloudflare / Node).
-- [ ] Definir contenido real (copys, paleta final, tipografías).
+- [ ] Completar datos reales del equipo y copy de "Acerca de nosotros" en `site.content.ts` (placeholders marcados con `TODO`).
+- [ ] Conectar CTAs ("Solicitar Demo" → `#contacto`) a un formulario/flujo real y definir la URL de "Ver Plataforma".
 - [ ] Añadir meta tags OG / Twitter (`src/utils/seo.ts` ya está preparado).
 - [ ] Añadir `robots.txt` y `sitemap` (`@astrojs/sitemap`).
 - [ ] Decidir si se incorporará Tailwind o se mantiene CSS plano.

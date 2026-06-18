@@ -1,83 +1,70 @@
 /* ============================================================
-   Landing SOC — Design Tokens
-   Enterprise Security aesthetic: deep navy + brand blue + cyan accent,
-   editorial serif display, modern sans body, mono for telemetry.
+   Landing SOC — Design Tokens (repteam.net-inspired)
+   Dark zinc-950 surface, red-coral brand accent, ample radii.
    ============================================================ */
 
 @import '@fontsource-variable/geist';
-@import '@fontsource/instrument-serif/400.css';
-@import '@fontsource/instrument-serif/400-italic.css';
-@import '@fontsource/jetbrains-mono/400.css';
 @import '@fontsource/jetbrains-mono/500.css';
 
 :root {
-  /* --- Surfaces -------------------------------------------------- */
-  --bg-base: #0a0e1a;
-  --bg-elev-1: #0f1524;
-  --bg-elev-2: #161e33;
-  --bg-elev-3: #1d263f;
+  /* --- Surfaces (zinc/neutral scale) ----------------------------- */
+  --bg-base: #09090b;          /* zinc-950 — body */
+  --bg-elev-1: #18181b;        /* zinc-900 */
+  --bg-elev-2: #27272a;        /* zinc-800 */
+  --bg-elev-3: #3f3f46;        /* zinc-700 */
+  --bg-card: rgba(250, 250, 250, 0.05);
+  --bg-card-hover: rgba(250, 250, 250, 0.10);
 
-  /* --- Borders -------------------------------------------------- */
-  --border: rgba(148, 163, 209, 0.10);
-  --border-strong: rgba(148, 163, 209, 0.18);
-  --border-brand: rgba(59, 130, 246, 0.35);
+  /* --- Borders --------------------------------------------------- */
+  --border: rgba(250, 250, 250, 0.05);
+  --border-strong: rgba(250, 250, 250, 0.15);
+  --border-neutral-800: #27272a;
+  --border-neutral-700: #3f3f46;
 
-  /* --- Brand ---------------------------------------------------- */
-  --brand-700: #1d4ed8;
-  --brand-600: #2563eb;
-  --brand-500: #3b82f6;
-  --brand-400: #60a5fa;
-  --brand-300: #93c5fd;
-  --brand-glow: rgba(59, 130, 246, 0.35);
-  --brand-glow-strong: rgba(59, 130, 246, 0.55);
-
-  /* --- Accent --------------------------------------------------- */
-  --accent-cyan: #22d3ee;
-  --accent-cyan-soft: rgba(34, 211, 238, 0.18);
+  /* --- Brand (red-coral) ---------------------------------------- */
+  --brand-500: #ff3241;
+  --brand-600: #e2202f;
+  --brand-glow: rgba(255, 50, 65, 0.35);
+  --brand-glow-soft: rgba(255, 50, 65, 0.10);
+  --brand-glow-strong: rgba(255, 50, 65, 0.55);
 
   /* --- Foreground ----------------------------------------------- */
-  --fg-strong: #f1f5f9;
-  --fg-default: #cbd5e1;
-  --fg-muted: #7c8aa8;
-  --fg-faint: #4b5775;
+  --fg-strong: #fafafa;        /* zinc-50 */
+  --fg-default: rgba(250, 250, 250, 0.80);
+  --fg-muted: #a1a1aa;          /* zinc-400 — nav, body secondary */
+  --fg-faint: rgba(250, 250, 250, 0.40);
 
-  /* --- Severity ------------------------------------------------- */
-  --sev-critical: #f43f5e;
-  --sev-critical-bg: rgba(244, 63, 94, 0.12);
-  --sev-high: #fb923c;
-  --sev-high-bg: rgba(251, 146, 60, 0.12);
-  --sev-medium: #facc15;
-  --sev-medium-bg: rgba(250, 204, 21, 0.12);
-  --sev-low: #38bdf8;
-  --sev-low-bg: rgba(56, 189, 248, 0.12);
+  /* --- Severity (kept minimal) ---------------------------------- */
   --sev-ok: #34d399;
   --sev-ok-bg: rgba(52, 211, 153, 0.14);
 
   /* --- Typography ----------------------------------------------- */
-  --font-display: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --font-display: 'Geist Variable', system-ui, -apple-system, sans-serif;
   --font-sans: 'Geist Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
-  /* --- Radius --------------------------------------------------- */
+  /* --- Radius (matches repteam: 6px buttons, 12px cards, 32px panels) -- */
   --radius-xs: 4px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  --radius-sm: 6px;       /* buttons */
+  --radius-md: 8px;
+  --radius-lg: 12px;      /* testimonial cards */
   --radius-xl: 24px;
-  --radius-2xl: 32px;
+  --radius-2xl: 32px;     /* hero mockup frame */
   --radius-pill: 9999px;
 
   /* --- Shadows -------------------------------------------------- */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
   --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 0 1px var(--brand-glow), 0 12px 40px var(--brand-glow);
+  --shadow-glow: 0 12px 40px var(--brand-glow);
   --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
-  /* --- Layout --------------------------------------------------- */
-  --container-max: 1200px;
-  --section-pad-y: clamp(4rem, 8vw, 7rem);
-  --header-h: 64px;
+  /* --- Layout (matches max-w-6xl 1152px + px-12) ---------------- */
+  --container-max: 1152px;
+  --container-px: 1.5rem;
+  --container-px-md: 3rem;       /* 48px */
+  --section-pad-y: 5rem;          /* py-20 = 80px */
+  --header-h: 80px;               /* top-4 + h-12 */
 
   /* --- Motion --------------------------------------------------- */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -95,30 +82,19 @@
 }
 
 html {
-  /* Native smooth-scroll disabled — GSAP ScrollSmoother handles scrolling.
-     scroll-margin-top on [id] sections (below) provides the offset for
-     anchor links so they don't sit beneath the fixed header. */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  background-color: var(--bg-base);
+  scroll-behavior: smooth;
 }
 
-/* Anchor offset for fixed header — respected by ScrollSmoother and by
-   native scrolling fallback for users with prefers-reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 :where(section[id], [id]) {
   scroll-margin-top: var(--header-h);
-}
-
-/* ScrollSmoother takes over layout: wrapper becomes fixed viewport-sized
-   and content is translated. Default styles keep native scroll working
-   before the script initializes, avoiding FOUC. */
-#smooth-wrapper {
-  position: relative;
-}
-
-#smooth-content {
-  will-change: transform;
-  padding-top: var(--header-h);
 }
 
 html,
@@ -126,30 +102,16 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  font-feature-settings: 'ss01', 'cv11';
-  color: var(--fg-default);
-  line-height: 1.55;
+  color: var(--fg-strong);
+  line-height: 1.5;
   font-size: 16px;
   min-height: 100%;
-}
-
-/* Global atmosphere: solid base + fixed-attachment dot pattern.
-   Lives on <html> so it sits behind ScrollSmoother's fixed wrapper. */
-html {
-  background-color: var(--bg-base);
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(148, 163, 209, 0.05) 1px,
-    transparent 0
-  );
-  background-size: 32px 32px;
-  background-attachment: fixed;
+  background: var(--bg-base);
 }
 
 body {
   position: relative;
   overflow-x: hidden;
-  background: transparent;
 }
 
 main {
@@ -160,30 +122,35 @@ main {
 /* Typography defaults */
 h1, h2, h3, h4 {
   color: var(--fg-strong);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin: 0;
 }
 
 h1 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.02;
+  font-size: clamp(2.5rem, 6.5vw, 4.5rem);     /* up to 72px */
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 h2 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(2rem, 4.4vw, 3.25rem);
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  font-size: clamp(2rem, 4.5vw, 3rem);          /* up to 48px */
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 h3 {
   font-size: 1.25rem;
+  font-weight: 500;
   letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 
 p {
@@ -192,75 +159,93 @@ p {
 }
 
 a {
-  color: var(--brand-400);
+  color: var(--fg-strong);
   text-decoration: none;
   transition: color 160ms var(--ease-out);
 }
 
 a:hover {
-  color: var(--brand-300);
+  color: var(--fg-strong);
 }
 
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--brand-400);
+  outline: 2px solid var(--brand-500);
   outline-offset: 3px;
   border-radius: var(--radius-xs);
 }
 
 /* Reusable elements ------------------------------------------------ */
 
-.eyebrow {
+/* Eyebrow pill — appears above each H2 (matches the "Features", "Solutions" chips) */
+.eyebrow-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-mono);
+  padding: 0.25rem 0.875rem 0.25rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--brand-400);
+  color: var(--fg-default);
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  user-select: none;
+  transition: border-color 200ms var(--ease-out);
 }
 
-.eyebrow::before {
+.eyebrow-pill:hover {
+  border-color: rgba(250, 250, 250, 0.25);
+}
+
+.eyebrow-pill__dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--brand-glow-soft);
+  border: 1px solid var(--brand-glow);
+  display: grid;
+  place-items: center;
+}
+
+.eyebrow-pill__dot::after {
   content: '';
-  width: 24px;
-  height: 1px;
-  background: var(--brand-400);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-500);
 }
 
 .text-mono {
   font-family: var(--font-mono);
 }
 
-.text-italic {
-  font-style: italic;
-  font-family: var(--font-display);
+/* Gradient text — matches repteam's H1/CTA heading effect */
+.text-gradient {
+  background: linear-gradient(to bottom right, #fafafa, rgba(250, 250, 250, 0.6));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Live pulse dot — used in dashboard mockup + integrations strip */
+/* Live pulse dot */
 .live-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent-cyan);
-  box-shadow: 0 0 0 0 var(--accent-cyan);
+  background: var(--sev-ok);
+  box-shadow: 0 0 0 0 var(--sev-ok);
   animation: live-pulse 2s var(--ease-in-out) infinite;
 }
 
 @keyframes live-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 0 6px rgba(34, 211, 238, 0);
-  }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+  50% { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
 }
 
-/* Subtle fade-in for sections as they enter viewport — purely declarative,
-   no JS. Uses CSS animation that fires once on initial paint. */
+/* Hero reveals — CSS-only, fire on initial paint */
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     opacity: 0;
@@ -270,10 +255,36 @@ summary:focus-visible {
   }
 
   @keyframes reveal {
-    to {
-      opacity: 1;
-      transform: none;
-    }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+/*
+   On-scroll reveals — JS adds `reveal-on-scroll` to candidates, then
+   `is-revealed` when the IntersectionObserver fires. Transform + opacity
+   only, so the GPU can composite without invalidating layout.
+*/
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+  transition-delay: calc(var(--reveal-index, 0) * 60ms);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
@@ -283,19 +294,12 @@ summary:focus-visible {
   color: var(--fg-strong);
 }
 
-/* Scrollbar — subtle, branded */
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-base);
-}
+/* Scrollbar */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
 ::-webkit-scrollbar-thumb {
   background: var(--bg-elev-2);
   border: 3px solid var(--bg-base);
   border-radius: var(--radius-pill);
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--bg-elev-3);
-}
+::-webkit-scrollbar-thumb:hover { background: var(--bg-elev-3); }

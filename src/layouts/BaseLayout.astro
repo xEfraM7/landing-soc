@@ -25,7 +25,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#0a0e1a" />
+    <meta name="theme-color" content="#09090b" />
 
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
@@ -48,14 +48,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
   </head>
   <body>
     <slot name="header" />
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <main>
-          <slot />
-        </main>
-        <slot name="footer" />
-      </div>
-    </div>
+    <main>
+      <slot />
+    </main>
+    <slot name="footer" />
 
     <script>
       import '@/scripts/smooth-scroll';

@@ -1,0 +1,976 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "REP — Home" [ref=e4] [cursor=pointer]:
+        - /url: "#top"
+        - img [ref=e6]
+        - generic [ref=e8]: REP
+      - navigation "Main" [ref=e9]:
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "How it Works" [ref=e12] [cursor=pointer]:
+              - /url: "#how"
+          - listitem [ref=e13]:
+            - button "Services" [ref=e14] [cursor=pointer]:
+              - text: Services
+              - img [ref=e15]
+          - listitem [ref=e17]:
+            - link "About us" [ref=e18] [cursor=pointer]:
+              - /url: "#about"
+          - listitem [ref=e19]:
+            - link "Consultant" [ref=e20] [cursor=pointer]:
+              - /url: "#contact"
+      - generic [ref=e21]:
+        - link "Persian" [ref=e22] [cursor=pointer]:
+          - /url: "#fa"
+          - generic [ref=e23]: pr
+          - generic [ref=e24]: Persian
+        - link "Contact Us" [ref=e25] [cursor=pointer]:
+          - /url: "#contact"
+          - generic [ref=e26]: Contact Us
+          - img [ref=e27]
+  - generic [ref=e30]:
+    - main [ref=e31]:
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]: Build for the future
+          - heading "Next-Level Security, Unmatched Reliability." [level=1] [ref=e37]:
+            - generic [ref=e38]:
+              - text: Next-Level Security,
+              - text: Unmatched Reliability.
+          - paragraph [ref=e39]: Empowering businesses with next-gen networking and security solutions, ensuring seamless connectivity, robust protection, and unmatched performance.
+          - generic [ref=e40]:
+            - link "Get Started" [ref=e41] [cursor=pointer]:
+              - /url: "#contact"
+              - generic [ref=e42]: Get Started
+            - link "How it works" [ref=e43] [cursor=pointer]:
+              - /url: "#how"
+              - generic [ref=e44]: How it works
+        - generic [ref=e59]:
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - img [ref=e64]
+              - text: Online
+            - generic [ref=e66]:
+              - img [ref=e67]
+              - text: Live
+          - generic [ref=e69]:
+            - generic [ref=e72]: 98%
+            - generic [ref=e76]: 1.4k
+            - generic [ref=e79]: 320ms
+      - region "We use Vanguard Companies & Services" [ref=e91]:
+        - generic [ref=e92]:
+          - heading "We use Vanguard Companies & Services" [level=2] [ref=e93]
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e96]:
+                - generic [ref=e97]:
+                  - generic [ref=e98]: C
+                  - generic [ref=e99]: Cisco
+                - generic [ref=e100]:
+                  - generic [ref=e101]: F
+                  - generic [ref=e102]: Fortinet
+                - generic [ref=e103]:
+                  - generic [ref=e104]: P
+                  - generic [ref=e105]: Palo Alto
+                - generic [ref=e106]:
+                  - generic [ref=e107]: J
+                  - generic [ref=e108]: Juniper
+                - generic [ref=e109]:
+                  - generic [ref=e110]: A
+                  - generic [ref=e111]: Aruba
+                - generic [ref=e112]:
+                  - generic [ref=e113]: M
+                  - generic [ref=e114]: Mikrotik
+                - generic [ref=e115]:
+                  - generic [ref=e116]: U
+                  - generic [ref=e117]: Ubiquiti
+                - generic [ref=e118]:
+                  - generic [ref=e119]: S
+                  - generic [ref=e120]: Sophos
+                - generic [ref=e121]:
+                  - generic [ref=e122]: CP
+                  - generic [ref=e123]: Check Point
+                - generic [ref=e124]:
+                  - generic [ref=e125]: F5
+                  - generic [ref=e126]: F5
+                - generic [ref=e127]:
+                  - generic [ref=e128]: C
+                  - generic [ref=e129]: Cisco
+                - generic [ref=e130]:
+                  - generic [ref=e131]: F
+                  - generic [ref=e132]: Fortinet
+                - generic [ref=e133]:
+                  - generic [ref=e134]: P
+                  - generic [ref=e135]: Palo Alto
+                - generic [ref=e136]:
+                  - generic [ref=e137]: J
+                  - generic [ref=e138]: Juniper
+                - generic [ref=e139]:
+                  - generic [ref=e140]: A
+                  - generic [ref=e141]: Aruba
+                - generic [ref=e142]:
+                  - generic [ref=e143]: M
+                  - generic [ref=e144]: Mikrotik
+                - generic [ref=e145]:
+                  - generic [ref=e146]: U
+                  - generic [ref=e147]: Ubiquiti
+                - generic [ref=e148]:
+                  - generic [ref=e149]: S
+                  - generic [ref=e150]: Sophos
+                - generic [ref=e151]:
+                  - generic [ref=e152]: CP
+                  - generic [ref=e153]: Check Point
+                - generic [ref=e154]:
+                  - generic [ref=e155]: F5
+                  - generic [ref=e156]: F5
+              - generic [ref=e157]:
+                - generic [ref=e158]:
+                  - generic [ref=e159]: C
+                  - generic [ref=e160]: Cisco
+                - generic [ref=e161]:
+                  - generic [ref=e162]: F
+                  - generic [ref=e163]: Fortinet
+                - generic [ref=e164]:
+                  - generic [ref=e165]: P
+                  - generic [ref=e166]: Palo Alto
+                - generic [ref=e167]:
+                  - generic [ref=e168]: J
+                  - generic [ref=e169]: Juniper
+                - generic [ref=e170]:
+                  - generic [ref=e171]: A
+                  - generic [ref=e172]: Aruba
+                - generic [ref=e173]:
+                  - generic [ref=e174]: M
+                  - generic [ref=e175]: Mikrotik
+                - generic [ref=e176]:
+                  - generic [ref=e177]: U
+                  - generic [ref=e178]: Ubiquiti
+                - generic [ref=e179]:
+                  - generic [ref=e180]: S
+                  - generic [ref=e181]: Sophos
+                - generic [ref=e182]:
+                  - generic [ref=e183]: CP
+                  - generic [ref=e184]: Check Point
+                - generic [ref=e185]:
+                  - generic [ref=e186]: F5
+                  - generic [ref=e187]: F5
+                - generic [ref=e188]:
+                  - generic [ref=e189]: C
+                  - generic [ref=e190]: Cisco
+                - generic [ref=e191]:
+                  - generic [ref=e192]: F
+                  - generic [ref=e193]: Fortinet
+                - generic [ref=e194]:
+                  - generic [ref=e195]: P
+                  - generic [ref=e196]: Palo Alto
+                - generic [ref=e197]:
+                  - generic [ref=e198]: J
+                  - generic [ref=e199]: Juniper
+                - generic [ref=e200]:
+                  - generic [ref=e201]: A
+                  - generic [ref=e202]: Aruba
+                - generic [ref=e203]:
+                  - generic [ref=e204]: M
+                  - generic [ref=e205]: Mikrotik
+                - generic [ref=e206]:
+                  - generic [ref=e207]: U
+                  - generic [ref=e208]: Ubiquiti
+                - generic [ref=e209]:
+                  - generic [ref=e210]: S
+                  - generic [ref=e211]: Sophos
+                - generic [ref=e212]:
+                  - generic [ref=e213]: CP
+                  - generic [ref=e214]: Check Point
+                - generic [ref=e215]:
+                  - generic [ref=e216]: F5
+                  - generic [ref=e217]: F5
+            - generic [ref=e218]:
+              - generic [ref=e219]:
+                - generic [ref=e220]:
+                  - generic [ref=e221]: V
+                  - generic [ref=e222]: VMware
+                - generic [ref=e223]:
+                  - generic [ref=e224]: MS
+                  - generic [ref=e225]: Microsoft
+                - generic [ref=e226]:
+                  - generic [ref=e227]: AW
+                  - generic [ref=e228]: AWS
+                - generic [ref=e229]:
+                  - generic [ref=e230]: AZ
+                  - generic [ref=e231]: Azure
+                - generic [ref=e232]:
+                  - generic [ref=e233]: GC
+                  - generic [ref=e234]: Google Cloud
+                - generic [ref=e235]:
+                  - generic [ref=e236]: VE
+                  - generic [ref=e237]: Veeam
+                - generic [ref=e238]:
+                  - generic [ref=e239]: "N"
+                  - generic [ref=e240]: NetApp
+                - generic [ref=e241]:
+                  - generic [ref=e242]: D
+                  - generic [ref=e243]: Dell
+                - generic [ref=e244]:
+                  - generic [ref=e245]: HP
+                  - generic [ref=e246]: HP
+                - generic [ref=e247]:
+                  - generic [ref=e248]: L
+                  - generic [ref=e249]: Lenovo
+                - generic [ref=e250]:
+                  - generic [ref=e251]: V
+                  - generic [ref=e252]: VMware
+                - generic [ref=e253]:
+                  - generic [ref=e254]: MS
+                  - generic [ref=e255]: Microsoft
+                - generic [ref=e256]:
+                  - generic [ref=e257]: AW
+                  - generic [ref=e258]: AWS
+                - generic [ref=e259]:
+                  - generic [ref=e260]: AZ
+                  - generic [ref=e261]: Azure
+                - generic [ref=e262]:
+                  - generic [ref=e263]: GC
+                  - generic [ref=e264]: Google Cloud
+                - generic [ref=e265]:
+                  - generic [ref=e266]: VE
+                  - generic [ref=e267]: Veeam
+                - generic [ref=e268]:
+                  - generic [ref=e269]: "N"
+                  - generic [ref=e270]: NetApp
+                - generic [ref=e271]:
+                  - generic [ref=e272]: D
+                  - generic [ref=e273]: Dell
+                - generic [ref=e274]:
+                  - generic [ref=e275]: HP
+                  - generic [ref=e276]: HP
+                - generic [ref=e277]:
+                  - generic [ref=e278]: L
+                  - generic [ref=e279]: Lenovo
+              - generic [ref=e280]:
+                - generic [ref=e281]:
+                  - generic [ref=e282]: V
+                  - generic [ref=e283]: VMware
+                - generic [ref=e284]:
+                  - generic [ref=e285]: MS
+                  - generic [ref=e286]: Microsoft
+                - generic [ref=e287]:
+                  - generic [ref=e288]: AW
+                  - generic [ref=e289]: AWS
+                - generic [ref=e290]:
+                  - generic [ref=e291]: AZ
+                  - generic [ref=e292]: Azure
+                - generic [ref=e293]:
+                  - generic [ref=e294]: GC
+                  - generic [ref=e295]: Google Cloud
+                - generic [ref=e296]:
+                  - generic [ref=e297]: VE
+                  - generic [ref=e298]: Veeam
+                - generic [ref=e299]:
+                  - generic [ref=e300]: "N"
+                  - generic [ref=e301]: NetApp
+                - generic [ref=e302]:
+                  - generic [ref=e303]: D
+                  - generic [ref=e304]: Dell
+                - generic [ref=e305]:
+                  - generic [ref=e306]: HP
+                  - generic [ref=e307]: HP
+                - generic [ref=e308]:
+                  - generic [ref=e309]: L
+                  - generic [ref=e310]: Lenovo
+                - generic [ref=e311]:
+                  - generic [ref=e312]: V
+                  - generic [ref=e313]: VMware
+                - generic [ref=e314]:
+                  - generic [ref=e315]: MS
+                  - generic [ref=e316]: Microsoft
+                - generic [ref=e317]:
+                  - generic [ref=e318]: AW
+                  - generic [ref=e319]: AWS
+                - generic [ref=e320]:
+                  - generic [ref=e321]: AZ
+                  - generic [ref=e322]: Azure
+                - generic [ref=e323]:
+                  - generic [ref=e324]: GC
+                  - generic [ref=e325]: Google Cloud
+                - generic [ref=e326]:
+                  - generic [ref=e327]: VE
+                  - generic [ref=e328]: Veeam
+                - generic [ref=e329]:
+                  - generic [ref=e330]: "N"
+                  - generic [ref=e331]: NetApp
+                - generic [ref=e332]:
+                  - generic [ref=e333]: D
+                  - generic [ref=e334]: Dell
+                - generic [ref=e335]:
+                  - generic [ref=e336]: HP
+                  - generic [ref=e337]: HP
+                - generic [ref=e338]:
+                  - generic [ref=e339]: L
+                  - generic [ref=e340]: Lenovo
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]:
+                  - generic [ref=e344]: W
+                  - generic [ref=e345]: Wazuh
+                - generic [ref=e346]:
+                  - generic [ref=e347]: CS
+                  - generic [ref=e348]: CrowdStrike
+                - generic [ref=e349]:
+                  - generic [ref=e350]: S1
+                  - generic [ref=e351]: SentinelOne
+                - generic [ref=e352]:
+                  - generic [ref=e353]: SP
+                  - generic [ref=e354]: Splunk
+                - generic [ref=e355]:
+                  - generic [ref=e356]: E
+                  - generic [ref=e357]: Elastic
+                - generic [ref=e358]:
+                  - generic [ref=e359]: DD
+                  - generic [ref=e360]: Datadog
+                - generic [ref=e361]:
+                  - generic [ref=e362]: CF
+                  - generic [ref=e363]: Cloudflare
+                - generic [ref=e364]:
+                  - generic [ref=e365]: AK
+                  - generic [ref=e366]: Akamai
+                - generic [ref=e367]:
+                  - generic [ref=e368]: TH
+                  - generic [ref=e369]: TheHive
+                - generic [ref=e370]:
+                  - generic [ref=e371]: GN
+                  - generic [ref=e372]: GreyNoise
+                - generic [ref=e373]:
+                  - generic [ref=e374]: W
+                  - generic [ref=e375]: Wazuh
+                - generic [ref=e376]:
+                  - generic [ref=e377]: CS
+                  - generic [ref=e378]: CrowdStrike
+                - generic [ref=e379]:
+                  - generic [ref=e380]: S1
+                  - generic [ref=e381]: SentinelOne
+                - generic [ref=e382]:
+                  - generic [ref=e383]: SP
+                  - generic [ref=e384]: Splunk
+                - generic [ref=e385]:
+                  - generic [ref=e386]: E
+                  - generic [ref=e387]: Elastic
+                - generic [ref=e388]:
+                  - generic [ref=e389]: DD
+                  - generic [ref=e390]: Datadog
+                - generic [ref=e391]:
+                  - generic [ref=e392]: CF
+                  - generic [ref=e393]: Cloudflare
+                - generic [ref=e394]:
+                  - generic [ref=e395]: AK
+                  - generic [ref=e396]: Akamai
+                - generic [ref=e397]:
+                  - generic [ref=e398]: TH
+                  - generic [ref=e399]: TheHive
+                - generic [ref=e400]:
+                  - generic [ref=e401]: GN
+                  - generic [ref=e402]: GreyNoise
+              - generic [ref=e403]:
+                - generic [ref=e404]:
+                  - generic [ref=e405]: W
+                  - generic [ref=e406]: Wazuh
+                - generic [ref=e407]:
+                  - generic [ref=e408]: CS
+                  - generic [ref=e409]: CrowdStrike
+                - generic [ref=e410]:
+                  - generic [ref=e411]: S1
+                  - generic [ref=e412]: SentinelOne
+                - generic [ref=e413]:
+                  - generic [ref=e414]: SP
+                  - generic [ref=e415]: Splunk
+                - generic [ref=e416]:
+                  - generic [ref=e417]: E
+                  - generic [ref=e418]: Elastic
+                - generic [ref=e419]:
+                  - generic [ref=e420]: DD
+                  - generic [ref=e421]: Datadog
+                - generic [ref=e422]:
+                  - generic [ref=e423]: CF
+                  - generic [ref=e424]: Cloudflare
+                - generic [ref=e425]:
+                  - generic [ref=e426]: AK
+                  - generic [ref=e427]: Akamai
+                - generic [ref=e428]:
+                  - generic [ref=e429]: TH
+                  - generic [ref=e430]: TheHive
+                - generic [ref=e431]:
+                  - generic [ref=e432]: GN
+                  - generic [ref=e433]: GreyNoise
+                - generic [ref=e434]:
+                  - generic [ref=e435]: W
+                  - generic [ref=e436]: Wazuh
+                - generic [ref=e437]:
+                  - generic [ref=e438]: CS
+                  - generic [ref=e439]: CrowdStrike
+                - generic [ref=e440]:
+                  - generic [ref=e441]: S1
+                  - generic [ref=e442]: SentinelOne
+                - generic [ref=e443]:
+                  - generic [ref=e444]: SP
+                  - generic [ref=e445]: Splunk
+                - generic [ref=e446]:
+                  - generic [ref=e447]: E
+                  - generic [ref=e448]: Elastic
+                - generic [ref=e449]:
+                  - generic [ref=e450]: DD
+                  - generic [ref=e451]: Datadog
+                - generic [ref=e452]:
+                  - generic [ref=e453]: CF
+                  - generic [ref=e454]: Cloudflare
+                - generic [ref=e455]:
+                  - generic [ref=e456]: AK
+                  - generic [ref=e457]: Akamai
+                - generic [ref=e458]:
+                  - generic [ref=e459]: TH
+                  - generic [ref=e460]: TheHive
+                - generic [ref=e461]:
+                  - generic [ref=e462]: GN
+                  - generic [ref=e463]: GreyNoise
+            - generic [ref=e464]:
+              - generic [ref=e465]:
+                - generic [ref=e466]:
+                  - generic [ref=e467]: AV
+                  - generic [ref=e468]: Avaya
+                - generic [ref=e469]:
+                  - generic [ref=e470]: YE
+                  - generic [ref=e471]: Yealink
+                - generic [ref=e472]:
+                  - generic [ref=e473]: PO
+                  - generic [ref=e474]: Polycom
+                - generic [ref=e475]:
+                  - generic [ref=e476]: GS
+                  - generic [ref=e477]: Grandstream
+                - generic [ref=e478]:
+                  - generic [ref=e479]: 3C
+                  - generic [ref=e480]: 3CX
+                - generic [ref=e481]:
+                  - generic [ref=e482]: FP
+                  - generic [ref=e483]: FreePBX
+                - generic [ref=e484]:
+                  - generic [ref=e485]: AS
+                  - generic [ref=e486]: Asterisk
+                - generic [ref=e487]:
+                  - generic [ref=e488]: HK
+                  - generic [ref=e489]: Hikvision
+                - generic [ref=e490]:
+                  - generic [ref=e491]: DA
+                  - generic [ref=e492]: Dahua
+                - generic [ref=e493]:
+                  - generic [ref=e494]: AX
+                  - generic [ref=e495]: Axis
+                - generic [ref=e496]:
+                  - generic [ref=e497]: AV
+                  - generic [ref=e498]: Avaya
+                - generic [ref=e499]:
+                  - generic [ref=e500]: YE
+                  - generic [ref=e501]: Yealink
+                - generic [ref=e502]:
+                  - generic [ref=e503]: PO
+                  - generic [ref=e504]: Polycom
+                - generic [ref=e505]:
+                  - generic [ref=e506]: GS
+                  - generic [ref=e507]: Grandstream
+                - generic [ref=e508]:
+                  - generic [ref=e509]: 3C
+                  - generic [ref=e510]: 3CX
+                - generic [ref=e511]:
+                  - generic [ref=e512]: FP
+                  - generic [ref=e513]: FreePBX
+                - generic [ref=e514]:
+                  - generic [ref=e515]: AS
+                  - generic [ref=e516]: Asterisk
+                - generic [ref=e517]:
+                  - generic [ref=e518]: HK
+                  - generic [ref=e519]: Hikvision
+                - generic [ref=e520]:
+                  - generic [ref=e521]: DA
+                  - generic [ref=e522]: Dahua
+                - generic [ref=e523]:
+                  - generic [ref=e524]: AX
+                  - generic [ref=e525]: Axis
+              - generic [ref=e526]:
+                - generic [ref=e527]:
+                  - generic [ref=e528]: AV
+                  - generic [ref=e529]: Avaya
+                - generic [ref=e530]:
+                  - generic [ref=e531]: YE
+                  - generic [ref=e532]: Yealink
+                - generic [ref=e533]:
+                  - generic [ref=e534]: PO
+                  - generic [ref=e535]: Polycom
+                - generic [ref=e536]:
+                  - generic [ref=e537]: GS
+                  - generic [ref=e538]: Grandstream
+                - generic [ref=e539]:
+                  - generic [ref=e540]: 3C
+                  - generic [ref=e541]: 3CX
+                - generic [ref=e542]:
+                  - generic [ref=e543]: FP
+                  - generic [ref=e544]: FreePBX
+                - generic [ref=e545]:
+                  - generic [ref=e546]: AS
+                  - generic [ref=e547]: Asterisk
+                - generic [ref=e548]:
+                  - generic [ref=e549]: HK
+                  - generic [ref=e550]: Hikvision
+                - generic [ref=e551]:
+                  - generic [ref=e552]: DA
+                  - generic [ref=e553]: Dahua
+                - generic [ref=e554]:
+                  - generic [ref=e555]: AX
+                  - generic [ref=e556]: Axis
+                - generic [ref=e557]:
+                  - generic [ref=e558]: AV
+                  - generic [ref=e559]: Avaya
+                - generic [ref=e560]:
+                  - generic [ref=e561]: YE
+                  - generic [ref=e562]: Yealink
+                - generic [ref=e563]:
+                  - generic [ref=e564]: PO
+                  - generic [ref=e565]: Polycom
+                - generic [ref=e566]:
+                  - generic [ref=e567]: GS
+                  - generic [ref=e568]: Grandstream
+                - generic [ref=e569]:
+                  - generic [ref=e570]: 3C
+                  - generic [ref=e571]: 3CX
+                - generic [ref=e572]:
+                  - generic [ref=e573]: FP
+                  - generic [ref=e574]: FreePBX
+                - generic [ref=e575]:
+                  - generic [ref=e576]: AS
+                  - generic [ref=e577]: Asterisk
+                - generic [ref=e578]:
+                  - generic [ref=e579]: HK
+                  - generic [ref=e580]: Hikvision
+                - generic [ref=e581]:
+                  - generic [ref=e582]: DA
+                  - generic [ref=e583]: Dahua
+                - generic [ref=e584]:
+                  - generic [ref=e585]: AX
+                  - generic [ref=e586]: Axis
+      - region "Comprehensive Security & Networking Solutions" [ref=e587]:
+        - generic [ref=e588]:
+          - generic [ref=e589]:
+            - generic [ref=e590]: Features
+            - heading "Comprehensive Security & Networking Solutions" [level=2] [ref=e592]:
+              - generic [ref=e593]:
+                - text: Comprehensive Security
+                - text: "& Networking Solutions"
+            - paragraph [ref=e594]: Performance, reliability, and protection — our solutions keep your business connected and secure without the complexity.
+          - generic [ref=e595]:
+            - article [ref=e596]:
+              - img [ref=e599]
+              - generic [ref=e601]:
+                - heading "Always-On Protection" [level=4] [ref=e602]
+                - paragraph [ref=e603]: 24/7 monitoring to keep your systems safe and running smoothly.
+            - article [ref=e604]:
+              - img [ref=e607]
+              - generic [ref=e609]:
+                - heading "Fast, Reliable Networking" [level=4] [ref=e610]
+                - paragraph [ref=e611]: Optimized connections for seamless performance and uninterrupted operations.
+            - article [ref=e612]:
+              - img [ref=e615]
+              - generic [ref=e618]:
+                - heading "Strong Security, Simple Protection" [level=4] [ref=e619]
+                - paragraph [ref=e620]: Keep your business safe from cyber threats with easy-to-manage security solutions.
+            - article [ref=e625]:
+              - img [ref=e628]
+              - generic [ref=e634]:
+                - heading "Flexible & Scalable Solutions" [level=4] [ref=e635]
+                - paragraph [ref=e636]: Security and networking that grow with your business.
+            - article [ref=e637]:
+              - img [ref=e640]
+              - generic [ref=e644]:
+                - heading "Smarter Threat Detection" [level=4] [ref=e645]
+                - paragraph [ref=e646]: Identify and stop cyber risks before they become a problem.
+      - region "Networking" [ref=e651]:
+        - generic [ref=e652]:
+          - generic [ref=e653]:
+            - generic [ref=e654]: Solutions
+            - heading "Networking" [level=2] [ref=e656]
+            - paragraph [ref=e657]: At Rep, we offer a comprehensive range of networking services.
+          - generic [ref=e658]:
+            - article [ref=e659]:
+              - img [ref=e662]
+              - heading "Infrastructure" [level=3] [ref=e668]
+              - paragraph [ref=e669]: Build a secure, high-performance IT foundation with our tailored infrastructure solutions. We ensure seamless connectivity, scalability, and reliability to support your business operations without downtime or security risks.
+            - article [ref=e670]:
+              - img [ref=e673]
+              - heading "CCTV" [level=3] [ref=e676]
+              - paragraph [ref=e677]: Protect your business with advanced CCTV solutions. Our high-resolution cameras, remote monitoring, and intelligent analytics provide real-time surveillance, deterring threats and ensuring safety for your assets and personnel.
+            - article [ref=e678]:
+              - img [ref=e681]
+              - heading "VoIP" [level=3] [ref=e683]
+              - paragraph [ref=e684]: Enhance communication with crystal-clear VoIP solutions. Our secure, cost-effective voice services ensure reliable connections, seamless integrations, and advanced features for businesses of all sizes, improving collaboration and efficiency.
+            - article [ref=e685]:
+              - img [ref=e688]
+              - heading "Data Center" [level=3] [ref=e692]
+              - paragraph [ref=e693]: Optimize performance and security with our data center solutions. From efficient cooling to secure storage and high-speed connectivity, we design and implement scalable environments tailored to your business needs.
+            - article [ref=e694]:
+              - img [ref=e697]
+              - heading "Virtualization" [level=3] [ref=e700]
+              - paragraph [ref=e701]: Maximize efficiency with our virtualization solutions. Reduce hardware costs, enhance security, and improve scalability with flexible, cloud-ready environments designed to optimize performance and resource utilization.
+            - article [ref=e702]:
+              - img [ref=e705]
+              - heading "Routing & Switching" [level=3] [ref=e707]
+              - paragraph [ref=e708]: Ensure fast, reliable network performance with advanced routing and switching solutions. We provide seamless connectivity, traffic optimization, and security to keep your business running smoothly and efficiently.
+      - region "Security" [ref=e709]:
+        - generic [ref=e710]:
+          - generic [ref=e711]:
+            - generic [ref=e712]: Solutions
+            - heading "Security" [level=2] [ref=e714]
+            - paragraph [ref=e715]: At Rep, we offer a comprehensive range of Security services.
+          - generic [ref=e716]:
+            - article [ref=e717]:
+              - img [ref=e720]
+              - heading "Firewalls" [level=3] [ref=e722]
+              - paragraph [ref=e723]: Protect your network with advanced firewalls that block unauthorized access, filter traffic, and prevent cyber threats. Our solutions provide robust security without compromising performance or connectivity.
+            - article [ref=e724]:
+              - img [ref=e727]
+              - heading "Intrusion Detection and Prevention" [level=3] [ref=e729]
+              - paragraph [ref=e730]: Stay ahead of cyber threats with real-time intrusion detection and prevention. Our solutions monitor, analyze, and stop malicious activity before it impacts your business operations.
+            - article [ref=e731]:
+              - img [ref=e734]
+              - heading "VPN Solutions" [level=3] [ref=e737]
+              - paragraph [ref=e738]: Ensure secure remote access with our VPN solutions. Encrypt data, protect communications, and enable seamless connectivity for remote teams without sacrificing security or performance.
+            - article [ref=e739]:
+              - img [ref=e742]
+              - heading "Infrastructure and Physical Security" [level=3] [ref=e749]
+              - paragraph [ref=e750]: Safeguard your digital and physical assets with integrated security solutions. From access control to cybersecurity, we provide a comprehensive approach to protecting your infrastructure.
+            - article [ref=e751]:
+              - img [ref=e754]
+              - heading "Availability and Resiliency" [level=3] [ref=e758]
+              - paragraph [ref=e759]: Keep your business running with high-availability solutions. Our resiliency strategies minimize downtime, ensure redundancy, and protect critical systems from failures or cyberattacks.
+      - region "What our customers say" [ref=e760]:
+        - generic [ref=e761]:
+          - generic [ref=e762]:
+            - generic [ref=e763]: Our Customers
+            - heading "What our customers say" [level=2] [ref=e765]
+            - paragraph [ref=e766]: We are proud to have helped thousands of customers across the globe. Here are some of their stories.
+          - generic [ref=e768]:
+            - generic [ref=e769]:
+              - generic [ref=e770]:
+                - figure [ref=e771] [cursor=pointer]:
+                  - generic [ref=e772]:
+                    - generic [ref=e773]: Mobile 140
+                    - generic [ref=e774]: www.mobile140.com
+                  - blockquote [ref=e775]: Mobile 140 is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+                - figure [ref=e776] [cursor=pointer]:
+                  - generic [ref=e777]:
+                    - generic [ref=e778]: Alborz Media
+                    - generic [ref=e779]: "@alborzmedia"
+                  - blockquote [ref=e780]: Broadcasting channel, potentially focusing on content production, news, or entertainment within the region.
+                - figure [ref=e781] [cursor=pointer]:
+                  - generic [ref=e782]:
+                    - generic [ref=e783]: Sapel
+                    - generic [ref=e784]: www.sapel.ir
+                  - blockquote [ref=e785]: Sapel is a prominent Iranian company with nearly half a century of experience in the plastic industry. Established in 1979, it specializes in producing blow molding containers and injection units.
+                - figure [ref=e786] [cursor=pointer]:
+                  - generic [ref=e787]:
+                    - generic [ref=e788]: Mobile 140
+                    - generic [ref=e789]: www.mobile140.com
+                  - blockquote [ref=e790]: Mobile 140 is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+                - figure [ref=e791] [cursor=pointer]:
+                  - generic [ref=e792]:
+                    - generic [ref=e793]: Alborz Media
+                    - generic [ref=e794]: "@alborzmedia"
+                  - blockquote [ref=e795]: Broadcasting channel, potentially focusing on content production, news, or entertainment within the region.
+                - figure [ref=e796] [cursor=pointer]:
+                  - generic [ref=e797]:
+                    - generic [ref=e798]: Sapel
+                    - generic [ref=e799]: www.sapel.ir
+                  - blockquote [ref=e800]: Sapel is a prominent Iranian company with nearly half a century of experience in the plastic industry. Established in 1979, it specializes in producing blow molding containers and injection units.
+              - generic [ref=e801]:
+                - figure [ref=e802] [cursor=pointer]:
+                  - generic [ref=e803]:
+                    - generic [ref=e804]: Mobile 140
+                    - generic [ref=e805]: www.mobile140.com
+                  - blockquote [ref=e806]: Mobile 140 is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+                - figure [ref=e807] [cursor=pointer]:
+                  - generic [ref=e808]:
+                    - generic [ref=e809]: Alborz Media
+                    - generic [ref=e810]: "@alborzmedia"
+                  - blockquote [ref=e811]: Broadcasting channel, potentially focusing on content production, news, or entertainment within the region.
+                - figure [ref=e812] [cursor=pointer]:
+                  - generic [ref=e813]:
+                    - generic [ref=e814]: Sapel
+                    - generic [ref=e815]: www.sapel.ir
+                  - blockquote [ref=e816]: Sapel is a prominent Iranian company with nearly half a century of experience in the plastic industry. Established in 1979, it specializes in producing blow molding containers and injection units.
+                - figure [ref=e817] [cursor=pointer]:
+                  - generic [ref=e818]:
+                    - generic [ref=e819]: Mobile 140
+                    - generic [ref=e820]: www.mobile140.com
+                  - blockquote [ref=e821]: Mobile 140 is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store, offering a wide range of products to meet the needs of tech-savvy consumers in Iran.
+                - figure [ref=e822] [cursor=pointer]:
+                  - generic [ref=e823]:
+                    - generic [ref=e824]: Alborz Media
+                    - generic [ref=e825]: "@alborzmedia"
+                  - blockquote [ref=e826]: Broadcasting channel, potentially focusing on content production, news, or entertainment within the region.
+                - figure [ref=e827] [cursor=pointer]:
+                  - generic [ref=e828]:
+                    - generic [ref=e829]: Sapel
+                    - generic [ref=e830]: www.sapel.ir
+                  - blockquote [ref=e831]: Sapel is a prominent Iranian company with nearly half a century of experience in the plastic industry. Established in 1979, it specializes in producing blow molding containers and injection units.
+            - generic [ref=e832]:
+              - generic [ref=e833]:
+                - figure [ref=e834] [cursor=pointer]:
+                  - generic [ref=e835]:
+                    - generic [ref=e836]: Polywin
+                    - generic [ref=e837]: www.polywin.ir
+                  - blockquote [ref=e838]: Polywin Co., based in Alborz, Iran, specializes in the production and supply of polyethylene and polypropylene pipes, fittings, and valves, offering laboratory testing and training services since its establishment in 2016.
+                - figure [ref=e839] [cursor=pointer]:
+                  - generic [ref=e840]:
+                    - generic [ref=e841]: Novin Media
+                    - generic [ref=e842]: www.novinmedia.com
+                  - blockquote [ref=e843]: Began its operations in 2014 to supply accessories for LG Electronics in Iran. It then continued as the exclusive importer of LG Bluetooth headsets, introducing this new product to Iran for the first time.
+                - figure [ref=e844] [cursor=pointer]:
+                  - generic [ref=e845]:
+                    - generic [ref=e846]: Alborz Engineering
+                    - generic [ref=e847]: www.alborz-nezam.ir
+                  - blockquote [ref=e848]: Alborz Province Engineering System Organization, a crucial institution in Iran responsible for overseeing and managing the engineering aspects of construction projects and licensing.
+                - figure [ref=e849] [cursor=pointer]:
+                  - generic [ref=e850]:
+                    - generic [ref=e851]: Polywin
+                    - generic [ref=e852]: www.polywin.ir
+                  - blockquote [ref=e853]: Polywin Co., based in Alborz, Iran, specializes in the production and supply of polyethylene and polypropylene pipes, fittings, and valves, offering laboratory testing and training services since its establishment in 2016.
+                - figure [ref=e854] [cursor=pointer]:
+                  - generic [ref=e855]:
+                    - generic [ref=e856]: Novin Media
+                    - generic [ref=e857]: www.novinmedia.com
+                  - blockquote [ref=e858]: Began its operations in 2014 to supply accessories for LG Electronics in Iran. It then continued as the exclusive importer of LG Bluetooth headsets, introducing this new product to Iran for the first time.
+                - figure [ref=e859] [cursor=pointer]:
+                  - generic [ref=e860]:
+                    - generic [ref=e861]: Alborz Engineering
+                    - generic [ref=e862]: www.alborz-nezam.ir
+                  - blockquote [ref=e863]: Alborz Province Engineering System Organization, a crucial institution in Iran responsible for overseeing and managing the engineering aspects of construction projects and licensing.
+              - generic [ref=e864]:
+                - figure [ref=e865] [cursor=pointer]:
+                  - generic [ref=e866]:
+                    - generic [ref=e867]: Polywin
+                    - generic [ref=e868]: www.polywin.ir
+                  - blockquote [ref=e869]: Polywin Co., based in Alborz, Iran, specializes in the production and supply of polyethylene and polypropylene pipes, fittings, and valves, offering laboratory testing and training services since its establishment in 2016.
+                - figure [ref=e870] [cursor=pointer]:
+                  - generic [ref=e871]:
+                    - generic [ref=e872]: Novin Media
+                    - generic [ref=e873]: www.novinmedia.com
+                  - blockquote [ref=e874]: Began its operations in 2014 to supply accessories for LG Electronics in Iran. It then continued as the exclusive importer of LG Bluetooth headsets, introducing this new product to Iran for the first time.
+                - figure [ref=e875] [cursor=pointer]:
+                  - generic [ref=e876]:
+                    - generic [ref=e877]: Alborz Engineering
+                    - generic [ref=e878]: www.alborz-nezam.ir
+                  - blockquote [ref=e879]: Alborz Province Engineering System Organization, a crucial institution in Iran responsible for overseeing and managing the engineering aspects of construction projects and licensing.
+                - figure [ref=e880] [cursor=pointer]:
+                  - generic [ref=e881]:
+                    - generic [ref=e882]: Polywin
+                    - generic [ref=e883]: www.polywin.ir
+                  - blockquote [ref=e884]: Polywin Co., based in Alborz, Iran, specializes in the production and supply of polyethylene and polypropylene pipes, fittings, and valves, offering laboratory testing and training services since its establishment in 2016.
+                - figure [ref=e885] [cursor=pointer]:
+                  - generic [ref=e886]:
+                    - generic [ref=e887]: Novin Media
+                    - generic [ref=e888]: www.novinmedia.com
+                  - blockquote [ref=e889]: Began its operations in 2014 to supply accessories for LG Electronics in Iran. It then continued as the exclusive importer of LG Bluetooth headsets, introducing this new product to Iran for the first time.
+                - figure [ref=e890] [cursor=pointer]:
+                  - generic [ref=e891]:
+                    - generic [ref=e892]: Alborz Engineering
+                    - generic [ref=e893]: www.alborz-nezam.ir
+                  - blockquote [ref=e894]: Alborz Province Engineering System Organization, a crucial institution in Iran responsible for overseeing and managing the engineering aspects of construction projects and licensing.
+            - generic [ref=e895]:
+              - generic [ref=e896]:
+                - figure [ref=e897] [cursor=pointer]:
+                  - generic [ref=e898]:
+                    - generic [ref=e899]: Sampa
+                    - generic [ref=e900]: www.iransampa.ir
+                  - blockquote [ref=e901]: IranSampa is involved in industrial and production activities, focusing on molding and production saloons. The company also maintains an active online presence to share information through its website.
+                - figure [ref=e902] [cursor=pointer]:
+                  - generic [ref=e903]:
+                    - generic [ref=e904]: Shahrab
+                    - generic [ref=e905]: www.shahrab.com
+                  - blockquote [ref=e906]: The primary focus of Shahrab is on providing water and wastewater treatment solutions and systems for various industries. They worked with clients such as the National Iranian Gas Company and the Pars Oil and Gas Company.
+                - figure [ref=e907] [cursor=pointer]:
+                  - generic [ref=e908]:
+                    - generic [ref=e909]: Insito
+                    - generic [ref=e910]: www.insito.ir
+                  - blockquote [ref=e911]: Insito is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store offering a wide range of products to consumers in Iran.
+                - figure [ref=e912] [cursor=pointer]:
+                  - generic [ref=e913]:
+                    - generic [ref=e914]: Sampa
+                    - generic [ref=e915]: www.iransampa.ir
+                  - blockquote [ref=e916]: IranSampa is involved in industrial and production activities, focusing on molding and production saloons. The company also maintains an active online presence to share information through its website.
+                - figure [ref=e917] [cursor=pointer]:
+                  - generic [ref=e918]:
+                    - generic [ref=e919]: Shahrab
+                    - generic [ref=e920]: www.shahrab.com
+                  - blockquote [ref=e921]: The primary focus of Shahrab is on providing water and wastewater treatment solutions and systems for various industries. They worked with clients such as the National Iranian Gas Company and the Pars Oil and Gas Company.
+                - figure [ref=e922] [cursor=pointer]:
+                  - generic [ref=e923]:
+                    - generic [ref=e924]: Insito
+                    - generic [ref=e925]: www.insito.ir
+                  - blockquote [ref=e926]: Insito is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store offering a wide range of products to consumers in Iran.
+              - generic [ref=e927]:
+                - figure [ref=e928] [cursor=pointer]:
+                  - generic [ref=e929]:
+                    - generic [ref=e930]: Sampa
+                    - generic [ref=e931]: www.iransampa.ir
+                  - blockquote [ref=e932]: IranSampa is involved in industrial and production activities, focusing on molding and production saloons. The company also maintains an active online presence to share information through its website.
+                - figure [ref=e933] [cursor=pointer]:
+                  - generic [ref=e934]:
+                    - generic [ref=e935]: Shahrab
+                    - generic [ref=e936]: www.shahrab.com
+                  - blockquote [ref=e937]: The primary focus of Shahrab is on providing water and wastewater treatment solutions and systems for various industries. They worked with clients such as the National Iranian Gas Company and the Pars Oil and Gas Company.
+                - figure [ref=e938] [cursor=pointer]:
+                  - generic [ref=e939]:
+                    - generic [ref=e940]: Insito
+                    - generic [ref=e941]: www.insito.ir
+                  - blockquote [ref=e942]: Insito is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store offering a wide range of products to consumers in Iran.
+                - figure [ref=e943] [cursor=pointer]:
+                  - generic [ref=e944]:
+                    - generic [ref=e945]: Sampa
+                    - generic [ref=e946]: www.iransampa.ir
+                  - blockquote [ref=e947]: IranSampa is involved in industrial and production activities, focusing on molding and production saloons. The company also maintains an active online presence to share information through its website.
+                - figure [ref=e948] [cursor=pointer]:
+                  - generic [ref=e949]:
+                    - generic [ref=e950]: Shahrab
+                    - generic [ref=e951]: www.shahrab.com
+                  - blockquote [ref=e952]: The primary focus of Shahrab is on providing water and wastewater treatment solutions and systems for various industries. They worked with clients such as the National Iranian Gas Company and the Pars Oil and Gas Company.
+                - figure [ref=e953] [cursor=pointer]:
+                  - generic [ref=e954]:
+                    - generic [ref=e955]: Insito
+                    - generic [ref=e956]: www.insito.ir
+                  - blockquote [ref=e957]: Insito is an Iranian e-commerce platform specializing in the sale of mobile phones and related accessories. The company operates as an online store offering a wide range of products to consumers in Iran.
+            - generic [ref=e958]:
+              - generic [ref=e959]:
+                - figure [ref=e960] [cursor=pointer]:
+                  - generic [ref=e961]:
+                    - generic [ref=e962]: Janja Mine
+                    - generic [ref=e963]: www.janjamine.com
+                  - blockquote [ref=e964]: Janja Mine in Iran is a major copper and gold mining project located in Sistan and Baluchistan, with proven reserves of 312 million metric tons and significant economic potential for job creation and regional development.
+                - figure [ref=e965] [cursor=pointer]:
+                  - generic [ref=e966]:
+                    - generic [ref=e967]: Amadeh Laziz
+                    - generic [ref=e968]: www.amadehlaziz.com
+                  - blockquote [ref=e969]: Specializes in producing and distributing ready and semi-ready food products across Iran and neighboring countries. Its flagship brand Elite was launched in 2006 and has become a market leader in the region.
+                - figure [ref=e970] [cursor=pointer]:
+                  - generic [ref=e971]:
+                    - generic [ref=e972]: Polywin Co.
+                    - generic [ref=e973]: www.polywin.ir
+                  - blockquote [ref=e974]: Manufactures polyethylene and polypropylene pipes, fittings and valves, with laboratory testing and training services across Iran since 2016.
+                - figure [ref=e975] [cursor=pointer]:
+                  - generic [ref=e976]:
+                    - generic [ref=e977]: Janja Mine
+                    - generic [ref=e978]: www.janjamine.com
+                  - blockquote [ref=e979]: Janja Mine in Iran is a major copper and gold mining project located in Sistan and Baluchistan, with proven reserves of 312 million metric tons and significant economic potential for job creation and regional development.
+                - figure [ref=e980] [cursor=pointer]:
+                  - generic [ref=e981]:
+                    - generic [ref=e982]: Amadeh Laziz
+                    - generic [ref=e983]: www.amadehlaziz.com
+                  - blockquote [ref=e984]: Specializes in producing and distributing ready and semi-ready food products across Iran and neighboring countries. Its flagship brand Elite was launched in 2006 and has become a market leader in the region.
+                - figure [ref=e985] [cursor=pointer]:
+                  - generic [ref=e986]:
+                    - generic [ref=e987]: Polywin Co.
+                    - generic [ref=e988]: www.polywin.ir
+                  - blockquote [ref=e989]: Manufactures polyethylene and polypropylene pipes, fittings and valves, with laboratory testing and training services across Iran since 2016.
+              - generic [ref=e990]:
+                - figure [ref=e991] [cursor=pointer]:
+                  - generic [ref=e992]:
+                    - generic [ref=e993]: Janja Mine
+                    - generic [ref=e994]: www.janjamine.com
+                  - blockquote [ref=e995]: Janja Mine in Iran is a major copper and gold mining project located in Sistan and Baluchistan, with proven reserves of 312 million metric tons and significant economic potential for job creation and regional development.
+                - figure [ref=e996] [cursor=pointer]:
+                  - generic [ref=e997]:
+                    - generic [ref=e998]: Amadeh Laziz
+                    - generic [ref=e999]: www.amadehlaziz.com
+                  - blockquote [ref=e1000]: Specializes in producing and distributing ready and semi-ready food products across Iran and neighboring countries. Its flagship brand Elite was launched in 2006 and has become a market leader in the region.
+                - figure [ref=e1001] [cursor=pointer]:
+                  - generic [ref=e1002]:
+                    - generic [ref=e1003]: Polywin Co.
+                    - generic [ref=e1004]: www.polywin.ir
+                  - blockquote [ref=e1005]: Manufactures polyethylene and polypropylene pipes, fittings and valves, with laboratory testing and training services across Iran since 2016.
+                - figure [ref=e1006] [cursor=pointer]:
+                  - generic [ref=e1007]:
+                    - generic [ref=e1008]: Janja Mine
+                    - generic [ref=e1009]: www.janjamine.com
+                  - blockquote [ref=e1010]: Janja Mine in Iran is a major copper and gold mining project located in Sistan and Baluchistan, with proven reserves of 312 million metric tons and significant economic potential for job creation and regional development.
+                - figure [ref=e1011] [cursor=pointer]:
+                  - generic [ref=e1012]:
+                    - generic [ref=e1013]: Amadeh Laziz
+                    - generic [ref=e1014]: www.amadehlaziz.com
+                  - blockquote [ref=e1015]: Specializes in producing and distributing ready and semi-ready food products across Iran and neighboring countries. Its flagship brand Elite was launched in 2006 and has become a market leader in the region.
+                - figure [ref=e1016] [cursor=pointer]:
+                  - generic [ref=e1017]:
+                    - generic [ref=e1018]: Polywin Co.
+                    - generic [ref=e1019]: www.polywin.ir
+                  - blockquote [ref=e1020]: Manufactures polyethylene and polypropylene pipes, fittings and valves, with laboratory testing and training services across Iran since 2016.
+      - region "Elevate your experience with us" [ref=e1021]:
+        - generic [ref=e1023]:
+          - heading "Elevate your experience with us" [level=2] [ref=e1024]:
+            - generic [ref=e1025]:
+              - text: Elevate your
+              - text: experience with us
+          - paragraph [ref=e1026]: Ready to get started? Sign up now and start your journey with us. We are here to help you grow.
+          - generic [ref=e1027]:
+            - link "Get Started" [ref=e1028] [cursor=pointer]:
+              - /url: "#contact"
+              - generic [ref=e1029]: Get Started
+            - link "Learn More" [ref=e1030] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e1031]: Learn More
+    - contentinfo [ref=e1032]:
+      - generic [ref=e1033]:
+        - generic [ref=e1034]:
+          - generic [ref=e1035]:
+            - link "REP — Home" [ref=e1036] [cursor=pointer]:
+              - /url: "#top"
+              - img [ref=e1038]
+              - generic [ref=e1040]: REP
+            - paragraph [ref=e1041]: Empower your business with our Solutions tools.
+            - link "Get Started" [ref=e1042] [cursor=pointer]:
+              - /url: "#contact"
+              - generic [ref=e1043]: Get Started
+              - img [ref=e1044]
+          - navigation "Product" [ref=e1046]:
+            - heading "Product" [level=4] [ref=e1047]
+            - list [ref=e1048]:
+              - listitem [ref=e1049]:
+                - link "Home" [ref=e1050] [cursor=pointer]:
+                  - /url: "#top"
+              - listitem [ref=e1051]:
+                - link "Features" [ref=e1052] [cursor=pointer]:
+                  - /url: "#how"
+              - listitem [ref=e1053]:
+                - link "Networking" [ref=e1054] [cursor=pointer]:
+                  - /url: "#networking"
+              - listitem [ref=e1055]:
+                - link "Security" [ref=e1056] [cursor=pointer]:
+                  - /url: "#security"
+          - navigation "Resources" [ref=e1057]:
+            - heading "Resources" [level=4] [ref=e1058]
+            - list [ref=e1059]:
+              - listitem [ref=e1060]:
+                - link "Blog" [ref=e1061] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e1062]:
+                - link "Help Center" [ref=e1063] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e1064]:
+                - link "Contact us" [ref=e1065] [cursor=pointer]:
+                  - /url: "#contact"
+        - paragraph [ref=e1066]: © 2026 REP. All rights reserved.
+  - generic [ref=e1069]:
+    - button "Menu" [ref=e1070]:
+      - img [ref=e1072]
+      - generic: Menu
+    - button "Inspect" [ref=e1076]:
+      - img [ref=e1078]
+      - generic: Inspect
+    - button "Audit" [ref=e1080]:
+      - img [ref=e1082]
+      - generic: Audit
+    - button "Settings" [ref=e1085]:
+      - img [ref=e1087]
+      - generic: Settings

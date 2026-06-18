@@ -1,112 +1,79 @@
-import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import ScrollSmoother from 'gsap/ScrollSmoother';
-
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-const HEADER_OFFSET = 64; // px — matches --header-h in global.css
+/**
+ * Native smooth-scroll + IntersectionObserver reveals.
+ * Replaces GSAP ScrollSmoother/ScrollTrigger (~110KB) with a ~1KB script.
+ *
+ * - Anchor links scroll smoothly via the browser, respecting prefers-reduced-motion.
+ * - Reveal animations are CSS-driven (.is-revealed). JS only adds the class when
+ *   the element enters the viewport — no per-frame work, no layout thrash.
+ */
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const HEADER_OFFSET = 80;
 
-if (prefersReducedMotion) {
-  console.info('[smooth-scroll] disabled — prefers-reduced-motion');
-} else {
-  const smoother = ScrollSmoother.create({
-    wrapper: '#smooth-wrapper',
-    content: '#smooth-content',
-    smooth: 1.5,
-    effects: true,
-    smoothTouch: 0.1,
+/* ---------------------------------------------------------------
+   Anchor link navigation — uses native scrollIntoView with smooth.
+   --------------------------------------------------------------- */
+
+document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const href = link.getAttribute('href');
+    if (!href || href.length <= 1) return;
+
+    const target = document.querySelector<HTMLElement>(href);
+    if (!target) return;
+
+    event.preventDefault();
+
+    const top = target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+    window.scrollTo({
+      top,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    });
+
+    history.pushState(null, '', href);
   });
+});
 
-  if (!smoother) {
-    console.warn('[smooth-scroll] ScrollSmoother.create returned no instance');
-  } else {
-    console.info('[smooth-scroll] ScrollSmoother active');
+/* ---------------------------------------------------------------
+   IntersectionObserver reveals — one-shot fade-in on viewport entry.
+   With reduced-motion: skip entirely (CSS keeps content visible).
+   --------------------------------------------------------------- */
 
-    /* ---------------------------------------------------------------
-       Anchor link smooth navigation
-       --------------------------------------------------------------- */
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const REVEAL_SELECTORS = [
+    '[data-reveal]',
+    '.bento__head',
+    '.services__head',
+    '.customers__head',
+    '.tile',
+    '.row',
+  ].join(',');
 
-    const animateScrollTo = (target: Element) => {
-      // Resolve the absolute Y in the smoothed-document, then tween smoother's
-      // own scrollTop so the duration + easing are fully ours (not the constant
-      // 1.5s smoothing factor). Feels intentional and unhurried.
-      const targetY = smoother.offset(target as HTMLElement, `top top+=${HEADER_OFFSET}`);
+  const targets = document.querySelectorAll<HTMLElement>(REVEAL_SELECTORS);
+  if (targets.length > 0) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            io.unobserve(entry.target);
+          }
+        }
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.05 }
+    );
 
-      gsap.to(smoother, {
-        scrollTop: targetY,
-        duration: 1.6,
-        ease: 'power3.inOut',
-        overwrite: true,
-      });
-    };
-
-    document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((link) => {
-      link.addEventListener('click', (event) => {
-        const href = link.getAttribute('href');
-        if (!href || href.length <= 1) return;
-
-        const target = document.querySelector(href);
-        if (!target) return;
-
-        event.preventDefault();
-        animateScrollTo(target);
-
-        // Reflect navigation in URL without triggering the browser's own jump
-        history.pushState(null, '', href);
-      });
+    targets.forEach((el, idx) => {
+      // Stagger reveal-delay across siblings inside the same parent.
+      const sameParent = el.parentElement?.children;
+      if (sameParent && sameParent.length > 1) {
+        const i = Array.prototype.indexOf.call(sameParent, el);
+        if (i >= 0) el.style.setProperty('--reveal-index', String(i));
+      } else {
+        el.style.setProperty('--reveal-index', String(idx));
+      }
+      el.classList.add('reveal-on-scroll');
+      io.observe(el);
     });
-
-    /* ---------------------------------------------------------------
-       Section reveals — content fades in as each section enters viewport
-       --------------------------------------------------------------- */
-
-    const REVEAL_SELECTORS = [
-      '.heading',
-      '.persona',
-      '.step',
-      '.row',
-      '.tile',
-      '.layer',
-      '.item',
-      '.metric',
-      '.chip',
-    ].join(',');
-
-    gsap.utils.toArray<HTMLElement>('main > section').forEach((section) => {
-      if (section.id === 'top') return; // hero animates via CSS on load
-
-      const items = section.querySelectorAll<HTMLElement>(REVEAL_SELECTORS);
-      if (items.length === 0) return;
-
-      gsap.from(items, {
-        scrollTrigger: {
-          trigger: section,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 0,
-        y: 32,
-        duration: 0.8,
-        stagger: 0.08,
-        ease: 'power2.out',
-      });
-    });
-
-    const ctaCard = document.querySelector<HTMLElement>('.cta .card');
-    if (ctaCard) {
-      gsap.from(ctaCard, {
-        scrollTrigger: {
-          trigger: ctaCard,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 0,
-        y: 36,
-        duration: 0.9,
-        ease: 'power2.out',
-      });
-    }
   }
 }

@@ -1,144 +1,136 @@
 ---
 import Container from '@components/ui/Container.astro';
-import SectionHeading from '@components/ui/SectionHeading.astro';
-import Icon from '@components/ui/Icon.astro';
-import { differentiators } from './differentiators.data';
+import { siteContent } from '@data/site.content';
+
+const { eyebrow, heading, lead, items } = siteContent.differentiators;
 ---
 
-<section id="differentiators" class="diff" aria-labelledby="diff-title">
+<section id="diferenciadores" class="diff" aria-labelledby="diff-title">
   <Container>
-    <div class="diff__head">
-      <SectionHeading
-        eyebrow="Por qué nosotros"
-        title="Diferenciadores construidos <em>desde el día uno</em>."
-        lead="No son addons. Son decisiones arquitectónicas que vienen de fábrica."
-        id="diff-title"
-      />
-    </div>
+    <header class="diff__head">
+      <span class="eyebrow-pill">
+        <span class="eyebrow-pill__dot"></span>
+        {eyebrow}
+      </span>
+      <h2 id="diff-title" class="diff__title">
+        <span class="text-gradient">{heading}</span>
+      </h2>
+      <p class="diff__lead">{lead}</p>
+    </header>
 
-    <ol class="grid" role="list">
-      {differentiators.map((d) => (
-        <li class="row">
-          <div class="row__num" aria-hidden="true">
-            <span class="num">{d.num}</span>
-            <span class="row__icon"><Icon name={d.icon} size={18} /></span>
-          </div>
-          <div class="row__body">
-            <h3 class="row__title">{d.title}</h3>
-            <p class="row__desc">{d.description}</p>
-          </div>
-        </li>
+    <div class="diff__grid">
+      {items.map((item) => (
+        <article class="row">
+          <span class="row__number" aria-hidden="true">{item.number}</span>
+          <h3 class="row__title">{item.title}</h3>
+          <p class="row__desc">{item.body}</p>
+          <span class="row__overlay" aria-hidden="true"></span>
+        </article>
       ))}
-    </ol>
+    </div>
   </Container>
 </section>
 
 <style>
   .diff {
     padding-block: var(--section-pad-y);
-    border-top: 1px solid var(--border);
   }
 
   .diff__head {
-    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 720px;
+    margin-inline: auto;
   }
 
-  .grid {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .diff__title {
+    margin: 0.75rem 0 0;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .diff__lead {
+    color: var(--fg-default);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 36rem;
+  }
+
+  /* Border-grid: cards carry borders so they form a continuous divided grid */
+  .diff__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
   }
 
-  @media (max-width: 720px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
+  @media (min-width: 720px) {
+    .diff__grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 980px) {
+    .diff__grid { grid-template-columns: 1fr 1fr 1fr; }
   }
 
   .row {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
-    padding: 2rem 1.75rem;
-    border-top: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-    transition: background 220ms var(--ease-out);
-  }
-
-  .row:hover {
-    background: rgba(15, 21, 36, 0.4);
-  }
-
-  /* Remove right border on right-column rows */
-  .row:nth-child(2n) {
-    border-right: none;
-  }
-
-  /* Add bottom border on last row(s) so grid is closed */
-  .row:nth-last-child(-n + 2) {
-    border-bottom: 1px solid var(--border);
-  }
-
-  @media (max-width: 720px) {
-    .row {
-      border-right: none;
-    }
-    .row:nth-last-child(-n + 2) {
-      border-bottom: none;
-    }
-    .row:last-child {
-      border-bottom: 1px solid var(--border);
-    }
-  }
-
-  .row__num {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 0.85rem;
+    padding: 2.5rem 1.75rem;
+    border: 1px solid transparent;
+    border-bottom-color: var(--border-neutral-800);
+    overflow: hidden;
+    isolation: isolate;
   }
 
-  .num {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 2.25rem;
+  @media (min-width: 720px) {
+    .row { border-right-color: var(--border-neutral-800); }
+    .row:nth-child(2n) { border-right-color: transparent; }
+  }
+
+  @media (min-width: 980px) {
+    .row { border-right-color: var(--border-neutral-800); }
+    .row:nth-child(2n) { border-right-color: var(--border-neutral-800); }
+    .row:nth-child(3n) { border-right-color: transparent; }
+  }
+
+  .row__number {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 500;
     line-height: 1;
-    color: transparent;
-    background: linear-gradient(135deg, var(--brand-400), var(--accent-cyan));
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-
-  .row__icon {
-    display: grid;
-    place-items: center;
-    width: 34px;
-    height: 34px;
-    border-radius: var(--radius-sm);
-    background: var(--bg-elev-1);
-    border: 1px solid var(--border-strong);
-    color: var(--brand-300);
-  }
-
-  .row__body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    color: var(--brand-500);
+    letter-spacing: 0.02em;
   }
 
   .row__title {
-    font-size: 1.15rem;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
     color: var(--fg-strong);
-    letter-spacing: -0.005em;
   }
 
   .row__desc {
-    color: var(--fg-muted);
-    font-size: 0.93rem;
+    color: var(--fg-default);
+    font-size: 0.9rem;
     line-height: 1.6;
-    max-width: 52ch;
+  }
+
+  .row__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(255, 50, 65, 0.18), transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms var(--ease-out);
+    z-index: -1;
+  }
+
+  .row:hover .row__overlay {
+    opacity: 1;
   }
 </style>
