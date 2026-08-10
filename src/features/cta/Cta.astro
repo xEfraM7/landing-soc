@@ -21,7 +21,9 @@ const { heading, lead, primaryCta, secondaryCta } = siteContent.cta;
       </h2>
       <p class="cta__lead">{lead}</p>
       <div class="cta__actions">
-        <Button href={primaryCta.href} variant="primary" size="md">{primaryCta.label}</Button>
+        <Button href={primaryCta.href} variant="primary" size="md" target="_blank"
+          >{primaryCta.label}</Button
+        >
         <Button href={secondaryCta.href} variant="secondary" size="md">{secondaryCta.label}</Button>
       </div>
     </div>

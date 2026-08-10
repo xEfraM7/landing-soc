@@ -10,6 +10,9 @@ import type { IconName } from '@assets/icons';
  * este archivo — no toques el markup de los componentes.
  */
 
+/** Evento público de Calendly donde se agendan las demos. */
+export const CALENDLY_URL = 'https://calendly.com/contact-cyberem/30min';
+
 // ---- Tipos compartidos --------------------------------------------------
 
 export interface Cta {
@@ -325,7 +328,7 @@ export const siteContent: SiteContent = {
   cta: {
     heading: 'Protege tu negocio con detección y respuesta gestionada',
     lead: 'Solicita una demo y descubre cómo CyberEM unifica el monitoreo, la investigación y la respuesta en una sola plataforma.',
-    primaryCta: { label: 'Solicitar Demo', href: '#contacto' },
+    primaryCta: { label: 'Agendar una reunión', href: CALENDLY_URL },
     secondaryCta: { label: 'Ver Plataforma', href: '#solucion' },
   },
 

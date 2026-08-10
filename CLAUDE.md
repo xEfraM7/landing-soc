@@ -185,7 +185,7 @@ pnpm astro add <pkg>    # Añadir integraciones / adapters de Astro
 
 - [ ] Definir adapter de despliegue (Vercel / Netlify / Cloudflare / Node).
 - [ ] Completar datos reales del equipo y copy de "Acerca de nosotros" en `site.content.ts` (placeholders marcados con `TODO`).
-- [ ] Conectar CTAs ("Solicitar Demo" → `#contacto`) a un formulario/flujo real y definir la URL de "Ver Plataforma".
+- [ ] Definir la URL de "Ver Plataforma".
 - [ ] Añadir meta tags OG / Twitter (`src/utils/seo.ts` ya está preparado).
 - [ ] Añadir `robots.txt` y `sitemap` (`@astrojs/sitemap`).
 - [ ] Decidir si se incorporará Tailwind o se mantiene CSS plano.

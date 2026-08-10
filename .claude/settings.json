@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(if \\(Test-Path .vercel\\) { Get-ChildItem .vercel } else { \"no .vercel\" }; \\(Get-Command vercel -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell(vercel whoami)",
+      "PowerShell(vercel project ls 2>&1)",
+      "PowerShell(vercel domains ls 2>&1)",
+      "PowerShell(vercel domains inspect ciberem.com 2>&1)",
+      "PowerShell(vercel project inspect landing-soc 2>&1)",
+      "PowerShell(Resolve-DnsName ciberem.com -Type A -ErrorAction SilentlyContinue)",
+      "PowerShell(vercel domains add ciberem.com landing-soc --yes 2>&1)",
+      "PowerShell(vercel domains add ciberem.com landing-soc 2>&1)",
+      "PowerShell(vercel domains add www.ciberem.com landing-soc 2>&1)",
+      "PowerShell(Resolve-DnsName ciberem.com -Type NS -Server 8.8.8.8 -ErrorAction SilentlyContinue)",
+      "PowerShell(Resolve-DnsName ciberem.com -Type A -Server 8.8.8.8 -ErrorAction SilentlyContinue)",
+      "PowerShell(Resolve-DnsName www.ciberem.com -Server 8.8.8.8 -ErrorAction SilentlyContinue)",
+      "PowerShell(foreach \\($u in @\\(\"https://ciberem.com\",\"https://www.ciberem.com\"\\)\\) { try { $r = Invoke-WebRequest $u -MaximumRedirection 0 -ErrorAction Stop; \"$u -> $\\($r.StatusCode\\)\" } catch { $s = $_.Exception.Response; if \\($s\\) { \"$u -> $\\([int]$s.StatusCode\\) $\\($s.Headers['Location']\\)\" } else { \"$u -> ERROR: $\\($_.Exception.Message\\)\" } } })",
+      "PowerShell(curl.exe -sS -o NUL -w \"%{url_effective} -> %{http_code} \\(redirect: %{redirect_url}\\)`n\" https://ciberem.com)",
+      "PowerShell(curl.exe -sS -o NUL -w \"%{url_effective} -> %{http_code} \\(redirect: %{redirect_url}\\)`n\" https://www.ciberem.com)",
+      "PowerShell(curl.exe -sS -o NUL -w \"http ciberem.com -> %{http_code} redirect=%{redirect_url}`n\" http://ciberem.com)",
+      "PowerShell(vercel certs ls 2>&1)",
+      "PowerShell(pnpm check)",
+      "PowerShell(pnpm dev --port 4321)"
+    ]
+  }
+}
