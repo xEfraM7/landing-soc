@@ -1,0 +1,59 @@
+---
+import type { BreadcrumbItem } from '@utils/seo';
+
+interface Props {
+  items: BreadcrumbItem[];
+  label: string;
+}
+
+const { items, label } = Astro.props;
+const lastIndex = items.length - 1;
+---
+
+<nav class="crumbs" aria-label={label}>
+  <ol role="list">
+    {
+      items.map((item, index) => (
+        <li>
+          {index === lastIndex ? (
+            <span aria-current="page">{item.name}</span>
+          ) : (
+            <a href={item.url}>{item.name}</a>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style>
+  .crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+  }
+
+  .crumbs li + li::before {
+    content: '/';
+    margin-right: 0.5rem;
+    color: var(--fg-faint);
+  }
+
+  .crumbs a {
+    color: var(--fg-muted);
+    transition: color 160ms var(--ease-out);
+  }
+
+  .crumbs a:hover {
+    color: var(--fg-strong);
+  }
+
+  .crumbs [aria-current] {
+    color: var(--fg-default);
+  }
+</style>

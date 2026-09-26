@@ -1,0 +1,14 @@
+---
+interface Props {
+  graph: object[];
+}
+
+const { graph } = Astro.props;
+// `<` escapado para que ningún texto del contenido pueda cerrar el <script>.
+const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(
+  /</g,
+  '\\u003c',
+);
+---
+
+<script type="application/ld+json" set:html={json} is:inline />

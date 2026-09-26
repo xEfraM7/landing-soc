@@ -1,9 +1,10 @@
 ---
 import Container from '@components/ui/Container.astro';
 import Icon from '@components/ui/Icon.astro';
-import { siteContent } from '@data/site.content';
+import { useSiteContent } from '@utils/i18n';
 
-const { eyebrow, heading, lead, items } = siteContent.personas;
+const { content } = useSiteContent(Astro);
+const { eyebrow, heading, lead, items } = content.personas;
 ---
 
 <section id="perfiles" class="personas" aria-labelledby="personas-title">

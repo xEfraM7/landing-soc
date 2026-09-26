@@ -1,0 +1,246 @@
+---
+import Container from '@components/ui/Container.astro';
+import Icon from '@components/ui/Icon.astro';
+import Breadcrumb from '@components/layout/Breadcrumb.astro';
+import { pillarKeys, type PillarKey } from '@data/site.content';
+import { pathFor, useSiteContent } from '@utils/i18n';
+import { breadcrumbFor } from '@utils/routes';
+
+interface Props {
+  pillarKey: PillarKey;
+}
+
+const { pillarKey } = Astro.props;
+const { locale, content } = useSiteContent(Astro);
+const pillar = content.pillars[pillarKey];
+const related = pillarKeys
+  .filter((key) => key !== pillarKey)
+  .map((key) => ({ href: pathFor(key, locale), label: content.pillars[key].title }));
+---
+
+<article class="pillar-page">
+  <header class="pillar-hero">
+    <div class="pillar-hero__bg" aria-hidden="true">
+      <div class="pillar-hero__glow"></div>
+    </div>
+    <Container>
+      <Breadcrumb items={breadcrumbFor(pillarKey, locale)} label={content.breadcrumb.homeLabel} />
+      <span class="eyebrow-pill">
+        <span class="eyebrow-pill__dot"></span>
+        {pillar.eyebrow}
+      </span>
+      <h1 class="pillar-hero__title"><span class="text-gradient">{pillar.title}</span></h1>
+      <p class="pillar-hero__lead">{pillar.lead}</p>
+    </Container>
+  </header>
+
+  <Container class="pillar-body">
+    {
+      pillar.sections.map((section) => (
+        <section class="block">
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          {section.bullets && (
+            <ul role="list" class="bullets">
+              {section.bullets.map((bullet) => (
+                <li>
+                  <Icon name="check" size={16} class="bullets__icon" />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))
+    }
+
+    <section class="block faq" id="faq">
+      <h2>{pillar.faqHeading}</h2>
+      {
+        pillar.faq.map((item) => (
+          <details class="faq__item">
+            <summary>
+              <span>{item.question}</span>
+              <Icon name="chevron-down" size={16} class="faq__chevron" />
+            </summary>
+            <p>{item.answer}</p>
+          </details>
+        ))
+      }
+    </section>
+
+    <nav class="block related" aria-label={pillar.relatedHeading}>
+      <h2>{pillar.relatedHeading}</h2>
+      <ul role="list">
+        {
+          related.map((item) => (
+            <li>
+              <a href={item.href}>
+                {item.label}
+                <Icon name="arrow-right" size={14} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </Container>
+</article>
+
+<style>
+  .pillar-hero {
+    position: relative;
+    padding-block: clamp(7rem, 12vw, 9rem) 3rem;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .pillar-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .pillar-hero__glow {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    width: 60vw;
+    height: 60vw;
+    max-width: 720px;
+    max-height: 720px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, var(--brand-glow-soft) 0%, transparent 65%);
+    filter: blur(40px);
+  }
+
+  .pillar-hero .eyebrow-pill {
+    margin-top: 1.5rem;
+  }
+
+  .pillar-hero__title {
+    max-width: 18ch;
+    margin-top: 1.25rem;
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .pillar-hero__lead {
+    max-width: 62ch;
+    margin-top: 1.25rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--fg-default);
+  }
+
+  :global(.pillar-body) {
+    max-width: calc(760px + 2 * var(--container-px-md));
+    padding-bottom: var(--section-pad-y);
+  }
+
+  .block {
+    padding-block: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .block h2 {
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+  }
+
+  .block p {
+    color: var(--fg-default);
+    line-height: 1.7;
+  }
+
+  .block p + p {
+    margin-top: 1rem;
+  }
+
+  .bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .bullets li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    color: var(--fg-default);
+    line-height: 1.6;
+  }
+
+  .bullets :global(.bullets__icon) {
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+    color: var(--brand-500);
+  }
+
+  .faq__item {
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+  }
+
+  .faq__item + .faq__item {
+    margin-top: 0.75rem;
+  }
+
+  .faq__item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__item :global(.faq__chevron) {
+    flex-shrink: 0;
+    color: var(--fg-muted);
+    transition: transform 200ms var(--ease-out);
+  }
+
+  .faq__item[open] :global(.faq__chevron) {
+    transform: rotate(180deg);
+  }
+
+  .faq__item p {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .related ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .related a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: var(--fg-strong);
+    transition: color 160ms var(--ease-out);
+  }
+
+  .related a:hover {
+    color: var(--brand-500);
+  }
+</style>

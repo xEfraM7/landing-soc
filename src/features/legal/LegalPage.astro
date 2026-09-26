@@ -1,0 +1,72 @@
+---
+import Container from '@components/ui/Container.astro';
+import Breadcrumb from '@components/layout/Breadcrumb.astro';
+import { useSiteContent } from '@utils/i18n';
+import { breadcrumbFor } from '@utils/routes';
+
+const { locale, content } = useSiteContent(Astro);
+const page = content.legal.privacy;
+---
+
+<article class="legal">
+  <Container class="legal__inner">
+    <Breadcrumb items={breadcrumbFor('privacy', locale)} label={content.breadcrumb.homeLabel} />
+    <h1 class="legal__title">{page.title}</h1>
+    <p class="legal__updated"><time datetime={page.updatedAt}>{page.updatedLabel}</time></p>
+
+    {
+      page.sections.map((section) => (
+        <section class="block">
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </section>
+      ))
+    }
+  </Container>
+</article>
+
+<style>
+  .legal {
+    padding-block: clamp(7rem, 12vw, 9rem) var(--section-pad-y);
+  }
+
+  :global(.legal__inner) {
+    max-width: calc(760px + 2 * var(--container-px-md));
+  }
+
+  .legal__title {
+    margin-top: 1.5rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.02em;
+  }
+
+  .legal__updated {
+    margin-top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+  }
+
+  .block {
+    padding-block: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .block:first-of-type {
+    margin-top: 2rem;
+  }
+
+  .block h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .block p {
+    color: var(--fg-default);
+    line-height: 1.7;
+  }
+
+  .block p + p {
+    margin-top: 1rem;
+  }
+</style>

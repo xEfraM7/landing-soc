@@ -2,9 +2,11 @@
 import Container from '@components/ui/Container.astro';
 import Button from '@components/ui/Button.astro';
 import Icon from '@components/ui/Icon.astro';
-import { siteContent } from '@data/site.content';
+import { localizePath, useSiteContent } from '@utils/i18n';
 
-const { brand, footer } = siteContent;
+const { locale, content } = useSiteContent(Astro);
+const { brand, footer } = content;
+const href = (path: string) => localizePath(path, locale);
 const year = new Date().getFullYear();
 ---
 
@@ -12,14 +14,14 @@ const year = new Date().getFullYear();
   <Container>
     <div class="grid">
       <div class="brand-block">
-        <a href={brand.homeHref} class="brand" aria-label={`${brand.name} — Inicio`}>
+        <a href={href(brand.homeHref)} class="brand" aria-label={brand.name}>
           <span class="brand__mark" aria-hidden="true">
             <Icon name={brand.icon} size={20} strokeWidth={2} />
           </span>
           <span class="brand__name">{brand.name}</span>
         </a>
         <p class="tagline">{footer.tagline}</p>
-        <Button href={footer.cta.href} variant="primary" size="md" iconAfter="arrow-right">
+        <Button href={href(footer.cta.href)} variant="primary" size="md" iconAfter="arrow-right">
           {footer.cta.label}
         </Button>
       </div>
@@ -29,7 +31,7 @@ const year = new Date().getFullYear();
           <h4>{column.heading}</h4>
           <ul role="list">
             {column.links.map((link) => (
-              <li><a href={link.href}>{link.label}</a></li>
+              <li><a href={href(link.href)}>{link.label}</a></li>
             ))}
           </ul>
         </nav>
@@ -49,7 +51,7 @@ const year = new Date().getFullYear();
 
   .grid {
     display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
     gap: 3rem;
     padding-block: 2rem 3rem;
   }

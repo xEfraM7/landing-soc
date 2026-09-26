@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/layout/Header.astro';
+import Footer from '@components/layout/Footer.astro';
+import PillarPage from '@features/pillar/PillarPage.astro';
+import Cta from '@features/cta/Cta.astro';
+import type { PillarKey } from '@data/site.content';
+import { useSiteContent } from '@utils/i18n';
+import { buildPillarJsonLd, pillarStaticPaths } from '@utils/routes';
+
+export function getStaticPaths() {
+  return pillarStaticPaths('en');
+}
+
+const { key } = Astro.props as { key: PillarKey };
+const { locale, content } = useSiteContent(Astro);
+const pillar = content.pillars[key];
+---
+
+<BaseLayout
+  title={pillar.seo.title}
+  description={pillar.seo.description}
+  routeKey={key}
+  jsonLd={buildPillarJsonLd(key, locale)}
+>
+  <Header slot="header" routeKey={key} />
+  <PillarPage pillarKey={key} />
+  <Cta />
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,30 +1,51 @@
 ---
 import Button from '@components/ui/Button.astro';
 import Icon from '@components/ui/Icon.astro';
-import { siteContent } from '@data/site.content';
+import LanguageSwitcher from '@components/layout/LanguageSwitcher.astro';
+import type { RouteKey } from '@data/site.content';
+import { localizePath, useSiteContent } from '@utils/i18n';
 
-const { brand, nav } = siteContent;
+interface Props {
+  routeKey: RouteKey;
+}
+
+const { routeKey } = Astro.props;
+const { locale, content } = useSiteContent(Astro);
+const { brand, nav } = content;
+const href = (path: string) => localizePath(path, locale);
 ---
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a href={brand.homeHref} class="brand" aria-label={`${brand.name} — Inicio`}>
+    <a href={href(brand.homeHref)} class="brand" aria-label={brand.name}>
       <span class="brand__mark" aria-hidden="true">
         <Icon name={brand.icon} size={18} strokeWidth={2} />
       </span>
       <span class="brand__name">{brand.name}</span>
     </a>
 
-    <nav class="nav" aria-label="Principal">
+    <nav class="nav" aria-label={nav.servicesLabel}>
       <ul role="list">
+        <li class="has-menu">
+          <button type="button" aria-haspopup="true">
+            {nav.servicesLabel}
+            <Icon name="chevron-down" size={14} />
+          </button>
+          <ul class="menu" role="list">
+            {nav.services.map((link) => (
+              <li><a href={href(link.href)}>{link.label}</a></li>
+            ))}
+          </ul>
+        </li>
         {nav.links.map((link) => (
-          <li><a href={link.href}>{link.label}</a></li>
+          <li><a href={href(link.href)}>{link.label}</a></li>
         ))}
       </ul>
     </nav>
 
     <div class="actions">
-      <Button href={nav.cta.href} variant="primary" size="sm" iconAfter="arrow-right">
+      <LanguageSwitcher routeKey={routeKey} />
+      <Button href={href(nav.cta.href)} variant="primary" size="sm" iconAfter="arrow-right">
         {nav.cta.label}
       </Button>
     </div>
@@ -116,10 +137,72 @@ const { brand, nav } = siteContent;
     color: var(--fg-strong);
   }
 
+  /* Menú "Servicios": solo CSS, abre con hover y con foco de teclado. */
+  .has-menu {
+    position: relative;
+  }
+
+  .has-menu > button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    height: 33px;
+    padding: 0 1rem;
+    font: inherit;
+    font-size: 0.875rem;
+    color: var(--fg-muted);
+    background: none;
+    border: 0;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: color 160ms var(--ease-out);
+  }
+
+  .has-menu > button:hover,
+  .has-menu:focus-within > button {
+    color: var(--fg-strong);
+  }
+
+  .menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    min-width: 220px;
+    display: none;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0.4rem;
+    list-style: none;
+    background: var(--bg-elev-1);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .has-menu:hover .menu,
+  .has-menu:focus-within .menu {
+    display: flex;
+  }
+
+  .menu a {
+    display: block;
+    height: auto;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: var(--fg-muted);
+    border-radius: var(--radius-sm);
+  }
+
+  .menu a:hover {
+    color: var(--fg-strong);
+    background: var(--bg-card);
+  }
+
   .actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
   @media (max-width: 880px) {

@@ -1,9 +1,11 @@
 ---
 import Container from '@components/ui/Container.astro';
 import Icon from '@components/ui/Icon.astro';
-import { siteContent } from '@data/site.content';
+import { localizePath, useSiteContent } from '@utils/i18n';
 
-const { problem, solution } = siteContent;
+const { locale, content } = useSiteContent(Astro);
+const { problem, solution } = content;
+const href = (path: string) => localizePath(path, locale);
 ---
 
 <section id="problema" class="problem" aria-labelledby="problem-title">
@@ -56,6 +58,10 @@ const { problem, solution } = siteContent;
           </div>
           <h3 class="pillar__title">{pillar.title}</h3>
           <p class="pillar__body">{pillar.body}</p>
+          <a class="pillar__link" href={href(pillar.href)}>
+            {pillar.linkLabel}
+            <Icon name="arrow-right" size={14} />
+          </a>
         </li>
       ))}
     </ul>
@@ -63,6 +69,21 @@ const { problem, solution } = siteContent;
 </section>
 
 <style>
+  .pillar__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--brand-500);
+    transition: gap 160ms var(--ease-out);
+  }
+
+  .pillar__link:hover {
+    gap: 0.6rem;
+  }
+
   /* ---------------- El Problema ---------------- */
   .problem {
     padding-block: var(--section-pad-y);

@@ -1,0 +1,52 @@
+---
+import { locales, type RouteKey } from '@data/site.content';
+import { alternatePaths, useSiteContent } from '@utils/i18n';
+
+interface Props {
+  routeKey: RouteKey;
+}
+
+const { routeKey } = Astro.props;
+const { locale, content } = useSiteContent(Astro);
+const paths = alternatePaths(routeKey);
+---
+
+<nav class="lang" aria-label={content.nav.languageSwitcher.ariaLabel}>
+  {
+    locales.map((code) => (
+      <a
+        href={paths[code]}
+        hreflang={code}
+        lang={code}
+        aria-current={code === locale ? 'page' : undefined}
+      >
+        {code.toUpperCase()}
+      </a>
+    ))
+  }
+</nav>
+
+<style>
+  .lang {
+    display: inline-flex;
+    gap: 0.15rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .lang a {
+    padding: 0.3rem 0.45rem;
+    color: var(--fg-muted);
+    border-radius: var(--radius-xs);
+    transition: color 160ms var(--ease-out);
+  }
+
+  .lang a[aria-current='page'] {
+    color: var(--fg-strong);
+    background: var(--bg-card);
+  }
+
+  .lang a:hover {
+    color: var(--fg-strong);
+  }
+</style>

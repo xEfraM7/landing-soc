@@ -1,8 +1,9 @@
 ---
 import Container from '@components/ui/Container.astro';
-import { siteContent } from '@data/site.content';
+import { useSiteContent } from '@utils/i18n';
 
-const { eyebrow, heading, about, members } = siteContent.team;
+const { content } = useSiteContent(Astro);
+const { eyebrow, heading, about, members } = content.team;
 ---
 
 <section id="equipo" class="team" aria-labelledby="team-title">

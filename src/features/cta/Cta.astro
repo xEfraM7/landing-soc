@@ -1,9 +1,11 @@
 ---
 import Container from '@components/ui/Container.astro';
 import Button from '@components/ui/Button.astro';
-import { siteContent } from '@data/site.content';
+import { localizePath, useSiteContent } from '@utils/i18n';
 
-const { heading, lead, primaryCta, secondaryCta } = siteContent.cta;
+const { locale, content } = useSiteContent(Astro);
+const { heading, lead, primaryCta, secondaryCta } = content.cta;
+const href = (path: string) => localizePath(path, locale);
 ---
 
 <section id="contacto" class="cta" aria-labelledby="cta-title">
@@ -21,10 +23,12 @@ const { heading, lead, primaryCta, secondaryCta } = siteContent.cta;
       </h2>
       <p class="cta__lead">{lead}</p>
       <div class="cta__actions">
-        <Button href={primaryCta.href} variant="primary" size="md" target="_blank"
+        <Button href={href(primaryCta.href)} variant="primary" size="md" target="_blank"
           >{primaryCta.label}</Button
         >
-        <Button href={secondaryCta.href} variant="secondary" size="md">{secondaryCta.label}</Button>
+        <Button href={href(secondaryCta.href)} variant="secondary" size="md">
+          {secondaryCta.label}
+        </Button>
       </div>
     </div>
   </Container>

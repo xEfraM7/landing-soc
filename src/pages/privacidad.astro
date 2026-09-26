@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/layout/Header.astro';
+import Footer from '@components/layout/Footer.astro';
+import LegalPage from '@features/legal/LegalPage.astro';
+import { useSiteContent } from '@utils/i18n';
+import { buildLegalJsonLd } from '@utils/routes';
+
+const { locale, content } = useSiteContent(Astro);
+const page = content.legal.privacy;
+---
+
+<BaseLayout
+  title={page.seo.title}
+  description={page.seo.description}
+  routeKey="privacy"
+  jsonLd={buildLegalJsonLd(locale)}
+>
+  <Header slot="header" routeKey="privacy" />
+  <LegalPage />
+  <Footer slot="footer" />
+</BaseLayout>
