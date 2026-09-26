@@ -14,7 +14,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "astro": "astro"
+    "astro": "astro",
+    "og:image": "node scripts/generate-brand-images.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.2.1",

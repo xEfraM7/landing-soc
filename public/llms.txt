@@ -1,0 +1,25 @@
+# CyberEM
+
+> Plataforma SOC (Security Operations Center) para empresas y MSPs: detección, investigación y respuesta ante amenazas desde una sola consola. Integra Wazuh (SIEM/EDR), TheHive/Cortex (casos), DefectDojo (vulnerabilidades) y GreyNoise (enriquecimiento de IOC); mapea alertas a MITRE ATT&CK; multi-tenant con RBAC de 4 roles y auditoría completa. Se ofrece como SOC como servicio y MDR. Sitio en español (por defecto) e inglés (/en).
+
+## Páginas (es)
+
+- [Inicio](https://ciberem.com/): plataforma SOC de detección y respuesta
+- [SOC como servicio](https://ciberem.com/soc-como-servicio): qué incluye, para quién es, cómo empezamos
+- [MDR](https://ciberem.com/mdr): detección con MITRE ATT&CK, respuesta activa, métricas MTTD/MTTC/MTTR
+- [SOC para MSP](https://ciberem.com/soc-para-msp): multi-tenancy, RBAC, auditoría, reportes por cliente
+- [Preguntas frecuentes](https://ciberem.com/preguntas-frecuentes)
+- [Política de privacidad](https://ciberem.com/privacidad)
+
+## Pages (en)
+
+- [Home](https://ciberem.com/en): SOC platform for threat detection and response
+- [SOC as a Service](https://ciberem.com/en/soc-as-a-service)
+- [MDR](https://ciberem.com/en/mdr)
+- [SOC for MSPs](https://ciberem.com/en/soc-for-msps)
+- [FAQ](https://ciberem.com/en/faq)
+- [Privacy Policy](https://ciberem.com/en/privacy)
+
+## Contacto / Contact
+
+- Demo (30 min): https://calendly.com/contact-cyberem/30min
