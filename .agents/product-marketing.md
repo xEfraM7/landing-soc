@@ -111,7 +111,7 @@
 
 ## Goals
 **Business goal:** Conseguir los primeros clientes de pago (MSPs y empresas) a través de demos.
-**Conversion action:** Agendar demo de 30 minutos (Calendly, evento `demo_click`) o escribir por WhatsApp +58 414 5599785 (evento `whatsapp_click`).
+**Conversion action:** Agendar demo de 30 minutos (Calendly, evento `demo_click`) o escribir por WhatsApp desde el botón de la web; el número no se publica (evento `whatsapp_click`).
 **Current metrics:** Sin datos; la analítica se activa al pegar el ID de GA4.
 
 ## Site
