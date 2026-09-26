@@ -1,5 +1,4 @@
 import {
-  CONTACT_PHONE,
   HEADQUARTERS,
   SERVICE_AREA,
   SITE_URL,
@@ -48,7 +47,6 @@ export const buildOrganizationJsonLd = (content: SiteContent) => ({
     'MITRE ATT&CK',
   ],
   address: HEADQUARTERS,
-  telephone: CONTACT_PHONE,
   areaServed: SERVICE_AREA,
   url: SITE_URL,
   logo: absoluteUrl('/logo.png'),
@@ -57,8 +55,7 @@ export const buildOrganizationJsonLd = (content: SiteContent) => ({
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'sales',
-    telephone: CONTACT_PHONE,
-    url: content.organization.contactUrl,
+      url: content.organization.contactUrl,
     availableLanguage: ['es', 'en'],
   },
 });

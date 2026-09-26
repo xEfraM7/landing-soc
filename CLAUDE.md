@@ -18,9 +18,9 @@ Documento maestro de contexto del proyecto. **Debe actualizarse en cada cambio r
 - **Estilos:** CSS plano con variables CSS en `src/styles/global.css` (scoped styles por componente vía `<style>` de Astro). **Sin Tailwind, sin GSAP.**
 - **Aesthetic direction:** Dark `zinc-950` (#09090b) + acento rojo-coral (#ff3241). Tipografía Geist Variable (display y body) + JetBrains Mono (datos), layouts max-w 1152px, secciones py-20, patrones border-grid + tarjetas + glows.
 - **Source of truth:** **todo el copy vive en `src/data/content/es.ts` y `src/data/content/en.ts`**, ambos tipados por `SiteContent` (`src/data/site.types.ts`). Los componentes obtienen su slice con `useSiteContent(Astro)` de `@utils/i18n`; nunca importan un idioma concreto ni llevan texto hardcodeado.
-- **Conversión:** el CTA final "Agendar una reunión" enlaza a Calendly (`CALENDLY_URL`) y "Escríbenos por WhatsApp" a `WHATSAPP_URL` (ambos en `src/data/site.config.ts`, junto a `CONTACT_PHONE` y `HEADQUARTERS`). Cada clic envía el evento GA4 `demo_click` o `whatsapp_click` cuando la analítica está activa. No hay formulario ni backend.
+- **Conversión:** el CTA final "Agendar una reunión" enlaza a Calendly (`CALENDLY_URL`) y "Escríbenos por WhatsApp" a `WHATSAPP_HREF` (`/#whatsapp`). El número **no** sale en el HTML, el schema ni `llms.txt`: `src/scripts/whatsapp-link.ts` convierte en el navegador los enlaces `…#whatsapp` en `wa.me/<número>` a partir de `WHATSAPP_NUMBER_PARTS` (`src/data/site.config.ts`). Cada clic envía el evento GA4 `demo_click` o `whatsapp_click` cuando la analítica está activa. No hay formulario ni backend.
 - **Planes:** la sección `#planes` muestra Plan Max y Plan Max+ **sin precios** (decisión del negocio: cotización en USD). No publicar importes ni porcentajes de descuento en el sitio, `llms.txt` ni el repo; el PDF de planes no se versiona.
-- **Ubicación:** base en Acarigua, Portuguesa; atención remota, sin dirección de calle. El schema Organization lleva `address` (ciudad/estado/país) y `telephone`.
+- **Ubicación:** base en Acarigua, Portuguesa; atención remota, sin dirección de calle. El schema Organization lleva `address` (ciudad/estado/país), sin teléfono.
 - **SEO:** `BaseLayout` emite canonical, hreflang es/en/x-default, Open Graph, Twitter y un `@graph` JSON-LD (Organization, WebSite y, según la página, Service, FAQPage, BreadcrumbList). `assertSeoLengths` rompe el build si un título pasa de 60 caracteres o una descripción sale de 120-160. Sitemap con `@astrojs/sitemap`, `robots.txt` abierto a bots de IA, `llms.txt`, `og-image.png` y `logo.png`. URLs sin barra final (`trailingSlash: 'never'` + `build.format: 'file'` + `cleanUrls` en Vercel).
 - **Analítica:** GA4 y verificación de Search Console se activan rellenando `seo.analytics.ga4Id` y `seo.analytics.searchConsoleToken` en ambos archivos de contenido. Vacío = desactivado. GA4 solo carga en build de producción.
 - **Marketing:** contexto de producto en `.agents/product-marketing.md` (lo leen los skills de marketing) y plan de 90 días en `docs/marketing/`.
@@ -118,7 +118,7 @@ landing-soc/
 ├── landing-data.md               # Brief de marketing original (posicionamiento, personas, flujo). Referencia, no se importa.
 ├── src/
 │   ├── data/                     # [TIPO] SOURCE OF TRUTH — todo el contenido del sitio
-│   │   ├── site.config.ts        #   - SITE_URL, CALENDLY_URL, locales, defaultLocale, tipo Locale
+│   │   ├── site.config.ts        #   - SITE_URL, CALENDLY_URL, WhatsApp, HEADQUARTERS, SERVICE_AREA, locales
 │   │   ├── site.types.ts         #   - SiteContent y todas las interfaces por sección; PillarKey, RouteKey
 │   │   ├── site.content.ts       #   - getSiteContent(locale) + re-exports de config y tipos
 │   │   └── content/
@@ -168,7 +168,8 @@ landing-soc/
 │   │   └── routes.ts             #   - pillarStaticPaths, breadcrumbFor, build{Home,Pillar,Legal}JsonLd
 │   ├── scripts/                  # [TIPO] Scripts client-side bundleados por Astro
 │   │   ├── smooth-scroll.ts      #   - Scroll suave nativo a anclas + reveals con IntersectionObserver
-│   │   └── analytics-events.ts   #   - Evento GA4 demo_click en enlaces a Calendly
+│   │   ├── whatsapp-link.ts      #   - Monta el enlace real de WhatsApp (el número no va en el HTML)
+│   │   └── analytics-events.ts   #   - Eventos GA4 demo_click (Calendly) y whatsapp_click
 │   ├── assets/                   # [TIPO] Assets procesados por Astro
 │   │   └── icons.ts              #   - Map { name → SVG paths } + tipo IconName, consumido por <Icon />
 │   └── env.d.ts                  # Tipos de Astro
@@ -281,7 +282,7 @@ pnpm astro add <pkg>    # Añadir integraciones / adapters de Astro
 - [ ] Decidir si se eliminan `Card.astro`, `Badge.astro` y `SectionHeading.astro` (sin uso desde el pivote a CiberEm).
 - [ ] Revisar la guía de Venezuela cada 3 meses (fecha `updated`, incidentes y normas nuevas, en especial si se sanciona la Ley de Ciberseguridad).
 - [ ] RIF y razón social: faltan para gremios, facturación y `legalName` real en el schema (hoy `legalName` = "CiberEm").
-- [ ] Google Business Profile como negocio de área de servicio (Acarigua, dirección oculta) con el teléfono +58 414 5599785.
+- [ ] Google Business Profile como negocio de área de servicio (Acarigua, dirección oculta, sin teléfono). Pasos y requisito de elegibilidad en `docs/marketing/estrategia-venezuela.md` §GBP.
 - [ ] Backlog de contenido (blog, comparativas, casos): ver `docs/marketing/estrategia-seo-posicionamiento.md` y `estrategia-venezuela.md` §3.
 
 **Resueltos:** adapter de despliegue (Vercel estático), datos reales del equipo, meta tags OG/Twitter, decisión Tailwind (CSS plano), `site` real, `og-image.png`, `robots.txt`, sitemap, JSON-LD, hreflang, redirect www, versión en inglés, páginas pilar, marca CiberEm.

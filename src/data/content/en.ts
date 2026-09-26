@@ -1,4 +1,4 @@
-import { CALENDLY_URL, WHATSAPP_URL } from '../site.config';
+import { CALENDLY_URL, WHATSAPP_HREF } from '../site.config';
 import type { SiteContent } from '../site.types';
 
 const LINKEDIN_MAURIZIO = 'https://www.linkedin.com/in/maurizio-cucina-50899a232/';
@@ -252,7 +252,7 @@ export const en: SiteContent = {
     heading: 'Protect your business with managed detection and response',
     lead: 'Request a demo and see how CiberEm unifies monitoring, investigation and response in a single platform.',
     primaryCta: { label: 'Book a meeting', href: CALENDLY_URL },
-    secondaryCta: { label: 'Message us on WhatsApp', href: WHATSAPP_URL },
+    secondaryCta: { label: 'Message us on WhatsApp', href: WHATSAPP_HREF },
   },
 
   pillars: {
@@ -850,7 +850,7 @@ export const en: SiteContent = {
         heading: 'Company',
         links: [
           { label: 'Request a Demo', href: '/#contacto' },
-          { label: 'WhatsApp', href: WHATSAPP_URL },
+          { label: 'WhatsApp', href: WHATSAPP_HREF },
           { label: 'Privacy Policy', href: '/privacy' },
         ],
       },

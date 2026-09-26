@@ -32,3 +32,9 @@ Thumbs.db
 
 # Playwright MCP session artifacts
 .playwright-mcp/
+
+# Dev server log
+dev.log
+
+# Documentos comerciales con precios (no se publican)
+Planes de *.pdf

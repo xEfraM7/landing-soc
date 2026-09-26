@@ -87,7 +87,7 @@ Todas las organizaciones y URLs de esta sección se verificaron el 26-09-2026.
 
 | Acción | Detalle |
 | --- | --- |
-| Google Business Profile | Viable en Venezuela. Si no hay oficina abierta al público, configurarlo como empresa de área de servicio. El nombre debe coincidir con el registro mercantil y el RIF. Categoría: empresa de ciberseguridad o consultor de seguridad informática. |
+| Google Business Profile | Empresa de área de servicio con base en Acarigua y dirección oculta (ver §GBP abajo). Nombre exacto "CiberEm", sin palabras clave añadidas. |
 | Bing Places | Mismo perfil. Alimenta Copilot y ChatGPT. |
 | LinkedIn de empresa | "CiberEm, empresa de ciberseguridad en Venezuela". Ubicación Venezuela. |
 | Dominio `ciberem.com.ve` | Registro defensivo en NIC.ve (CONATEL), con redirección 301 a ciberem.com. |
@@ -243,8 +243,23 @@ Para los toques 2 y 3, usar la secuencia del plan general.
 
 | Decisión | Por qué importa |
 | --- | --- |
-| Dirección en Venezuela o área de servicio | Necesaria para Google Business Profile y para el schema `address` |
+| Dirección en Venezuela o área de servicio | Resuelto: Acarigua, Portuguesa; atención remota. Schema `address` sin calle |
 | Teléfono o WhatsApp Business venezolano | WhatsApp es el canal de contacto habitual de los gremios y medios locales; un botón de WhatsApp probablemente convierta mejor que Calendly |
 | RIF y razón social | Da confianza, es requisito en gremios y debe coincidir con Google Business Profile |
 | Precios en USD | La competencia local los publica |
 | Registrar `ciberem.com.ve` | Protege la marca y es barato |
+
+## GBP: Google Business Profile paso a paso (2026-09-26)
+
+**Elegibilidad (leer primero).** Google exige contacto en persona con clientes; los negocios solo online no son elegibles y pueden suspenderse. CiberEm califica si **visita clientes** (pentest, hardening o instalación en sitio). Si todo es remoto, es mejor no crearlo y reforzar LinkedIn, Bing Places y directorios.
+
+1. Entrar en business.google.com con una cuenta de Google de la empresa (no personal).
+2. Nombre: `CiberEm`, exactamente igual que en la web. Nada de "CiberEm Ciberseguridad Venezuela": Google lo trata como relleno de palabras clave.
+3. Categoría principal: *Servicio de seguridad informática* (Computer security service). Secundaria: *Consultor informático*.
+4. "¿Quieres agregar una ubicación que los clientes puedan visitar?" → **No**. Así la dirección no se muestra.
+5. Google pide igualmente una dirección real para verificar (puede ser la de casa en Acarigua); queda **oculta**.
+6. Áreas de servicio: hasta 20. Empezar por Portuguesa, Lara, Carabobo, Distrito Capital, Miranda, Zulia, Aragua, Barinas, Cojedes, Yaracuy y añadir "Venezuela".
+7. Contacto: sitio web `https://ciberem.com`. El teléfono es opcional y **se muestra públicamente**; dejarlo vacío mientras el número sea personal.
+8. Verificación: normalmente por video continuo que muestre la ciudad, herramientas de trabajo (equipo, pantalla con la plataforma) y algo que pruebe que gestionas el negocio. Sin RIF ni documento de la empresa, la verificación puede ser más difícil: tener a mano cualquier prueba (factura, contrato, marca).
+9. Tras verificar: descripción de 750 caracteres (misma que el footer), servicios (SOC 24/7, gestión de vulnerabilidades, pentest, hardening, MDR), fotos del equipo y logo (`public/logo.png`), y pedir reseñas a los primeros clientes.
+

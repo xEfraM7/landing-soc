@@ -5,9 +5,13 @@ export const SITE_URL = 'https://ciberem.com';
 export const CALENDLY_URL = 'https://calendly.com/contact-cyberem/30min';
 
 /** Mercado prioritario. Alimenta `areaServed` en el JSON-LD de Organization y Service. */
-/** Contacto directo. `wa.me` abre WhatsApp personal o Business indistintamente. */
-export const CONTACT_PHONE = '+58-414-5599785';
-export const WHATSAPP_URL = 'https://wa.me/584145599785';
+/**
+ * El número de WhatsApp no aparece en el HTML: el contenido enlaza a `WHATSAPP_HREF` y
+ * `scripts/whatsapp-link.ts` lo cambia por `wa.me/<número>` en el navegador.
+ */
+export const WHATSAPP_HREF = '/#whatsapp';
+// ponytail: troceado para que no salga entero ni en el bundle; frena scrapers simples, no a un humano.
+export const WHATSAPP_NUMBER_PARTS = ['58', '414', '559', '9785'];
 
 /** Ciudad base. Sin dirección de calle: CiberEm atiende en remoto. */
 export const HEADQUARTERS = {
