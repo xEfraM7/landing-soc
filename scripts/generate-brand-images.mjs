@@ -3,6 +3,7 @@
  * plantillas HTML de esta carpeta usando la CLI de Playwright (sin dependencia en el repo).
  *
  * Uso: pnpm og:image
+ * Requisito (una vez por máquina): npx playwright install chromium
  */
 import { execSync } from 'node:child_process';
 import { resolve } from 'node:path';
