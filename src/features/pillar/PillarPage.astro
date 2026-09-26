@@ -34,7 +34,8 @@ const related = pillarKeys
     </Container>
   </header>
 
-  <Container class="pillar-body">
+  <Container>
+    <div class="pillar-body">
     {
       pillar.sections.map((section) => (
         <section class="block">
@@ -84,6 +85,7 @@ const related = pillarKeys
         }
       </ul>
     </nav>
+    </div>
   </Container>
 </article>
 
@@ -135,8 +137,8 @@ const related = pillarKeys
     color: var(--fg-default);
   }
 
-  :global(.pillar-body) {
-    max-width: calc(760px + 2 * var(--container-px-md));
+  .pillar-body {
+    max-width: 760px;
     padding-bottom: var(--section-pad-y);
   }
 

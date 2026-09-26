@@ -9,7 +9,8 @@ const page = content.legal.privacy;
 ---
 
 <article class="legal">
-  <Container class="legal__inner">
+  <Container>
+    <div class="legal__inner">
     <Breadcrumb items={breadcrumbFor('privacy', locale)} label={content.breadcrumb.homeLabel} />
     <h1 class="legal__title">{page.title}</h1>
     <p class="legal__updated"><time datetime={page.updatedAt}>{page.updatedLabel}</time></p>
@@ -22,6 +23,7 @@ const page = content.legal.privacy;
         </section>
       ))
     }
+    </div>
   </Container>
 </article>
 
@@ -30,8 +32,8 @@ const page = content.legal.privacy;
     padding-block: clamp(7rem, 12vw, 9rem) var(--section-pad-y);
   }
 
-  :global(.legal__inner) {
-    max-width: calc(760px + 2 * var(--container-px-md));
+  .legal__inner {
+    max-width: 760px;
   }
 
   .legal__title {
