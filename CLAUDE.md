@@ -274,7 +274,7 @@ pnpm astro add <pkg>    # Añadir integraciones / adapters de Astro
 
 ## 9. Pendientes conocidos
 
-- [ ] Pegar `ga4Id` y `searchConsoleToken` en `seo.analytics` (es y en) cuando existan las propiedades.
+- [ ] Pegar `ga4Id` en `seo.analytics` (es y en) cuando exista la propiedad GA4. Search Console ya está verificado por DNS (registro TXT `google-site-verification` en Namecheap, **no borrarlo**), así que `searchConsoleToken` se queda vacío.
 - [ ] Añadir LinkedIn de empresa y Crunchbase a `organization.sameAs` (es y en) cuando existan.
 - [ ] Contraste del botón primario: texto blanco sobre #ff3241 da 3.1:1 (WCAG AA pide 4.5:1). Decisión de diseño.
 - [ ] Menú móvil: por debajo de 880px el nav se oculta; el footer mantiene todos los enlaces.
