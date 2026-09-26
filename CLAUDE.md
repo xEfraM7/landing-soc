@@ -7,15 +7,48 @@ Documento maestro de contexto del proyecto. **Debe actualizarse en cada cambio r
 ## 1. Resumen del proyecto
 
 - **Nombre:** landing-soc
-- **Producto:** **CyberEM** — plataforma SOC (detección, investigación y respuesta ante amenazas) para empresas y MSPs.
-- **Tipo:** Landing page estática (español)
+- **Producto:** **CiberEm** — plataforma SOC (detección, investigación y respuesta ante amenazas) para empresas y MSPs.
+- **Marca:** siempre **CiberEm** (no "CyberEM"). Única excepción: la URL externa de Calendly (`contact-cyberem`).
+- **Dominio público:** `https://ciberem.com`, desplegado en **Vercel** como sitio estático (sin adapter). `www.ciberem.com` redirige 301 al apex (`vercel.json`).
+- **Tipo:** Sitio estático bilingüe: español por defecto en `/`, inglés en `/en`. Landing + 4 páginas pilar + privacidad por idioma (12 URLs).
 - **Framework:** [Astro](https://docs.astro.build) 4.x
 - **Lenguaje:** TypeScript (modo strict)
 - **Gestor de paquetes:** **pnpm** (obligatorio, ver `packageManager` en `package.json`)
-- **Estilos:** CSS plano con variables CSS en `src/styles/global.css` (scoped styles por componente vía `<style>` de Astro)
-- **Aesthetic direction:** Dark `zinc-950` (#09090b) + acento rojo-coral (#ff3241). Tipografía Geist Variable, layouts max-w-6xl, secciones py-20, patrones border-grid + tarjetas + glows.
-- **Source of truth:** **todo el copy del sitio vive en `src/data/site.content.ts`** (alias `@data`). Los componentes no llevan texto hardcodeado: importan su slice de `siteContent`.
-- **Estado actual:** Landing de CyberEM con 6 secciones (Hero, Problema/Solución, Perfiles, Diferenciadores, Equipo/Conócenos, CTA).
+- **Estilos:** CSS plano con variables CSS en `src/styles/global.css` (scoped styles por componente vía `<style>` de Astro). **Sin Tailwind, sin GSAP.**
+- **Aesthetic direction:** Dark `zinc-950` (#09090b) + acento rojo-coral (#ff3241). Tipografía Geist Variable (display y body) + JetBrains Mono (datos), layouts max-w 1152px, secciones py-20, patrones border-grid + tarjetas + glows.
+- **Source of truth:** **todo el copy vive en `src/data/content/es.ts` y `src/data/content/en.ts`**, ambos tipados por `SiteContent` (`src/data/site.types.ts`). Los componentes obtienen su slice con `useSiteContent(Astro)` de `@utils/i18n`; nunca importan un idioma concreto ni llevan texto hardcodeado.
+- **Conversión:** el CTA final "Agendar una reunión" enlaza a Calendly (`CALENDLY_URL` en `src/data/site.config.ts`). Cada clic envía el evento GA4 `demo_click` cuando la analítica está activa. No hay formulario ni backend.
+- **SEO:** `BaseLayout` emite canonical, hreflang es/en/x-default, Open Graph, Twitter y un `@graph` JSON-LD (Organization, WebSite y, según la página, Service, FAQPage, BreadcrumbList). `assertSeoLengths` rompe el build si un título pasa de 60 caracteres o una descripción sale de 120-160. Sitemap con `@astrojs/sitemap`, `robots.txt` abierto a bots de IA, `llms.txt`, `og-image.png` y `logo.png`. URLs sin barra final (`trailingSlash: 'never'` + `build.format: 'file'` + `cleanUrls` en Vercel).
+- **Analítica:** GA4 y verificación de Search Console se activan rellenando `seo.analytics.ga4Id` y `seo.analytics.searchConsoleToken` en ambos archivos de contenido. Vacío = desactivado. GA4 solo carga en build de producción.
+- **Marketing:** contexto de producto en `.agents/product-marketing.md` (lo leen los skills de marketing) y plan de 90 días en `docs/marketing/`.
+- **Estado actual:** Landing de CiberEm con 6 features / 7 bloques, 4 páginas pilar (SOC como servicio, MDR, SOC para MSP, FAQ) y privacidad, todo en es/en. Sin `TODO` pendientes en `src/`.
+
+### 1.0 Rutas
+
+| Clave (`RouteKey`) | es | en | Página |
+| --- | --- | --- | --- |
+| `home` | `/` | `/en` | `pages/index.astro`, `pages/en/index.astro` |
+| `soc-service` | `/soc-como-servicio` | `/en/soc-as-a-service` | `pages/[pillar].astro`, `pages/en/[pillar].astro` |
+| `mdr` | `/mdr` | `/en/mdr` | idem |
+| `msp` | `/soc-para-msp` | `/en/soc-for-msps` | idem |
+| `faq` | `/preguntas-frecuentes` | `/en/faq` | idem |
+| `privacy` | `/privacidad` | `/en/privacy` | `pages/privacidad.astro`, `pages/en/privacy.astro` |
+
+Los slugs de pilares viven en el contenido (`pillars[key].slug`). Las rutas internas del contenido van **sin prefijo de idioma** (`/mdr`, `/#solucion`); `localizePath` añade `/en` cuando toca. `pathFor(key, locale)` y `alternatePaths(key)` resuelven URLs y hreflang.
+
+### 1.1 Mapa de secciones (orden top → bottom)
+
+| # | Bloque | id ancla | Componente | Slice de `siteContent` |
+| --- | --- | --- | --- | --- |
+| 1 | Hero (badge + H1 + lead + 2 CTAs + 4 highlights + mockup SOC) | `#top` | `features/hero/Hero.astro` | `hero` |
+| 2 | El Problema | `#problema` | `features/problem-solution/ProblemSolution.astro` | `problem` |
+| 3 | Nuestra Solución (3 pilares) | `#solucion` | (mismo componente) | `solution` |
+| 4 | Pensado para los cuatro perfiles (grid 4) | `#perfiles` | `features/personas/Personas.astro` | `personas` |
+| 5 | Diferenciadores (border-grid, 6 numerados) | `#diferenciadores` | `features/differentiators/Differentiators.astro` | `differentiators` |
+| 6 | Conócenos + Acerca de nosotros + tarjetas de equipo | `#equipo` | `features/team/Team.astro` | `team` |
+| 7 | CTA final con glows | `#contacto` | `features/cta/Cta.astro` | `cta` |
+
+Header (pill flotante con menú "Servicios" solo CSS y selector ES/EN) y Footer (3 columnas: Plataforma, Servicios, Empresa) consumen `nav`, `brand` y `footer`. Los enlaces a anclas usan `/#ancla` para funcionar también desde las páginas pilar; `smooth-scroll.ts` aplica un offset de 80px por el header. La sección Solución enlaza cada pilar a su página pilar.
 
 ---
 
@@ -28,7 +61,7 @@ Estos principios son **vinculantes** para cualquier cambio en el código.
 - Nombres descriptivos en variables, funciones, componentes y archivos. Nada de `data`, `tmp`, `foo`.
 - Funciones y componentes pequeños, con **una sola responsabilidad**.
 - Cada componente `.astro` debe ser autocontenido y exponer una API clara vía `Props`.
-- No mezclar lógica de presentación con lógica de negocio: la lógica reutilizable vive en `src/utils/`, y **todo el contenido textual del sitio vive en el source of truth `src/data/site.content.ts`** (no hardcodear copy en los componentes).
+- No mezclar lógica de presentación con lógica de negocio: la lógica reutilizable vive en `src/utils/`, y **todo el contenido textual del sitio vive en `src/data/content/{es,en}.ts`** (no hardcodear copy en los componentes).
 - Comentarios solo cuando el *por qué* no sea obvio. No comentar lo que el código ya dice.
 - Tipar siempre las `Props` con `interface Props`.
 - Eliminar código muerto inmediatamente. Nada de `// TODO` huérfanos ni archivos `*.old`.
@@ -37,7 +70,7 @@ Estos principios son **vinculantes** para cualquier cambio en el código.
 ### 2.2 DRY (Don't Repeat Yourself)
 
 - Si una pieza de UI aparece dos veces, **se extrae** a `src/components/ui/` o `src/components/layout/`.
-- **Source of truth único de contenido:** todos los textos, listas, navegación, SEO y datos de secciones viven en `src/data/site.content.ts` (objeto `siteContent`, tipado por sección). Cada feature importa su slice (`siteContent.hero`, `siteContent.personas`, …). **No** se crean archivos `*.data.ts` por feature ni se hardcodea copy en el markup.
+- **Source of truth único de contenido:** todos los textos, listas, navegación, SEO y datos de secciones viven en `src/data/content/es.ts` y `en.ts` (mismo tipo `SiteContent`). Cada feature obtiene su slice con `const { content } = useSiteContent(Astro)` (`content.hero`, `content.personas`, …). Todo texto nuevo se añade **en los dos idiomas**. **No** se crean archivos `*.data.ts` por feature ni se hardcodea copy en el markup.
 - Tokens visuales (colores, fuentes, spacing) **solo** en `src/styles/global.css` como variables CSS. Prohibido hardcodear colores en componentes.
 - Helpers reutilizables (SEO, formateo, slugs, etc.) en `src/utils/`.
 - Rutas de import largas se sustituyen por los alias `@components`, `@features`, `@layouts`, `@styles`, `@utils`, `@assets`, `@data`, `@/*` (definidos en `tsconfig.json`).
@@ -47,7 +80,7 @@ Estos principios son **vinculantes** para cualquier cambio en el código.
 Combinación de dos criterios de organización:
 
 - **Por tipo:** elementos transversales que sirven a toda la app — `layouts/`, `pages/`, `styles/`, `utils/`, `assets/`, y componentes reutilizables en `components/`.
-- **Por feature:** cada sección de la landing es una carpeta autocontenida dentro de `src/features/` con su componente y, si aplica, sus estilos y subcomponentes. El **contenido** no vive en la feature, sino en `src/data/site.content.ts`.
+- **Por feature:** cada sección de la landing es una carpeta autocontenida dentro de `src/features/` con su componente y, si aplica, sus estilos y subcomponentes. El **contenido** no vive en la feature, sino en `src/data/content/`.
 
 **Reglas:**
 
@@ -60,53 +93,86 @@ Combinación de dos criterios de organización:
 
 ## 3. Estructura de carpetas
 
-```
+```text
 landing-soc/
-├── public/                       # Assets servidos tal cual (favicon, robots, og-images)
-│   └── favicon.svg
+├── public/                       # Assets servidos tal cual
+│   ├── favicon.svg
+│   ├── robots.txt                #   - Allow all + referencia al sitemap
+│   ├── llms.txt                  #   - Resumen del producto y URLs para buscadores con IA
+│   ├── og-image.png              #   - 1200×630, generado con `pnpm og:image`
+│   ├── logo.png                  #   - 512×512, usado en el schema Organization
+│   └── team/                     #   - Fotos del equipo (referenciadas desde content.team.members[].photo)
+├── scripts/                      # Plantillas HTML + generador de og-image.png y logo.png (Playwright CLI)
 ├── docs/
-│   └── superpowers/specs/        # Specs de diseño aprobados
+│   ├── superpowers/specs/        # Specs de diseño aprobados
+│   │   ├── 2026-05-16-soc-landing-design.md          #   - Diseño visual original (base: landing-data.md)
+│   │   ├── 2026-06-17-cyberem-content-pivot-design.md #   - Pivote de contenido (histórico, marca anterior)
+│   │   └── 2026-09-26-seo-posicionamiento-design.md   #   - SEO técnico, bilingüe, pilares y plan
+│   ├── superpowers/plans/        # Planes de implementación
+│   └── marketing/                # Plan de SEO y posicionamiento a 90 días + baselines GEO
+├── landing-data.md               # Brief de marketing original (posicionamiento, personas, flujo). Referencia, no se importa.
 ├── src/
 │   ├── data/                     # [TIPO] SOURCE OF TRUTH — todo el contenido del sitio
-│   │   └── site.content.ts       #   - `siteContent`: brand, seo, nav, hero, problem, solution,
-│   │                             #     personas, differentiators, team, cta, footer (tipado por sección)
+│   │   ├── site.config.ts        #   - SITE_URL, CALENDLY_URL, locales, defaultLocale, tipo Locale
+│   │   ├── site.types.ts         #   - SiteContent y todas las interfaces por sección; PillarKey, RouteKey
+│   │   ├── site.content.ts       #   - getSiteContent(locale) + re-exports de config y tipos
+│   │   └── content/
+│   │       ├── es.ts             #   - Contenido en español (brand, seo, organization, nav, secciones,
+│   │       └── en.ts             #     pillars, legal, footer). Mismo tipo en ambos idiomas.
 │   ├── pages/                    # [TIPO] Rutas (cada archivo = una URL). Requerido por Astro.
-│   │   └── index.astro           #   - Orquesta layout + 6 features de la landing
+│   │   ├── index.astro           #   - Landing es
+│   │   ├── [pillar].astro        #   - 4 pilares es (getStaticPaths desde el contenido)
+│   │   ├── privacidad.astro
+│   │   └── en/                   #   - index.astro, [pillar].astro, privacy.astro
 │   ├── layouts/                  # [TIPO] Layouts compartidos (HTML base, wrappers)
-│   │   └── BaseLayout.astro      #   - <html lang="es"> + <head> + SEO meta + slots header/main/footer
+│   │   └── BaseLayout.astro      #   - Props: title, description, routeKey, jsonLd, image?
+│   │                             #   - lang dinámico, canonical, hreflang, OG, JSON-LD, GA4 opcional,
+│   │                             #     preload de Geist, assertSeoLengths
+│   │                             #   - Carga smooth-scroll.ts y analytics-events.ts al final del body
 │   ├── components/               # [TIPO] Componentes reutilizables (no atados a una feature)
 │   │   ├── ui/                   #   - Primitivos visuales
-│   │   │   ├── Button.astro      #     · primary (rojo #ff3241) / secondary (zinc outline) / ghost
+│   │   │   ├── Button.astro      #     · variant primary/secondary/ghost · size sm/md/lg · iconBefore/iconAfter · href o type
 │   │   │   ├── Container.astro   #     · max-w 1152px + px 24/48px
-│   │   │   ├── SectionHeading.astro
-│   │   │   ├── Card.astro        #     · variantes default/feature/bento/persona (legacy)
-│   │   │   ├── Badge.astro       #     · neutral/brand/cyan + severidad (legacy)
-│   │   │   └── Icon.astro        #     · renderiza SVG inline desde assets/icons.ts
+│   │   │   ├── Icon.astro        #     · renderiza SVG inline desde assets/icons.ts
+│   │   │   ├── SectionHeading.astro #  · SIN USO actualmente (legacy)
+│   │   │   ├── Card.astro        #     · SIN USO actualmente (legacy)
+│   │   │   └── Badge.astro       #     · SIN USO actualmente (legacy)
+│   │   ├── seo/
+│   │   │   └── JsonLd.astro      #   - <script type="application/ld+json"> con @graph
 │   │   └── layout/               #   - Composición de página
-│   │       ├── Header.astro      #     · pill flotante (top-4) con nav desde siteContent.nav
-│   │       └── Footer.astro      #     · brand + columnas desde siteContent.footer
-│   ├── features/                 # [FEATURE] 6 secciones autocontenidas (orden: top→bottom)
-│   │   ├── hero/                 #   - Badge + H1 + lead + 2 CTAs + 4 highlights + mockup SOC
-│   │   │   └── Hero.astro
-│   │   ├── problem-solution/     #   - "El Problema" (#problema) + "Nuestra Solución" (#solucion, 3 pilares)
-│   │   │   └── ProblemSolution.astro
-│   │   ├── personas/             #   - "Pensado para los cuatro perfiles" — grid de 4 tarjetas (#perfiles)
-│   │   │   └── Personas.astro
-│   │   ├── differentiators/      #   - "Diferenciadores" — border-grid 6 ítems numerados (#diferenciadores)
-│   │   │   └── Differentiators.astro
-│   │   ├── team/                 #   - "Conócenos" + "Acerca de nosotros" + tarjetas de equipo (#equipo)
-│   │   │   └── Team.astro
-│   │   └── cta/                  #   - CTA final con glows (#contacto)
-│   │       └── Cta.astro
+│   │       ├── Header.astro      #     · pill flotante: menú Servicios (CSS) + nav + ES/EN + CTA. Prop routeKey
+│   │       ├── Footer.astro      #     · brand + tagline + CTA + 3 columnas
+│   │       ├── LanguageSwitcher.astro # · enlaces ES/EN a la página equivalente. Prop routeKey
+│   │       └── Breadcrumb.astro  #     · migas con aria-current
+│   ├── features/                 # [FEATURE] Secciones autocontenidas
+│   │   ├── hero/Hero.astro
+│   │   ├── problem-solution/ProblemSolution.astro   # #problema + #solucion (pilares enlazan a páginas pilar)
+│   │   ├── personas/Personas.astro                  # #perfiles
+│   │   ├── differentiators/Differentiators.astro    # #diferenciadores
+│   │   ├── team/Team.astro                          # #equipo (fotos + LinkedIn)
+│   │   ├── cta/Cta.astro                            # #contacto (CTA → Calendly)
+│   │   ├── pillar/PillarPage.astro                  # página pilar: hero + secciones + FAQ + relacionados
+│   │   └── legal/LegalPage.astro                    # política de privacidad
 │   ├── styles/                   # [TIPO] Estilos globales y tokens
-│   │   └── global.css            #   - Variables CSS (surfaces, brand, severidad, tipografía)
+│   │   └── global.css            #   - @import de fuentes, variables CSS (surfaces, brand, severidad,
+│   │                             #     tipografía, radius, shadows, container, easing) + reveals
 │   ├── utils/                    # [TIPO] Helpers puros y reutilizables
-│   │   └── seo.ts                #   - buildTitle + defaultSeo (derivados de siteContent.seo)
+│   │   ├── i18n.ts               #   - useSiteContent, resolveLocale, localizePath, pathFor, alternatePaths
+│   │   ├── seo.ts                #   - absoluteUrl, assertSeoLengths, builders JSON-LD
+│   │   └── routes.ts             #   - pillarStaticPaths, breadcrumbFor, build{Home,Pillar,Legal}JsonLd
 │   ├── scripts/                  # [TIPO] Scripts client-side bundleados por Astro
-│   │   └── smooth-scroll.ts      #   - Init GSAP ScrollSmoother + respeta reduced-motion
-│   └── assets/                   # [TIPO] Assets procesados por Astro
-│       └── icons.ts              #   - Map { name → SVG paths } consumido por <Icon />
-├── astro.config.mjs              # Configuración de Astro
+│   │   ├── smooth-scroll.ts      #   - Scroll suave nativo a anclas + reveals con IntersectionObserver
+│   │   └── analytics-events.ts   #   - Evento GA4 demo_click en enlaces a Calendly
+│   ├── assets/                   # [TIPO] Assets procesados por Astro
+│   │   └── icons.ts              #   - Map { name → SVG paths } + tipo IconName, consumido por <Icon />
+│   └── env.d.ts                  # Tipos de Astro
+├── .agents/skills/               # Skills de diseño/frontend instaladas para agentes (ver skills-lock.json)
+├── .agents/product-marketing.md  # Contexto de producto, ICP, voz y diferenciadores para skills de marketing
+├── vercel.json                   # cleanUrls, sin barra final, 301 www → apex
+├── .claude/settings.json         # Permisos del agente (comandos vercel / dns / pnpm ya aprobados)
+├── .mcp.json                     # MCP servers del proyecto: sequential-thinking, context7
+├── skills-lock.json              # Lockfile de las skills de .agents/skills
+├── astro.config.mjs              # site https://ciberem.com, i18n es/en, sitemap, trailingSlash never, build.format file
 ├── tsconfig.json                 # TS strict + alias de imports
 ├── package.json                  # Manifest (packageManager: pnpm)
 ├── .npmrc                        # Config de pnpm
@@ -117,10 +183,12 @@ landing-soc/
 **Cómo añadir una nueva feature:**
 
 1. Crear `src/features/<nombre-feature>/`.
-2. Dentro, el componente principal `<NombreFeature>.astro` y subcomponentes locales si aplica. **El contenido NO va aquí:** añade su slice tipado a `src/data/site.content.ts` y consúmelo con `import { siteContent } from '@data/site.content'`.
-3. Importarla desde `src/pages/index.astro` (o la página correspondiente) usando el alias `@features/<nombre>/...`.
+2. Dentro, el componente principal `<NombreFeature>.astro` y subcomponentes locales si aplica. **El contenido NO va aquí:** añade la interfaz a `src/data/site.types.ts`, el slice a `content/es.ts` **y** `content/en.ts`, y consúmelo con `const { locale, content } = useSiteContent(Astro)`. Pasa cada `href` interno por `localizePath(href, locale)`.
+3. Importarla desde `src/pages/index.astro` **y** `src/pages/en/index.astro` (o las páginas correspondientes) usando el alias `@features/<nombre>/...`.
 4. Si algún elemento se vuelve reutilizable por otra feature, **moverlo** a `src/components/` y actualizar imports.
-5. **Actualizar la sección 3 de este CLAUDE.md** con la nueva carpeta.
+5. **Actualizar la sección 1.1 y la sección 3 de este CLAUDE.md** con la nueva sección/carpeta.
+
+**Cómo añadir una página nueva:** añade su clave a `RouteKey` en `site.types.ts`, su slug y SEO al contenido de ambos idiomas, resuelve la ruta en `unprefixedPathFor` (`@utils/i18n`), crea la página es y en pasando `routeKey` y `jsonLd` a `BaseLayout`, y enlázala desde nav o footer. El título debe quedar en ≤ 60 caracteres y la descripción en 120-160, o el build falla.
 
 ---
 
@@ -145,12 +213,15 @@ Definidos en `tsconfig.json`. Úsalos siempre en lugar de rutas relativas largas
 
 ```bash
 pnpm install            # Instalar dependencias
-pnpm dev                # Servidor de desarrollo (http://localhost:4321)
+pnpm dev                # Servidor de desarrollo (http://localhost:4321, host: true)
 pnpm build              # Build de producción a dist/
 pnpm preview            # Previsualizar el build
 pnpm check              # Type-check con astro check
+pnpm og:image           # Regenera public/og-image.png y public/logo.png desde scripts/*.html
 pnpm astro add <pkg>    # Añadir integraciones / adapters de Astro
 ```
+
+`pnpm og:image` necesita Chromium de Playwright una vez por máquina: `npx playwright install chromium`.
 
 **No usar `npm` ni `yarn`** en este proyecto. El campo `packageManager` y `engines.pnpm` en `package.json` lo fuerzan.
 
@@ -159,41 +230,57 @@ pnpm astro add <pkg>    # Añadir integraciones / adapters de Astro
 ## 6. Convenciones de código
 
 - **Componentes Astro:** PascalCase (`Hero.astro`, `Button.astro`).
-- **Contenido:** un único `src/data/site.content.ts` (objeto `siteContent` tipado por sección). No crear `*.data.ts` por feature.
+- **Contenido:** `src/data/content/es.ts` y `en.ts`, tipados por `SiteContent`. No crear `*.data.ts` por feature. Todo cambio de copy se hace en los dos idiomas.
 - **Utils:** camelCase (`seo.ts`, `formatDate.ts`).
-- **CSS:** clases en kebab-case. Estilos *scoped* dentro del componente; globales solo en `src/styles/global.css`.
+- **CSS:** clases en kebab-case (BEM-ish: `bloque__elemento`). Estilos *scoped* dentro del componente; globales solo en `src/styles/global.css`.
 - **Props:** siempre declaradas vía `interface Props` con tipos explícitos y valores por defecto donde aplique.
 - **Imports:** primero externos, luego alias internos, separados por una línea en blanco.
+- **Iconos:** cualquier icono nuevo se añade a `src/assets/icons.ts`; el tipo `IconName` se deriva del map, así que `site.content.ts` queda tipado automáticamente.
+- **Animaciones:** solo CSS + `smooth-scroll.ts`. Para que un elemento aparezca al hacer scroll, añádele `data-reveal` (el script le pone `reveal-on-scroll` y luego `is-revealed`; `--reveal-index` escalona hermanos 60ms). El hero usa la clase `.reveal` con `--reveal-delay` (CSS puro). Todo respeta `prefers-reduced-motion`. **No reintroducir GSAP.**
 
 ---
 
 ## 7. Estado de dependencias
 
-| Paquete | Versión | Notas |
-| ------- | ------- | ----- |
-| astro                          | ^4.16.0 | Framework base |
-| @fontsource-variable/geist     | ^5.2.8  | Fuente UI (sans body) — auto-hospedada |
-| @fontsource/instrument-serif   | ^5.2.8  | Fuente display (titulares editoriales) |
-| @fontsource/jetbrains-mono     | ^5.2.8  | Fuente monoespaciada (datos / IOCs) |
-| gsap                           | ^3.15.0 | Animaciones + ScrollSmoother (smooth scroll). 100% free desde 2024 — incluye plugins Club |
+| Paquete | Versión | Tipo | Notas |
+| ------- | ------- | ---- | ----- |
+| astro | ^4.16.0 | dep | Framework base |
+| @astrojs/sitemap | 3.2.1 | dep | Sitemap. Fijada; versiones más nuevas no se han probado con Astro 4 |
+| @fontsource-variable/geist | ^5.2.8 | dep | Fuente UI (display + body) — auto-hospedada |
+| @fontsource/jetbrains-mono | ^5.2.8 | dep | Fuente monoespaciada (datos / IOCs), solo peso 500 |
+| @astrojs/check | ^0.9.9 | dev | Requerido por `pnpm check` |
+| typescript | ^5.6.3 | dev | Compilador para `astro check` |
+
+**Eliminadas** (no reintroducir sin motivo): `gsap` (reemplazado por scroll nativo + IntersectionObserver, ~110KB menos), `@fontsource/instrument-serif` (el display ahora es Geist).
 
 *Actualizar esta tabla al añadir o subir cualquier dependencia.*
 
 ---
 
-## 8. Pendientes conocidos
+## 8. Despliegue
 
-- [ ] Definir adapter de despliegue (Vercel / Netlify / Cloudflare / Node).
-- [ ] Completar datos reales del equipo y copy de "Acerca de nosotros" en `site.content.ts` (placeholders marcados con `TODO`).
-- [ ] Definir la URL de "Ver Plataforma".
-- [ ] Añadir meta tags OG / Twitter (`src/utils/seo.ts` ya está preparado).
-- [ ] Añadir `robots.txt` y `sitemap` (`@astrojs/sitemap`).
-- [ ] Decidir si se incorporará Tailwind o se mantiene CSS plano.
+- **Plataforma:** Vercel, proyecto `landing-soc`, output estático de `pnpm build` (`dist/`). No requiere adapter.
+- **Dominios:** `ciberem.com` y `www.ciberem.com` añadidos al proyecto en Vercel (ver comandos aprobados en `.claude/settings.json`). `vercel.json` redirige www al apex con 301.
+- **Tras cada deploy relevante:** comprobar canonical y hreflang en producción, reenviar el sitemap en Search Console si cambian URLs, y validar schema con Rich Results Test.
 
 ---
 
-## 9. Regla de mantenimiento de este archivo
+## 9. Pendientes conocidos
+
+- [ ] Pegar `ga4Id` y `searchConsoleToken` en `seo.analytics` (es y en) cuando existan las propiedades.
+- [ ] Añadir LinkedIn de empresa y Crunchbase a `organization.sameAs` (es y en) cuando existan.
+- [ ] Contraste del botón primario: texto blanco sobre #ff3241 da 3.1:1 (WCAG AA pide 4.5:1). Decisión de diseño.
+- [ ] Menú móvil: por debajo de 880px el nav se oculta; el footer mantiene todos los enlaces.
+- [ ] Definir la URL real de "Ver Plataforma" (hoy `/#solucion`).
+- [ ] Decidir si se eliminan `Card.astro`, `Badge.astro` y `SectionHeading.astro` (sin uso desde el pivote a CiberEm).
+- [ ] Backlog de contenido (blog, comparativas, casos): ver `docs/marketing/estrategia-seo-posicionamiento.md`.
+
+**Resueltos:** adapter de despliegue (Vercel estático), datos reales del equipo, meta tags OG/Twitter, decisión Tailwind (CSS plano), `site` real, `og-image.png`, `robots.txt`, sitemap, JSON-LD, hreflang, redirect www, versión en inglés, páginas pilar, marca CiberEm.
+
+---
+
+## 10. Regla de mantenimiento de este archivo
 
 > **En cada cambio que afecte estructura, dependencias, scripts, principios o convenciones, este `CLAUDE.md` se actualiza en el mismo commit / mismo cambio.**
 >
-> Antes de cerrar una tarea, revisa: ¿la sección 3 (estructura), 5 (comandos) y 7 (dependencias) siguen siendo verdad? Si no, actualízalas.
+> Antes de cerrar una tarea, revisa: ¿las secciones 1.0 (rutas), 1.1 (mapa de secciones), 3 (estructura), 5 (comandos), 7 (dependencias) y 9 (pendientes) siguen siendo verdad? Si no, actualízalas.

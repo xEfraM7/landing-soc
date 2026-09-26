@@ -6,7 +6,7 @@
 
 **Architecture:** El contenido se divide en `src/data/content/{es,en}.ts` tipados por `SiteContent`; `getSiteContent(locale)` reemplaza el import directo. Astro i18n nativo sirve `/` (es) y `/en/` (en). Un `PillarPage` reutilizable renderiza 4 páginas pilar por idioma desde rutas dinámicas `[pillar].astro`. `BaseLayout` emite canonical, hreflang, OG y un `@graph` JSON-LD construido en `utils/seo.ts`.
 
-**Tech Stack:** Astro 4.16 (i18n nativo), `@astrojs/sitemap` 3.2.1 (compatible con Astro 4), CSS plano con tokens, Playwright CLI (ya disponible vía `npx`) para generar `og-image.png` y `logo.png`.
+**Tech Stack:** Astro 4.16 (i18n nativo), `@astrojs/sitemap` 3.2.1, CSS plano con tokens, Playwright CLI (ya disponible vía `npx`) para generar `og-image.png` y `logo.png`.
 
 ## Global Constraints
 
