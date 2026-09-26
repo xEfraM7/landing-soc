@@ -6,13 +6,13 @@ const LINKEDIN_EFRAIN = 'https://www.linkedin.com/in/efrain-cabrera-b25489216/';
 
 export const es: SiteContent = {
   brand: {
-    name: 'CyberEM',
+    name: 'CiberEm',
     icon: 'shield',
     homeHref: '/',
   },
 
   seo: {
-    title: 'Plataforma SOC de detección y respuesta | CyberEM',
+    title: 'Plataforma SOC de detección y respuesta | CiberEm',
     description:
       'Plataforma SOC con monitoreo 24/7, gestión de incidentes y respuesta ante amenazas para empresas y MSPs. Detecta, investiga y responde sin un SOC interno.',
     analytics: {
@@ -22,7 +22,7 @@ export const es: SiteContent = {
   },
 
   organization: {
-    legalName: 'CyberEM',
+    legalName: 'CiberEm',
     foundingYear: 2025,
     sameAs: [LINKEDIN_MAURIZIO, LINKEDIN_EFRAIN],
     contactUrl: CALENDLY_URL,
@@ -75,7 +75,7 @@ export const es: SiteContent = {
   solution: {
     eyebrow: 'Nuestra propuesta',
     heading: 'Nuestra Solución',
-    lead: 'CyberEM centraliza la detección, investigación y respuesta ante amenazas en una sola plataforma.',
+    lead: 'CiberEm centraliza la detección, investigación y respuesta ante amenazas en una sola plataforma.',
     paragraphs: [
       'Ayudamos a organizaciones y proveedores de servicios gestionados (MSP) a reducir el ruido, priorizar los incidentes que realmente importan y responder más rápido ante posibles ataques.',
       'Con monitoreo continuo, visibilidad centralizada y automatización de procesos, los equipos de seguridad pueden enfocarse en proteger el negocio en lugar de gestionar herramientas aisladas.',
@@ -138,7 +138,7 @@ export const es: SiteContent = {
   },
 
   differentiators: {
-    eyebrow: 'Por qué CyberEM',
+    eyebrow: 'Por qué CiberEm',
     heading: 'Diferenciadores',
     lead: 'Lo que hace distinta a nuestra plataforma frente a un stack de herramientas aisladas.',
     items: [
@@ -181,7 +181,7 @@ export const es: SiteContent = {
     about: {
       heading: 'Acerca de nosotros',
       paragraphs: [
-        'Somos dos co-fundadores con perfiles complementarios: ciberseguridad técnica e ingeniería de software. Creamos CyberEM convencidos de que la detección y respuesta ante amenazas debe ser accesible para empresas de todos los tamaños, no solo para grandes corporaciones con equipos SOC internos.',
+        'Somos dos co-fundadores con perfiles complementarios: ciberseguridad técnica e ingeniería de software. Creamos CiberEm convencidos de que la detección y respuesta ante amenazas debe ser accesible para empresas de todos los tamaños, no solo para grandes corporaciones con equipos SOC internos.',
         'Combinamos experiencia operativa en seguridad ofensiva y defensiva con ingeniería de producto para construir una plataforma que reduce el tiempo de detección, elimina el ruido y permite a los equipos responder con rapidez y contexto.',
       ],
     },
@@ -189,14 +189,14 @@ export const es: SiteContent = {
       {
         name: 'Maurizio Cucina',
         role: 'Co-Fundador · Ciberseguridad',
-        bio: 'Licenciado en Ciberseguridad. Responsable de la estrategia técnica de detección, investigación y respuesta ante amenazas en CyberEM.',
+        bio: 'Licenciado en Ciberseguridad. Responsable de la estrategia técnica de detección, investigación y respuesta ante amenazas en CiberEm.',
         photo: '/team/maurizio-cucina.jpg',
         linkedin: LINKEDIN_MAURIZIO,
       },
       {
         name: 'Efrain Cabrera',
         role: 'Co-Fundador · Desarrollo',
-        bio: 'Ingeniero en Informática con experiencia en ciberseguridad y desarrollo de aplicaciones web. Responsable de arquitectura y producto en CyberEM.',
+        bio: 'Ingeniero en Informática con experiencia en ciberseguridad y desarrollo de aplicaciones web. Responsable de arquitectura y producto en CiberEm.',
         photo: '/team/efrain-cabrera.png',
         linkedin: LINKEDIN_EFRAIN,
       },
@@ -205,7 +205,7 @@ export const es: SiteContent = {
 
   cta: {
     heading: 'Protege tu negocio con detección y respuesta gestionada',
-    lead: 'Solicita una demo y descubre cómo CyberEM unifica el monitoreo, la investigación y la respuesta en una sola plataforma.',
+    lead: 'Solicita una demo y descubre cómo CiberEm unifica el monitoreo, la investigación y la respuesta en una sola plataforma.',
     primaryCta: { label: 'Agendar una reunión', href: CALENDLY_URL },
     secondaryCta: { label: 'Ver Plataforma', href: '/#solucion' },
   },
@@ -214,13 +214,13 @@ export const es: SiteContent = {
     'soc-service': {
       slug: 'soc-como-servicio',
       seo: {
-        title: 'SOC como servicio 24/7 para empresas | CyberEM',
+        title: 'SOC como servicio 24/7 para empresas | CiberEm',
         description:
-          'SOC como servicio con monitoreo 24/7, detección con MITRE ATT&CK y respuesta ante incidentes. Sin construir un SOC interno: empieza con una demo de CyberEM.',
+          'SOC como servicio con monitoreo 24/7, detección con MITRE ATT&CK y respuesta ante incidentes. Sin construir un SOC interno: empieza con una demo de CiberEm.',
       },
       eyebrow: 'SOC como servicio',
       title: 'SOC como servicio: monitoreo, detección y respuesta 24/7',
-      lead: 'Un Centro de Operaciones de Seguridad completo, operado desde la plataforma CyberEM, sin contratar un equipo interno ni integrar cinco consolas distintas.',
+      lead: 'Un Centro de Operaciones de Seguridad completo, operado desde la plataforma CiberEm, sin contratar un equipo interno ni integrar cinco consolas distintas.',
       serviceType: 'SOC como servicio',
       sections: [
         {
@@ -231,9 +231,9 @@ export const es: SiteContent = {
           ],
         },
         {
-          heading: 'Qué incluye el SOC de CyberEM',
+          heading: 'Qué incluye el SOC de CiberEm',
           paragraphs: [
-            'CyberEM unifica en una sola consola las piezas que normalmente viven en herramientas separadas: SIEM y EDR con Wazuh, gestión de casos con TheHive y Cortex, vulnerabilidades con DefectDojo y enriquecimiento de indicadores con GreyNoise.',
+            'CiberEm unifica en una sola consola las piezas que normalmente viven en herramientas separadas: SIEM y EDR con Wazuh, gestión de casos con TheHive y Cortex, vulnerabilidades con DefectDojo y enriquecimiento de indicadores con GreyNoise.',
           ],
           bullets: [
             'Monitoreo continuo con alertas en tiempo real vía streaming, clasificadas por severidad.',
@@ -268,7 +268,7 @@ export const es: SiteContent = {
         {
           question: '¿Qué diferencia un SOC como servicio de un SOC interno?',
           answer:
-            'El SOC interno requiere contratar analistas, licenciar herramientas y cubrir turnos 24/7. El SOC como servicio entrega la misma capacidad de detección y respuesta como un servicio operado desde la plataforma CyberEM, con costes previsibles y puesta en marcha en días.',
+            'El SOC interno requiere contratar analistas, licenciar herramientas y cubrir turnos 24/7. El SOC como servicio entrega la misma capacidad de detección y respuesta como un servicio operado desde la plataforma CiberEm, con costes previsibles y puesta en marcha en días.',
         },
         {
           question: '¿Qué herramientas integra?',
@@ -297,9 +297,9 @@ export const es: SiteContent = {
     mdr: {
       slug: 'mdr',
       seo: {
-        title: 'MDR: detección y respuesta gestionada | CyberEM',
+        title: 'MDR: detección y respuesta gestionada | CiberEm',
         description:
-          'MDR de CyberEM: detección gestionada mapeada a MITRE ATT&CK, respuesta activa en el endpoint y métricas MTTD y MTTR para tu equipo de seguridad.',
+          'MDR de CiberEm: detección gestionada mapeada a MITRE ATT&CK, respuesta activa en el endpoint y métricas MTTD y MTTR para tu equipo de seguridad.',
       },
       eyebrow: 'MDR',
       title: 'MDR: detección y respuesta gestionada ante amenazas',
@@ -310,7 +310,7 @@ export const es: SiteContent = {
           heading: 'Qué es MDR',
           paragraphs: [
             'MDR (Managed Detection and Response) es un servicio de seguridad que combina tecnología de detección con analistas que investigan las alertas y ejecutan la respuesta. Mientras un EDR o un SIEM generan señales, el MDR se hace cargo de convertirlas en incidentes gestionados hasta su contención.',
-            'En CyberEM el MDR se apoya en la telemetría de Wazuh, la gestión de casos de TheHive y el enriquecimiento de Cortex y GreyNoise, todo dentro de una consola con trazabilidad completa.',
+            'En CiberEm el MDR se apoya en la telemetría de Wazuh, la gestión de casos de TheHive y el enriquecimiento de Cortex y GreyNoise, todo dentro de una consola con trazabilidad completa.',
           ],
         },
         {
@@ -343,7 +343,7 @@ export const es: SiteContent = {
         {
           question: '¿MDR es lo mismo que EDR?',
           answer:
-            'No. El EDR es la tecnología que recoge telemetría y detecta en el endpoint. El MDR es el servicio que investiga esas detecciones y ejecuta la respuesta. CyberEM usa Wazuh como capa EDR/SIEM y añade la gestión, la investigación y la respuesta.',
+            'No. El EDR es la tecnología que recoge telemetría y detecta en el endpoint. El MDR es el servicio que investiga esas detecciones y ejecuta la respuesta. CiberEm usa Wazuh como capa EDR/SIEM y añade la gestión, la investigación y la respuesta.',
         },
         {
           question: '¿Qué acciones de respuesta se ejecutan?',
@@ -372,7 +372,7 @@ export const es: SiteContent = {
     msp: {
       slug: 'soc-para-msp',
       seo: {
-        title: 'SOC multi-tenant para MSP y MSSP | CyberEM',
+        title: 'SOC multi-tenant para MSP y MSSP | CiberEm',
         description:
           'SOC multi-tenant para MSP y MSSP: aísla datos por cliente, RBAC de 4 roles, auditoría completa y reportes por organización desde una sola consola.',
       },
@@ -385,7 +385,7 @@ export const es: SiteContent = {
           heading: 'Por qué un MSP necesita un SOC multi-tenant',
           paragraphs: [
             'Un proveedor de servicios gestionados atiende a decenas de clientes con infraestructuras distintas. Operar una consola de seguridad por cliente multiplica el coste y el tiempo de respuesta; mezclar los datos en una sola rompe la confidencialidad. La multi-tenancy resuelve ambos problemas: un solo despliegue, datos separados por organización.',
-            'CyberEM está diseñado desde el origen para MSP y MSSP: cada organización tiene sus propios agentes, alertas, casos y vulnerabilidades, y el administrador cambia de cliente desde un conmutador sin volver a iniciar sesión.',
+            'CiberEm está diseñado desde el origen para MSP y MSSP: cada organización tiene sus propios agentes, alertas, casos y vulnerabilidades, y el administrador cambia de cliente desde un conmutador sin volver a iniciar sesión.',
           ],
         },
         {
@@ -448,9 +448,9 @@ export const es: SiteContent = {
     faq: {
       slug: 'preguntas-frecuentes',
       seo: {
-        title: 'Preguntas frecuentes sobre SOC y MDR | CyberEM',
+        title: 'Preguntas frecuentes sobre SOC y MDR | CiberEm',
         description:
-          'Respuestas a las preguntas frecuentes sobre la plataforma SOC de CyberEM: integraciones, MDR, MITRE ATT&CK, multi-tenancy, auditoría y cómo agendar una demo.',
+          'Respuestas a las preguntas frecuentes sobre la plataforma SOC de CiberEm: integraciones, MDR, MITRE ATT&CK, multi-tenancy, auditoría y cómo agendar una demo.',
       },
       eyebrow: 'FAQ',
       title: 'Preguntas frecuentes',
@@ -459,7 +459,7 @@ export const es: SiteContent = {
         {
           heading: 'Sobre la plataforma',
           paragraphs: [
-            'CyberEM es una plataforma SOC que centraliza detección, investigación y respuesta ante amenazas. Se ofrece como SOC como servicio y como MDR para empresas, y como consola multi-tenant para MSP y MSSP.',
+            'CiberEm es una plataforma SOC que centraliza detección, investigación y respuesta ante amenazas. Se ofrece como SOC como servicio y como MDR para empresas, y como consola multi-tenant para MSP y MSSP.',
           ],
         },
         {
@@ -478,7 +478,7 @@ export const es: SiteContent = {
       faqHeading: 'Todas las preguntas',
       faq: [
         {
-          question: '¿Con qué herramientas se integra CyberEM?',
+          question: '¿Con qué herramientas se integra CiberEm?',
           answer:
             'Wazuh (SIEM/EDR), TheHive y Cortex (gestión de casos y analizadores), DefectDojo (vulnerabilidades) y GreyNoise (enriquecimiento de IOC).',
         },
@@ -505,7 +505,7 @@ export const es: SiteContent = {
         {
           question: '¿Qué son MTTD y MTTR?',
           answer:
-            'MTTD es el tiempo medio hasta detectar una amenaza y MTTR el tiempo medio hasta resolverla. CyberEM los calcula automáticamente a partir del ciclo de vida de cada caso, junto con el MTTC (contención).',
+            'MTTD es el tiempo medio hasta detectar una amenaza y MTTR el tiempo medio hasta resolverla. CiberEm los calcula automáticamente a partir del ciclo de vida de cada caso, junto con el MTTC (contención).',
         },
         {
           question: '¿Cómo agendo una demo?',
@@ -526,7 +526,7 @@ export const es: SiteContent = {
     privacy: {
       slug: 'privacidad',
       seo: {
-        title: 'Política de privacidad | CyberEM',
+        title: 'Política de privacidad | CiberEm',
         description:
           'Política de privacidad de ciberem.com: qué datos recogemos, qué servicios de terceros usamos (Calendly, Vercel, Google Analytics) y cómo ejercer tus derechos.',
       },
@@ -537,7 +537,7 @@ export const es: SiteContent = {
         {
           heading: 'Responsable',
           paragraphs: [
-            'CyberEM es responsable del tratamiento de los datos recogidos a través de ciberem.com. Para cualquier consulta sobre privacidad puedes contactarnos agendando una reunión desde el botón "Solicitar Demo" o a través de los perfiles de LinkedIn de los fundadores enlazados en la sección Equipo.',
+            'CiberEm es responsable del tratamiento de los datos recogidos a través de ciberem.com. Para cualquier consulta sobre privacidad puedes contactarnos agendando una reunión desde el botón "Solicitar Demo" o a través de los perfiles de LinkedIn de los fundadores enlazados en la sección Equipo.',
           ],
         },
         {
@@ -599,6 +599,6 @@ export const es: SiteContent = {
         ],
       },
     ],
-    copyright: 'CyberEM. Todos los derechos reservados.',
+    copyright: 'CiberEm. Todos los derechos reservados.',
   },
 };

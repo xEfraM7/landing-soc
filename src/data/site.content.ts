@@ -1,5 +1,5 @@
 /**
- * Source of truth del sitio CyberEM.
+ * Source of truth del sitio CiberEm.
  *
  * Todo el copy vive en `content/es.ts` y `content/en.ts`, tipados por `SiteContent`.
  * Los componentes obtienen su slice con `useSiteContent(Astro)` (ver `@utils/i18n`);

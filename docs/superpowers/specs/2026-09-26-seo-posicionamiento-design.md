@@ -7,7 +7,7 @@
 
 ## 1. Objetivo
 
-Convertir la landing de CyberEM (una sola URL en español, sin señales SEO válidas en producción) en un
+Convertir la landing de CiberEm (una sola URL en español, sin señales SEO válidas en producción) en un
 sitio indexable, bilingüe (es/en) con páginas pilar por keyword comercial y datos estructurados, y
 entregar un plan de marketing/posicionamiento a 90 días para publicitarla y llegar a más público.
 

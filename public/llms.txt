@@ -1,4 +1,4 @@
-# CyberEM
+# CiberEm
 
 > Plataforma SOC (Security Operations Center) para empresas y MSPs: detección, investigación y respuesta ante amenazas desde una sola consola. Integra Wazuh (SIEM/EDR), TheHive/Cortex (casos), DefectDojo (vulnerabilidades) y GreyNoise (enriquecimiento de IOC); mapea alertas a MITRE ATT&CK; multi-tenant con RBAC de 4 roles y auditoría completa. Se ofrece como SOC como servicio y MDR. Sitio en español (por defecto) e inglés (/en).
 

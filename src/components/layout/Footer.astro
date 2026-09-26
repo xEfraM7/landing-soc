@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
 
       {footer.columns.map((column) => (
         <nav class="col" aria-label={column.heading}>
-          <h4>{column.heading}</h4>
+          <h2 class="col__title">{column.heading}</h2>
           <ul role="list">
             {column.links.map((link) => (
               <li><a href={href(link.href)}>{link.label}</a></li>
@@ -106,7 +106,7 @@ const year = new Date().getFullYear();
     line-height: 1.55;
   }
 
-  .col h4 {
+  .col__title {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--fg-strong);
