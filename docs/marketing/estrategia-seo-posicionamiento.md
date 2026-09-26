@@ -14,7 +14,7 @@ CiberEm ya tiene un sitio técnicamente correcto: 12 URLs indexables en español
 Tres apuestas para los próximos 90 días:
 
 1. **Fundación medible.** Search Console, GA4 y Bing Webmaster activos en la semana 1, con el evento `demo_click` como conversión.
-2. **Autoridad de entidad.** LinkedIn de empresa, Crunchbase, perfiles en directorios SaaS y de ciberseguridad. Esto alimenta a Google y a los buscadores con IA para reconocer "CiberEm" como marca.
+2. **Autoridad de entidad.** LinkedIn de empresa, Crunchbase, perfiles en directorios SaaS y de ciberseguridad. Esto alimenta a Google y a los buscadores con IA para reconocer "CiberEm" como marca. Es urgente: hoy "ciberem" devuelve sobre todo una aldea de Indonesia (ver [baseline GEO](geo-baseline-2026-09-26.md)), así que la marca debe presentarse siempre como "CiberEm, plataforma SOC".
 3. **Demanda directa a MSPs.** LinkedIn de los fundadores y outbound a MSPs. Es el canal que produce demos antes de que el SEO madure (el SEO tarda 3-6 meses en mover tráfico).
 
 Resultado esperado a 90 días: marca indexada y reconocida, las 4 páginas pilar con impresiones en Search Console, al menos 20 dominios de referencia y un flujo semanal de demos procedente de LinkedIn y outbound.

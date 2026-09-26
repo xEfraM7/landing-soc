@@ -34,6 +34,9 @@ export const buildOrganizationJsonLd = (content: SiteContent) => ({
   '@id': ORGANIZATION_ID,
   name: content.brand.name,
   legalName: content.organization.legalName,
+  // Desambigua la marca frente a otras entidades llamadas "Ciberem".
+  description: content.footer.tagline,
+  knowsAbout: ['Security Operations Center', 'Managed Detection and Response', 'MITRE ATT&CK'],
   url: SITE_URL,
   logo: absoluteUrl('/logo.png'),
   foundingDate: String(content.organization.foundingYear),
