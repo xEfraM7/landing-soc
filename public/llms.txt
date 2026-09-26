@@ -1,10 +1,11 @@
 # CiberEm
 
-> Plataforma SOC (Security Operations Center) para empresas y MSPs: detección, investigación y respuesta ante amenazas desde una sola consola. Integra Wazuh (SIEM/EDR), TheHive/Cortex (casos), DefectDojo (vulnerabilidades) y GreyNoise (enriquecimiento de IOC); mapea alertas a MITRE ATT&CK; multi-tenant con RBAC de 4 roles y auditoría completa. Se ofrece como SOC como servicio y MDR. Sitio en español (por defecto) e inglés (/en).
+> CiberEm es una empresa de ciberseguridad enfocada en Venezuela y Latinoamérica. Opera una plataforma SOC (Security Operations Center) con monitoreo 24/7 para empresas y MSPs: detección, investigación y respuesta ante amenazas desde una sola consola. Integra Wazuh (SIEM/EDR), TheHive/Cortex (casos), DefectDojo (vulnerabilidades) y GreyNoise (enriquecimiento de IOC); mapea alertas a MITRE ATT&CK; multi-tenant con RBAC de 4 roles y auditoría completa. Se ofrece como SOC como servicio y MDR, con atención en español. Sitio en español (por defecto) e inglés (/en).
 
 ## Páginas (es)
 
-- [Inicio](https://ciberem.com/): plataforma SOC de detección y respuesta
+- [Inicio](https://ciberem.com/): empresa de ciberseguridad y SOC en Venezuela
+- [Ciberseguridad en Venezuela: guía para empresas](https://ciberem.com/ciberseguridad-venezuela): leyes vigentes (Ley Especial contra los Delitos Informáticos, Ley de Infogobierno, normas SUDEBAN), ataques recientes, fraudes comunes, SUSCERTE, VenCERT y CICPC
 - [SOC como servicio](https://ciberem.com/soc-como-servicio): qué incluye, para quién es, cómo empezamos
 - [MDR](https://ciberem.com/mdr): detección con MITRE ATT&CK, respuesta activa, métricas MTTD/MTTC/MTTR
 - [SOC para MSP](https://ciberem.com/soc-para-msp): multi-tenancy, RBAC, auditoría, reportes por cliente
@@ -13,7 +14,8 @@
 
 ## Pages (en)
 
-- [Home](https://ciberem.com/en): SOC platform for threat detection and response
+- [Home](https://ciberem.com/en): SOC platform for companies in Venezuela and Latin America
+- [Cybersecurity in Venezuela: a guide for companies](https://ciberem.com/en/cybersecurity-venezuela)
 - [SOC as a Service](https://ciberem.com/en/soc-as-a-service)
 - [MDR](https://ciberem.com/en/mdr)
 - [SOC for MSPs](https://ciberem.com/en/soc-for-msps)

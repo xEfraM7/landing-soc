@@ -32,9 +32,14 @@ export interface OrganizationContent {
   contactUrl: string;
 }
 
-export type PillarKey = 'soc-service' | 'mdr' | 'msp' | 'faq';
+export type PillarKey = 'venezuela' | 'soc-service' | 'mdr' | 'msp' | 'faq';
 export type RouteKey = 'home' | PillarKey | 'privacy';
-export const pillarKeys: PillarKey[] = ['soc-service', 'mdr', 'msp', 'faq'];
+export const pillarKeys: PillarKey[] = ['venezuela', 'soc-service', 'mdr', 'msp', 'faq'];
+
+export interface SourceLink {
+  label: string;
+  url: string;
+}
 
 export interface FaqItem {
   question: string;
@@ -60,6 +65,10 @@ export interface PillarPageContent {
   faqHeading: string;
   faq: FaqItem[];
   relatedHeading: string;
+  /** Señal de frescura visible. ISO yyyy-mm-dd + etiqueta localizada. */
+  updated?: { date: string; label: string };
+  /** Fuentes citadas: los buscadores con IA priorizan contenido con referencias. */
+  sources?: { heading: string; links: SourceLink[] };
 }
 
 export interface LegalPageContent {

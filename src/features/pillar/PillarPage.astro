@@ -31,6 +31,13 @@ const related = pillarKeys
       </span>
       <h1 class="pillar-hero__title"><span class="text-gradient">{pillar.title}</span></h1>
       <p class="pillar-hero__lead">{pillar.lead}</p>
+      {
+        pillar.updated && (
+          <p class="pillar-hero__updated">
+            <time datetime={pillar.updated.date}>{pillar.updated.label}</time>
+          </p>
+        )
+      }
     </Container>
   </header>
 
@@ -69,6 +76,23 @@ const related = pillarKeys
         ))
       }
     </section>
+
+    {
+      pillar.sources && (
+        <section class="block sources">
+          <h2>{pillar.sources.heading}</h2>
+          <ol>
+            {pillar.sources.links.map((source) => (
+              <li>
+                <a href={source.url} target="_blank" rel="noopener">
+                  {source.label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
 
     <nav class="block related" aria-label={pillar.relatedHeading}>
       <h2>{pillar.relatedHeading}</h2>
@@ -135,6 +159,36 @@ const related = pillarKeys
     font-size: 1.125rem;
     line-height: 1.6;
     color: var(--fg-default);
+  }
+
+  .pillar-hero__updated {
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+  }
+
+  .sources ol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding-left: 1.25rem;
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+  }
+
+  .sources a {
+    color: var(--fg-default);
+    text-decoration: underline;
+    text-decoration-color: var(--border-strong);
+    text-underline-offset: 3px;
+    word-break: break-word;
+  }
+
+  .sources a:hover {
+    color: var(--fg-strong);
+    text-decoration-color: var(--brand-500);
   }
 
   .pillar-body {

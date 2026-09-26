@@ -36,6 +36,7 @@ export const en: SiteContent = {
     ],
     servicesLabel: 'Services',
     services: [
+      { label: 'Cybersecurity in Venezuela', href: '/cybersecurity-venezuela' },
       { label: 'SOC as a Service', href: '/soc-as-a-service' },
       { label: 'MDR', href: '/mdr' },
       { label: 'SOC for MSPs', href: '/soc-for-msps' },
@@ -48,9 +49,9 @@ export const en: SiteContent = {
   breadcrumb: { homeLabel: 'Home' },
 
   hero: {
-    eyebrow: 'SOC · Detection and Response',
+    eyebrow: 'SOC · Venezuela & Latin America',
     title: 'SOC platform: we detect and respond before the threat hits your business.',
-    lead: '24/7 SOC monitoring, incident management, hardening and continuous protection from a single platform.',
+    lead: '24/7 SOC monitoring, incident management, hardening and continuous protection for companies in Venezuela and Latin America, from a single platform.',
     description:
       'We help businesses and MSPs identify, investigate, harden and respond to threats in real time without building an in-house SOC.',
     primaryCta: { label: 'Request a Demo', href: '/#contacto' },
@@ -211,6 +212,203 @@ export const en: SiteContent = {
   },
 
   pillars: {
+    venezuela: {
+      slug: 'cybersecurity-venezuela',
+      seo: {
+        title: 'Cybersecurity in Venezuela: A Guide for Companies | CiberEm',
+        description:
+          'Cybersecurity in Venezuela for companies: current laws, recent attacks, the most common fraud schemes and how to protect your organization with a 24/7 SOC.',
+      },
+      eyebrow: 'Guide · Venezuela',
+      title: 'Cybersecurity in Venezuela: a guide for companies',
+      lead: 'Which laws apply, which attacks are hitting Venezuelan organizations and what a company needs to detect them and respond in time.',
+      serviceType: 'Cybersecurity and SOC services for companies in Venezuela',
+      updated: { date: '2026-09-26', label: 'Updated: September 26, 2026' },
+      sections: [
+        {
+          heading: 'What corporate cybersecurity means in Venezuela',
+          paragraphs: [
+            'Corporate cybersecurity in Venezuela is the set of controls, processes and monitoring that protects an organization’s systems, data and operations against cyberattacks. It sits within the 2001 Special Law against Computer Crimes and, for banks, within the rules issued by SUDEBAN, the banking regulator.',
+            'Pressure on Venezuelan companies is high. According to Fortinet’s FortiGuard Labs, Venezuela received more than 11 billion attempted cyberattacks in 2023. Across Latin America, Kaspersky reported in September 2025 an 85% increase in blocked phishing attacks over the previous twelve months.',
+          ],
+        },
+        {
+          heading: 'Recent attacks on Venezuelan organizations',
+          paragraphs: [
+            'Public incidents over recent months show that no sector is safe, and that the damage is measured in weeks of disrupted operations and exposed customer data.',
+          ],
+          bullets: [
+            'PDVSA, December 2025: the state oil company reported a cyberattack on its administrative systems. According to Bloomberg Línea, more than a month later it was still running daily processes manually.',
+            'Movistar Venezuela, April 2025: data on 3.2 million customers was published, as verified by VE Sin Filtro.',
+            'Cashea, February 2026: the company confirmed a leak of user data.',
+          ],
+        },
+        {
+          heading: 'The most common fraud against companies and users',
+          paragraphs: [
+            'Many attacks start by deceiving a person. Venezuelan outlet Efecto Cocuyo identified the five most frequent digital scams of 2025. As a volume reference, Banco de Venezuela reported blocking 19,322 fraud attempts in the first quarter of 2025 alone.',
+          ],
+          bullets: [
+            'Phishing and QR-code phishing with fake bonus, raffle or bank portals.',
+            'Impersonation of banks and brands on social media.',
+            'Fake job offers used to steal data or money.',
+            'Vishing and WhatsApp account takeover by callers posing as CICPC officers.',
+            'Money mules and "mistaken" payments through Pago Móvil, the local instant-payment system.',
+          ],
+        },
+        {
+          heading: 'Cybersecurity legal framework in Venezuela',
+          paragraphs: [
+            'Venezuela has not yet enacted a general cybersecurity law. Obligations and offenses are spread across several laws and sector rules.',
+          ],
+          bullets: [
+            'Special Law against Computer Crimes (Official Gazette No. 37,313, October 30, 2001): punishes unauthorized access with 1 to 5 years in prison, system sabotage with 4 to 8 years and computer fraud with 3 to 7 years.',
+            'Law on Data Messages and Electronic Signatures (Official Gazette No. 37,148, February 28, 2001): gives legal value to data messages and electronic signatures, and creates SUSCERTE.',
+            'Infogovernment Law (Official Gazette No. 40,274, October 17, 2013): names SUSCERTE the authority for state information security and creates the National Information Protection and Security System.',
+            'SUDEBAN Resolution 641.10 of 2010: requires banks to use authentication factors, per-channel limits and education campaigns in electronic banking.',
+            'SUDEBAN circular of January 2024: bars banks from moving their main data centers and databases abroad, and requires strong encryption and penetration tests at least once a year.',
+            'National Cybersecurity Council (Decree 4,975, August 2024) and National Cyber Defense and Security Center (Decree 5,232, January 2026).',
+            'Cybersecurity Law: listed as a bill in the 2026-2027 Legislative Plan approved by the National Assembly on January 22, 2026.',
+          ],
+        },
+        {
+          heading: 'Agencies involved',
+          paragraphs: ['Knowing who to call saves time when an incident happens.'],
+          bullets: [
+            'SUSCERTE, the Superintendency of Electronic Certification Services: root certification authority and head of the National Information Security System.',
+            'VenCERT: the state computer emergency response team, part of SUSCERTE, focused on public systems and critical infrastructure.',
+            'CICPC Computer Crimes Division: receives complaints about computer crimes against companies and individuals.',
+          ],
+        },
+        {
+          heading: 'What a Venezuelan company needs to stay protected',
+          paragraphs: [
+            'A company does not need to build its own SOC to be protected, but it does need someone watching its systems continuously who knows how to act when something happens.',
+          ],
+          bullets: [
+            '24/7 monitoring of servers, endpoints and accounts, with alerts prioritized by severity.',
+            'Detection mapped to MITRE ATT&CK to know which attack techniques are covered.',
+            'A defined response process: isolate hosts, disable accounts and contain before damage spreads.',
+            'An audit log of every action, useful for compliance and as evidence in a criminal complaint.',
+            'Regular penetration tests, required at least once a year in banking.',
+            'Staff training against phishing, vishing and impersonation.',
+          ],
+        },
+        {
+          heading: 'How CiberEm helps companies in Venezuela',
+          paragraphs: [
+            'CiberEm runs a remote SOC with 24/7 monitoring for companies and MSPs in Venezuela and Latin America, with support in Spanish and English. The platform brings Wazuh, TheHive and Cortex, DefectDojo and GreyNoise into one console, maps every alert to MITRE ATT&CK and executes active responses from the case, with a full audit trail of every action.',
+          ],
+        },
+      ],
+      faqHeading: 'Cybersecurity in Venezuela FAQ',
+      faq: [
+        {
+          question: 'Which law punishes computer crimes in Venezuela?',
+          answer:
+            'The Special Law against Computer Crimes, published in Official Gazette No. 37,313 on October 30, 2001. It covers, among others, unauthorized access (1 to 5 years in prison), system sabotage (4 to 8 years), computer fraud (3 to 7 years) and violation of personal data privacy (2 to 6 years).',
+        },
+        {
+          question: 'Where do you report a cyberattack in Venezuela?',
+          answer:
+            'To the CICPC Computer Crimes Division. Before filing, preserve the evidence: system logs, screenshots, original emails and messages, without wiping or reinstalling the affected machines.',
+        },
+        {
+          question: 'What is VenCERT?',
+          answer:
+            'VenCERT is the Venezuelan state computer emergency response team. It is part of SUSCERTE and works to prevent, detect and manage incidents in public systems and critical infrastructure.',
+        },
+        {
+          question: 'Is there a cybersecurity law in Venezuela?',
+          answer:
+            'As of September 2026 no general cybersecurity law has been enacted. A Cybersecurity Law bill is listed in the 2026-2027 Legislative Plan. Meanwhile, the Special Law against Computer Crimes, the Infogovernment Law and sector rules such as SUDEBAN’s for banking apply.',
+        },
+        {
+          question: 'What does SUDEBAN require from banks on information security?',
+          answer:
+            'Resolution 641.10 requires authentication factors, per-channel limits and education campaigns in electronic banking. A January 2024 circular bars moving main data centers and databases abroad, and requires strong encryption and penetration tests at least once a year.',
+        },
+        {
+          question: 'Does a Venezuelan SMB need a SOC?',
+          answer:
+            'It needs SOC capabilities, not necessarily its own SOC. With SOC as a Service, an SMB gets 24/7 monitoring, detection and incident response without hiring a team of analysts or buying tools separately.',
+        },
+      ],
+      relatedHeading: 'Our services',
+      sources: {
+        heading: 'Sources',
+        links: [
+          {
+            label: 'Special Law against Computer Crimes (CONATEL, Spanish)',
+            url: 'https://conatel.gob.ve/wp-content/uploads/2024/08/PDF-Ley-Especial-contra-los-Delitos-Informaticos.pdf',
+          },
+          {
+            label: 'Law on Data Messages and Electronic Signatures (SUSCERTE, Spanish)',
+            url: 'https://www.suscerte.gob.ve/wp-content/uploads/2022/07/Ley-sobre-Mensajes-de-Datos-y-Firmas-Electronicas.pdf',
+          },
+          {
+            label: 'Infogovernment Law (CONATI, Spanish)',
+            url: 'https://www.conati.gob.ve/wp-content/uploads/Ley-de-infogobierno.pdf',
+          },
+          { label: 'SUDEBAN regulations (Spanish)', url: 'https://sudeban.gob.ve/index.php/normativas/' },
+          {
+            label: 'Banca y Negocios: SUDEBAN regulates cloud computing in banking (Spanish)',
+            url: 'https://www.bancaynegocios.com/sudeban-regula-estrictamente-uso-de-computacion-de-nube-en-la-banca/',
+          },
+          {
+            label: 'Acceso a la Justicia: National Cybersecurity Council created (Spanish)',
+            url: 'https://accesoalajusticia.org/creado-el-consejo-nacional-de-ciberseguridad/',
+          },
+          {
+            label: 'Acceso a la Justicia: National Cyber Defense and Security Center created (Spanish)',
+            url: 'https://accesoalajusticia.org/creado-el-centro-nacional-de-defensa-y-seguridad-cibernetica/',
+          },
+          {
+            label: 'National Assembly: 2026-2027 Legislative Plan (Spanish)',
+            url: 'https://www.asambleanacional.gob.ve/noticias/parlamento-aprueba-plan-basico-legislativo-2026-2027',
+          },
+          { label: 'SUSCERTE', url: 'https://www.suscerte.gob.ve/' },
+          { label: 'VenCERT', url: 'https://vencert.suscerte.gob.ve/' },
+          {
+            label: 'CICPC Computer Crimes Division',
+            url: 'https://delitosinformaticos.cicpc.gob.ve/',
+          },
+          {
+            label: 'El Estímulo: Fortinet on cyberattacks in Venezuela (Spanish)',
+            url: 'https://elestimulo.com/tecnologia/2024-04-27/fortinet-ciberseguridad-en-caracas/',
+          },
+          {
+            label: 'Kaspersky: phishing attacks up 85% in Latin America (Spanish)',
+            url: 'https://latam.kaspersky.com/about/press-releases/ataques-con-mensajes-falsos-aumentan-85-en-america-latina-mas-de-12-mil-millones-de-casos-detectados-kaspersky',
+          },
+          {
+            label: 'Banca y Negocios: PDVSA reports a cyberattack (Spanish)',
+            url: 'https://www.bancaynegocios.com/pdvsa-denuncia-ataque-cibernetico-dirigido-a-detener-su-operatividad-areas-operativas-no-sufrieron-afectacion',
+          },
+          {
+            label: 'Bloomberg Línea: PDVSA runs processes over WhatsApp after the attack (Spanish)',
+            url: 'https://www.bloomberglinea.com/latinoamerica/venezuela/la-venezolana-pdvsa-lleva-procesos-diarios-via-whatsapp-tras-ciberataque-de-diciembre/',
+          },
+          {
+            label: 'El Estímulo: Movistar data leak (Spanish)',
+            url: 'https://elestimulo.com/elinteres/de-interes/2025-04-30/movistar-filtracion/',
+          },
+          {
+            label: 'El Diario: Cashea data leak (Spanish)',
+            url: 'https://eldiario.com/2026/02/22/cashea-sufrio-filtracion-datos/',
+          },
+          {
+            label: 'Efecto Cocuyo: digital scams of 2025 (Spanish)',
+            url: 'https://efectococuyo.com/cocuyo-chequea/estafas-digitales-2025/',
+          },
+          {
+            label: 'Banco de Venezuela: fraud attempts blocked (Spanish)',
+            url: 'https://www.bancodevenezuela.com/index.html@p=28747.html',
+          },
+        ],
+      },
+    },
+
     'soc-service': {
       slug: 'soc-as-a-service',
       seo: {
@@ -478,6 +676,11 @@ export const en: SiteContent = {
       faqHeading: 'All questions',
       faq: [
         {
+          question: 'Does CiberEm serve companies in Venezuela?',
+          answer:
+            'Yes. Venezuela is our priority market. CiberEm runs a remote SOC with 24/7 monitoring for companies and MSPs in Venezuela and Latin America, with support in Spanish and English and no need to build a SOC on your premises.',
+        },
+        {
           question: 'Which tools does CiberEm integrate with?',
           answer:
             'Wazuh (SIEM/EDR), TheHive and Cortex (case management and analyzers), DefectDojo (vulnerabilities) and GreyNoise (IOC enrichment).',
@@ -570,7 +773,8 @@ export const en: SiteContent = {
   },
 
   footer: {
-    tagline: 'Threat detection, investigation and response from a single platform.',
+    tagline:
+      'Cybersecurity for companies in Venezuela: threat detection, investigation and response from a single platform.',
     cta: { label: 'Request a Demo', href: '/#contacto' },
     columns: [
       {
@@ -585,6 +789,7 @@ export const en: SiteContent = {
       {
         heading: 'Services',
         links: [
+          { label: 'Cybersecurity in Venezuela', href: '/cybersecurity-venezuela' },
           { label: 'SOC as a Service', href: '/soc-as-a-service' },
           { label: 'MDR', href: '/mdr' },
           { label: 'SOC for MSPs', href: '/soc-for-msps' },

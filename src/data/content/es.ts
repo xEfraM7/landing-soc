@@ -12,9 +12,9 @@ export const es: SiteContent = {
   },
 
   seo: {
-    title: 'Plataforma SOC de detección y respuesta | CiberEm',
+    title: 'Empresa de ciberseguridad y SOC en Venezuela | CiberEm',
     description:
-      'Plataforma SOC con monitoreo 24/7, gestión de incidentes y respuesta ante amenazas para empresas y MSPs. Detecta, investiga y responde sin un SOC interno.',
+      'Ciberseguridad para empresas en Venezuela: SOC 24/7, detección y respuesta ante amenazas y gestión de incidentes para empresas y MSPs, sin un SOC interno.',
     analytics: {
       ga4Id: '',
       searchConsoleToken: '',
@@ -36,6 +36,7 @@ export const es: SiteContent = {
     ],
     servicesLabel: 'Servicios',
     services: [
+      { label: 'Ciberseguridad en Venezuela', href: '/ciberseguridad-venezuela' },
       { label: 'SOC como servicio', href: '/soc-como-servicio' },
       { label: 'MDR', href: '/mdr' },
       { label: 'SOC para MSP', href: '/soc-para-msp' },
@@ -48,9 +49,10 @@ export const es: SiteContent = {
   breadcrumb: { homeLabel: 'Inicio' },
 
   hero: {
-    eyebrow: 'SOC · Detección y Respuesta',
-    title: 'Plataforma SOC: detectamos y respondemos antes de que la amenaza afecte tu negocio.',
-    lead: 'Monitoreo SOC 24/7, gestión de incidentes, hardening y protección continua desde una sola plataforma.',
+    eyebrow: 'Ciberseguridad en Venezuela · SOC 24/7',
+    title:
+      'Ciberseguridad en Venezuela: detectamos y respondemos antes de que la amenaza afecte tu negocio.',
+    lead: 'Monitoreo SOC 24/7, gestión de incidentes, hardening y protección continua para empresas en Venezuela y Latinoamérica, desde una sola plataforma.',
     description:
       'Ayudamos a empresas y MSPs a identificar, investigar, fortalecer y responder amenazas en tiempo real sin necesidad de construir un SOC interno.',
     primaryCta: { label: 'Solicitar Demo', href: '/#contacto' },
@@ -211,6 +213,205 @@ export const es: SiteContent = {
   },
 
   pillars: {
+    venezuela: {
+      slug: 'ciberseguridad-venezuela',
+      seo: {
+        title: 'Ciberseguridad en Venezuela: guía para empresas | CiberEm',
+        description:
+          'Guía de ciberseguridad en Venezuela para empresas: leyes vigentes, ataques recientes, fraudes más comunes y cómo proteger tu organización con un SOC 24/7.',
+      },
+      eyebrow: 'Guía · Venezuela',
+      title: 'Ciberseguridad en Venezuela: guía para empresas',
+      lead: 'Qué leyes aplican, qué ataques están afectando a organizaciones venezolanas y qué necesita una empresa para detectarlos y responder a tiempo.',
+      serviceType: 'Servicios de ciberseguridad y SOC para empresas en Venezuela',
+      updated: { date: '2026-09-26', label: 'Actualizado: 26 de septiembre de 2026' },
+      sections: [
+        {
+          heading: 'Qué es la ciberseguridad empresarial en Venezuela',
+          paragraphs: [
+            'La ciberseguridad empresarial en Venezuela es el conjunto de controles, procesos y monitoreo que protege los sistemas, los datos y la operación de una organización frente a ataques informáticos. Se enmarca en la Ley Especial contra los Delitos Informáticos de 2001 y, en la banca, en las normas de SUDEBAN.',
+            'La presión sobre las empresas venezolanas es alta. Según FortiGuard Labs de Fortinet, Venezuela recibió más de 11.000 millones de intentos de ciberataque en 2023. En América Latina, Kaspersky reportó en septiembre de 2025 un aumento del 85 % en los ataques con mensajes falsos (phishing) bloqueados en los doce meses anteriores.',
+          ],
+        },
+        {
+          heading: 'Ataques recientes contra organizaciones venezolanas',
+          paragraphs: [
+            'Los incidentes públicos de los últimos meses muestran que ningún sector está a salvo, y que el daño se mide en semanas de operación afectada y en datos de clientes expuestos.',
+          ],
+          bullets: [
+            'PDVSA, diciembre de 2025: la empresa denunció un ciberataque contra sus sistemas administrativos. Según Bloomberg Línea, más de un mes después seguía operando procesos diarios de forma manual.',
+            'Movistar Venezuela, abril de 2025: se publicaron datos de 3,2 millones de clientes, contenido verificado por VE Sin Filtro.',
+            'Cashea, febrero de 2026: la empresa confirmó una filtración de datos de sus usuarios.',
+          ],
+        },
+        {
+          heading: 'Fraudes más comunes contra empresas y usuarios',
+          paragraphs: [
+            'Buena parte de los ataques empieza por engañar a una persona. Efecto Cocuyo identificó las cinco estafas digitales más frecuentes de 2025 en Venezuela. Como referencia de volumen, el Banco de Venezuela informó que neutralizó 19.322 intentos de estafa solo en el primer trimestre de 2025.',
+          ],
+          bullets: [
+            'Phishing y QRishing con portales falsos de bonos, sorteos o bancos.',
+            'Suplantación de bancos y marcas en redes sociales.',
+            'Ofertas de empleo falsas para robar datos o dinero.',
+            'Vishing y robo de cuentas de WhatsApp con falsos funcionarios del CICPC.',
+            'Mulas bancarias y pagos "por error" a través de pago móvil.',
+          ],
+        },
+        {
+          heading: 'Marco legal de ciberseguridad en Venezuela',
+          paragraphs: [
+            'Venezuela no tiene todavía una ley general de ciberseguridad sancionada. Las obligaciones y los delitos se reparten entre varias leyes y normas sectoriales.',
+          ],
+          bullets: [
+            'Ley Especial contra los Delitos Informáticos (Gaceta Oficial N° 37.313, 30 de octubre de 2001): castiga el acceso indebido con 1 a 5 años de prisión, el sabotaje de sistemas con 4 a 8 años y el fraude informático con 3 a 7 años.',
+            'Ley sobre Mensajes de Datos y Firmas Electrónicas (Gaceta Oficial N° 37.148, 28 de febrero de 2001): da valor jurídico a los mensajes de datos y a la firma electrónica, y crea SUSCERTE.',
+            'Ley de Infogobierno (Gaceta Oficial N° 40.274, 17 de octubre de 2013): designa a SUSCERTE como órgano competente en seguridad informática del Estado y crea el Sistema Nacional de Protección y Seguridad Informática.',
+            'SUDEBAN, Resolución 641.10 de 2010: exige a los bancos factores de autenticación, límites por canal y campañas educativas en la banca electrónica.',
+            'SUDEBAN, circular de enero de 2024: prohíbe a los bancos trasladar al exterior sus centros de cómputo y bases de datos principales, y exige cifrado robusto y pruebas de penetración al menos una vez al año.',
+            'Consejo Nacional de Ciberseguridad (Decreto 4.975, agosto de 2024) y Centro Nacional de Defensa y Seguridad Cibernética (Decreto 5.232, enero de 2026).',
+            'Ley de Ciberseguridad: figura como proyecto en el Plan Legislativo 2026-2027 aprobado por la Asamblea Nacional el 22 de enero de 2026.',
+          ],
+        },
+        {
+          heading: 'Organismos que intervienen',
+          paragraphs: [
+            'Conocer a quién acudir ahorra tiempo cuando ocurre un incidente.',
+          ],
+          bullets: [
+            'SUSCERTE, la Superintendencia de Servicios de Certificación Electrónica: autoridad de certificación raíz y responsable del Sistema Nacional de Seguridad Informática.',
+            'VenCERT: equipo de respuesta ante emergencias informáticas del Estado, adscrito a SUSCERTE, enfocado en sistemas públicos e infraestructuras críticas.',
+            'CICPC, División contra Delitos Informáticos: recibe las denuncias por delitos informáticos contra empresas y personas.',
+          ],
+        },
+        {
+          heading: 'Qué necesita una empresa venezolana para protegerse',
+          paragraphs: [
+            'Una empresa no necesita construir un SOC propio para estar protegida, pero sí necesita que alguien vigile sus sistemas de forma continua y sepa actuar cuando algo ocurre.',
+          ],
+          bullets: [
+            'Monitoreo 24/7 de servidores, equipos y cuentas, con alertas priorizadas por severidad.',
+            'Detección mapeada a MITRE ATT&CK para saber qué técnicas de ataque están cubiertas.',
+            'Un proceso de respuesta definido: aislar equipos, deshabilitar cuentas y contener antes de que el daño crezca.',
+            'Registro de auditoría de cada acción, útil para cumplimiento y como evidencia en una denuncia.',
+            'Pruebas de penetración periódicas, obligatorias al menos una vez al año en la banca.',
+            'Formación del personal contra phishing, vishing y suplantación.',
+          ],
+        },
+        {
+          heading: 'Cómo ayuda CiberEm a empresas en Venezuela',
+          paragraphs: [
+            'CiberEm opera un SOC remoto con monitoreo 24/7 para empresas y MSPs en Venezuela y Latinoamérica, con atención en español. La plataforma integra Wazuh, TheHive y Cortex, DefectDojo y GreyNoise en una sola consola, mapea cada alerta a MITRE ATT&CK y ejecuta respuestas activas desde el caso, con auditoría completa de cada acción.',
+          ],
+        },
+      ],
+      faqHeading: 'Preguntas frecuentes sobre ciberseguridad en Venezuela',
+      faq: [
+        {
+          question: '¿Qué ley castiga los delitos informáticos en Venezuela?',
+          answer:
+            'La Ley Especial contra los Delitos Informáticos, publicada en la Gaceta Oficial N° 37.313 el 30 de octubre de 2001. Tipifica, entre otros, el acceso indebido (1 a 5 años de prisión), el sabotaje de sistemas (4 a 8 años), el fraude informático (3 a 7 años) y la violación de la privacidad de datos personales (2 a 6 años).',
+        },
+        {
+          question: '¿Dónde se denuncia un ciberataque en Venezuela?',
+          answer:
+            'Ante la División contra Delitos Informáticos del CICPC. Antes de denunciar conviene conservar la evidencia: registros de los sistemas, capturas de pantalla, correos y mensajes originales, sin borrar ni reinstalar los equipos afectados.',
+        },
+        {
+          question: '¿Qué es VenCERT?',
+          answer:
+            'VenCERT es el equipo de respuesta ante emergencias informáticas del Estado venezolano. Está adscrito a SUSCERTE y se ocupa de prevenir, detectar y gestionar incidentes en los sistemas públicos y en las infraestructuras críticas.',
+        },
+        {
+          question: '¿Existe una ley de ciberseguridad en Venezuela?',
+          answer:
+            'A septiembre de 2026 no hay una ley general de ciberseguridad sancionada. Un proyecto de Ley de Ciberseguridad figura en el Plan Legislativo 2026-2027. Mientras tanto rigen la Ley Especial contra los Delitos Informáticos, la Ley de Infogobierno y las normas sectoriales, como las de SUDEBAN para la banca.',
+        },
+        {
+          question: '¿Qué exige SUDEBAN a los bancos en seguridad informática?',
+          answer:
+            'La Resolución 641.10 exige factores de autenticación, límites por canal y campañas educativas en la banca electrónica. Una circular de enero de 2024 prohíbe trasladar al exterior los centros de cómputo y las bases de datos principales, y exige cifrado robusto y pruebas de penetración al menos una vez al año.',
+        },
+        {
+          question: '¿Una pyme venezolana necesita un SOC?',
+          answer:
+            'Necesita las capacidades de un SOC, no necesariamente uno propio. Con un SOC como servicio, una pyme obtiene monitoreo 24/7, detección y respuesta ante incidentes sin contratar un equipo de analistas ni comprar herramientas por separado.',
+        },
+      ],
+      relatedHeading: 'Nuestros servicios',
+      sources: {
+        heading: 'Fuentes',
+        links: [
+          {
+            label: 'Ley Especial contra los Delitos Informáticos (CONATEL)',
+            url: 'https://conatel.gob.ve/wp-content/uploads/2024/08/PDF-Ley-Especial-contra-los-Delitos-Informaticos.pdf',
+          },
+          {
+            label: 'Ley sobre Mensajes de Datos y Firmas Electrónicas (SUSCERTE)',
+            url: 'https://www.suscerte.gob.ve/wp-content/uploads/2022/07/Ley-sobre-Mensajes-de-Datos-y-Firmas-Electronicas.pdf',
+          },
+          {
+            label: 'Ley de Infogobierno (CONATI)',
+            url: 'https://www.conati.gob.ve/wp-content/uploads/Ley-de-infogobierno.pdf',
+          },
+          { label: 'SUDEBAN, normativas', url: 'https://sudeban.gob.ve/index.php/normativas/' },
+          {
+            label: 'Banca y Negocios: SUDEBAN regula el uso de computación en la nube en la banca',
+            url: 'https://www.bancaynegocios.com/sudeban-regula-estrictamente-uso-de-computacion-de-nube-en-la-banca/',
+          },
+          {
+            label: 'Acceso a la Justicia: creado el Consejo Nacional de Ciberseguridad',
+            url: 'https://accesoalajusticia.org/creado-el-consejo-nacional-de-ciberseguridad/',
+          },
+          {
+            label: 'Acceso a la Justicia: creado el Centro Nacional de Defensa y Seguridad Cibernética',
+            url: 'https://accesoalajusticia.org/creado-el-centro-nacional-de-defensa-y-seguridad-cibernetica/',
+          },
+          {
+            label: 'Asamblea Nacional: Plan Legislativo 2026-2027',
+            url: 'https://www.asambleanacional.gob.ve/noticias/parlamento-aprueba-plan-basico-legislativo-2026-2027',
+          },
+          { label: 'SUSCERTE', url: 'https://www.suscerte.gob.ve/' },
+          { label: 'VenCERT', url: 'https://vencert.suscerte.gob.ve/' },
+          {
+            label: 'CICPC, División contra Delitos Informáticos',
+            url: 'https://delitosinformaticos.cicpc.gob.ve/',
+          },
+          {
+            label: 'El Estímulo: Fortinet y los ciberataques en Venezuela',
+            url: 'https://elestimulo.com/tecnologia/2024-04-27/fortinet-ciberseguridad-en-caracas/',
+          },
+          {
+            label: 'Kaspersky: los ataques con mensajes falsos aumentan 85 % en América Latina',
+            url: 'https://latam.kaspersky.com/about/press-releases/ataques-con-mensajes-falsos-aumentan-85-en-america-latina-mas-de-12-mil-millones-de-casos-detectados-kaspersky',
+          },
+          {
+            label: 'Banca y Negocios: PDVSA denuncia un ataque cibernético',
+            url: 'https://www.bancaynegocios.com/pdvsa-denuncia-ataque-cibernetico-dirigido-a-detener-su-operatividad-areas-operativas-no-sufrieron-afectacion',
+          },
+          {
+            label: 'Bloomberg Línea: PDVSA opera procesos por WhatsApp tras el ciberataque',
+            url: 'https://www.bloomberglinea.com/latinoamerica/venezuela/la-venezolana-pdvsa-lleva-procesos-diarios-via-whatsapp-tras-ciberataque-de-diciembre/',
+          },
+          {
+            label: 'El Estímulo: filtración de datos de Movistar',
+            url: 'https://elestimulo.com/elinteres/de-interes/2025-04-30/movistar-filtracion/',
+          },
+          {
+            label: 'El Diario: Cashea sufrió una filtración de datos',
+            url: 'https://eldiario.com/2026/02/22/cashea-sufrio-filtracion-datos/',
+          },
+          {
+            label: 'Efecto Cocuyo: las estafas digitales de 2025',
+            url: 'https://efectococuyo.com/cocuyo-chequea/estafas-digitales-2025/',
+          },
+          {
+            label: 'Banco de Venezuela: intentos de estafa neutralizados',
+            url: 'https://www.bancodevenezuela.com/index.html@p=28747.html',
+          },
+        ],
+      },
+    },
+
     'soc-service': {
       slug: 'soc-como-servicio',
       seo: {
@@ -478,6 +679,11 @@ export const es: SiteContent = {
       faqHeading: 'Todas las preguntas',
       faq: [
         {
+          question: '¿CiberEm presta servicio a empresas en Venezuela?',
+          answer:
+            'Sí. Venezuela es nuestro mercado prioritario. CiberEm opera un SOC remoto con monitoreo 24/7 para empresas y MSPs en Venezuela y Latinoamérica, con atención en español y sin necesidad de instalar un SOC en tus oficinas.',
+        },
+        {
           question: '¿Con qué herramientas se integra CiberEm?',
           answer:
             'Wazuh (SIEM/EDR), TheHive y Cortex (gestión de casos y analizadores), DefectDojo (vulnerabilidades) y GreyNoise (enriquecimiento de IOC).',
@@ -570,7 +776,8 @@ export const es: SiteContent = {
   },
 
   footer: {
-    tagline: 'Detección, investigación y respuesta ante amenazas desde una sola plataforma.',
+    tagline:
+      'Ciberseguridad para empresas en Venezuela: detección, investigación y respuesta ante amenazas desde una sola plataforma.',
     cta: { label: 'Solicitar Demo', href: '/#contacto' },
     columns: [
       {
@@ -585,6 +792,7 @@ export const es: SiteContent = {
       {
         heading: 'Servicios',
         links: [
+          { label: 'Ciberseguridad en Venezuela', href: '/ciberseguridad-venezuela' },
           { label: 'SOC como servicio', href: '/soc-como-servicio' },
           { label: 'MDR', href: '/mdr' },
           { label: 'SOC para MSP', href: '/soc-para-msp' },

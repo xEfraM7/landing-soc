@@ -22,7 +22,8 @@ assertSeoLengths({ title, description }, `${routeKey}/${locale}`);
 const canonical = absoluteUrl(pathFor(routeKey, locale));
 const alternates = alternatePaths(routeKey);
 const imageUrl = absoluteUrl(image);
-const ogLocale: Record<string, string> = { es: 'es_ES', en: 'en_US' };
+// El español se orienta a Venezuela, el mercado prioritario.
+const ogLocale: Record<string, string> = { es: 'es_VE', en: 'en_US' };
 const { ga4Id, searchConsoleToken } = content.seo.analytics;
 const analyticsEnabled = import.meta.env.PROD && ga4Id !== '';
 ---

@@ -1,4 +1,5 @@
 import {
+  SERVICE_AREA,
   SITE_URL,
   type FaqItem,
   type Locale,
@@ -37,6 +38,7 @@ export const buildOrganizationJsonLd = (content: SiteContent) => ({
   // Desambigua la marca frente a otras entidades llamadas "Ciberem".
   description: content.footer.tagline,
   knowsAbout: ['Security Operations Center', 'Managed Detection and Response', 'MITRE ATT&CK'],
+  areaServed: SERVICE_AREA,
   url: SITE_URL,
   logo: absoluteUrl('/logo.png'),
   foundingDate: String(content.organization.foundingYear),
@@ -64,7 +66,7 @@ export const buildServiceJsonLd = (pillar: PillarPageContent, url: string) => ({
   serviceType: pillar.serviceType,
   description: pillar.seo.description,
   url,
-  areaServed: 'Worldwide',
+  areaServed: SERVICE_AREA,
   provider: { '@id': ORGANIZATION_ID },
 });
 
