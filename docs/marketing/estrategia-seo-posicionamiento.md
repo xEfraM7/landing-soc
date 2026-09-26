@@ -9,7 +9,7 @@
 
 ## 1. Resumen ejecutivo
 
-CiberEm ya tiene un sitio técnicamente correcto: 12 URLs indexables en español e inglés, datos estructurados, sitemap, robots, `llms.txt` e imagen social. Lo que falta es **autoridad** (nadie enlaza a ciberem.com) y **medición** (no hay analítica activa).
+CiberEm ya tiene un sitio técnicamente correcto: 14 URLs indexables en español e inglés, datos estructurados, sitemap, robots, `llms.txt` e imagen social. Lo que falta es **autoridad** (nadie enlaza a ciberem.com) y **medición** (no hay analítica activa).
 
 Tres apuestas para los próximos 90 días:
 
@@ -17,7 +17,7 @@ Tres apuestas para los próximos 90 días:
 2. **Autoridad de entidad.** LinkedIn de empresa, Crunchbase, perfiles en directorios SaaS y de ciberseguridad. Esto alimenta a Google y a los buscadores con IA para reconocer "CiberEm" como marca. Es urgente: hoy "ciberem" devuelve sobre todo una aldea de Indonesia (ver [baseline GEO](geo-baseline-2026-09-26.md)), así que la marca debe presentarse siempre como "CiberEm, plataforma SOC".
 3. **Demanda directa a MSPs.** LinkedIn de los fundadores y outbound a MSPs. Es el canal que produce demos antes de que el SEO madure (el SEO tarda 3-6 meses en mover tráfico).
 
-Resultado esperado a 90 días: marca indexada y reconocida, las 4 páginas pilar con impresiones en Search Console, al menos 20 dominios de referencia y un flujo semanal de demos procedente de LinkedIn y outbound.
+Resultado esperado a 90 días: marca indexada y reconocida, las 5 páginas pilar con impresiones en Search Console, al menos 20 dominios de referencia y un flujo semanal de demos procedente de LinkedIn y outbound.
 
 ---
 
@@ -27,7 +27,7 @@ Resultado esperado a 90 días: marca indexada y reconocida, las 4 páginas pilar
 
 **Por qué este cuadrante:** el problema (amenazas no detectadas) es grande y frecuente. Eso favorece un portfolio de activos que se acumulan (páginas pilar, contenido en LinkedIn, perfiles de directorio) sobre campañas puntuales.
 
-**Mercado:** global, con español como idioma principal y el inglés como segunda vía. En el mundo hispanohablante la competencia en SEO por "SOC como servicio" y "MDR" es mucho menor que en inglés: ahí está la ventaja inicial.
+**Mercado:** Venezuela es el mercado prioritario desde el 26-09-2026 (ver [estrategia-venezuela.md](estrategia-venezuela.md)). Latinoamérica es el segundo, y el inglés sirve a multinacionales con operaciones en Venezuela. Lo que sigue sobre el resto de mercados se mantiene como segunda prioridad. En el mundo hispanohablante la competencia en SEO por "SOC como servicio" y "MDR" es mucho menor que en inglés: ahí está la ventaja inicial.
 
 **Voz:** técnica, directa, sin promesas absolutas. Nunca "100% seguro" ni "cero brechas".
 
@@ -38,7 +38,7 @@ Resultado esperado a 90 días: marca indexada y reconocida, las 4 páginas pilar
 | Área | Estado | Nota |
 | --- | --- | --- |
 | SEO técnico | Resuelto | Canonical, hreflang, sitemap, robots, schema, OG. Lighthouse SEO 100. |
-| Contenido | Base | 1 landing + 4 pilares por idioma. Sin blog, sin casos. |
+| Contenido | Base | 1 landing + 5 pilares por idioma (incluida la guía de Venezuela). Sin blog, sin casos. |
 | Analítica | Pendiente | Campos preparados; falta el ID de GA4 y el token de Search Console. |
 | Autoridad | Cero | Sin backlinks ni perfiles de empresa. |
 | Prueba social | Cero | Sin clientes públicos ni testimonios. |
@@ -53,12 +53,14 @@ Una intención principal por URL. Las variantes long-tail se cubren dentro de ca
 
 | URL | Keyword principal | Long-tail que cubre |
 | --- | --- | --- |
-| `/` | plataforma SOC | detección y respuesta ante amenazas; SOC 24/7; monitoreo de seguridad para empresas |
+| `/` | empresa de ciberseguridad en Venezuela | SOC Venezuela; plataforma SOC; SOC 24/7 para empresas |
+| `/ciberseguridad-venezuela` | ciberseguridad en Venezuela | ley de delitos informáticos Venezuela; denunciar delito informático; VenCERT; SUDEBAN seguridad |
 | `/soc-como-servicio` | SOC como servicio | SOCaaS; SOC externo; SOC gestionado para pymes |
 | `/mdr` | MDR detección y respuesta gestionada | qué es MDR; MDR vs EDR; respuesta activa ante incidentes |
 | `/soc-para-msp` | SOC para MSP | SOC multi-tenant; SOC para MSSP; plataforma de seguridad para MSP |
 | `/preguntas-frecuentes` | preguntas frecuentes SOC | qué es MTTD y MTTR; Wazuh TheHive integración; MITRE ATT&CK SOC |
 | `/en` | SOC platform | threat detection and response platform |
+| `/en/cybersecurity-venezuela` | cybersecurity in Venezuela | Venezuela computer crimes law; SUDEBAN security requirements |
 | `/en/soc-as-a-service` | SOC as a service | SOCaaS for SMBs; outsourced SOC |
 | `/en/mdr` | managed detection and response | MDR vs EDR; MDR service |
 | `/en/soc-for-msps` | multi-tenant SOC for MSPs | SOC platform for MSSPs; Wazuh multi-tenant |
@@ -75,7 +77,7 @@ Una intención principal por URL. Las variantes long-tail se cubren dentro de ca
 | Tarea | Responsable | Cómo |
 | --- | --- | --- |
 | Desplegar esta rama en Vercel | Efrain | Merge a `main`. Comprobar que `www.ciberem.com` redirige con 301 a `ciberem.com`. |
-| Google Search Console | Efrain | Verificar el dominio por DNS (propiedad de dominio). Enviar `https://ciberem.com/sitemap-index.xml`. Solicitar indexación de las 12 URLs. |
+| Google Search Console | Efrain | Verificar el dominio por DNS (propiedad de dominio). Enviar `https://ciberem.com/sitemap-index.xml`. Solicitar indexación de las 14 URLs. |
 | GA4 | Efrain | Crear la propiedad, pegar el ID en `seo.analytics.ga4Id` de `src/data/content/es.ts` y `en.ts`. Marcar `demo_click` como evento clave. |
 | Bing Webmaster Tools | Efrain | Importar desde Search Console. Bing alimenta Copilot y ChatGPT search. |
 | Rich Results Test | Efrain | Validar `/mdr`, `/soc-para-msp` y `/preguntas-frecuentes`. |

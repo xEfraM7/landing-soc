@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v1
+**Document version:** v2
 **Last updated:** 2026-09-26
 
 ## Product Overview
@@ -11,15 +11,17 @@
 **Business model:** Por definir públicamente. Hoy la conversión es una demo de 30 minutos en Calendly. No hay precios publicados (ver Open decisions en el plan).
 
 ## Target Audience
+**Target market:** Venezuela primero; Latinoamérica después. El inglés (`/en`) sirve a multinacionales con operaciones en Venezuela.
 **Target companies:**
-- MSP y MSSP con 10-200 clientes que ofrecen soporte de TI pero no un SOC propio.
-- Empresas de 50-1.000 empleados sin equipo SOC interno.
+- Empresas venezolanas de 50-1.000 empleados sin equipo SOC interno, sobre todo banca, fintech, retail, salud, telecom y logística.
+- MSP y MSSP venezolanos con 10-200 clientes que ofrecen soporte de TI pero no un SOC propio.
 **Decision-makers:** Dueño o director técnico del MSP; CISO, responsable de seguridad o director de TI en empresa.
 **Primary use case:** Detectar, investigar y responder amenazas 24/7 sin construir un SOC interno ni operar cinco consolas separadas.
 **Jobs to be done:**
 - "Dame visibilidad real de lo que pasa en mis sistemas y de mis clientes."
 - "Reduce el ruido para que el equipo solo atienda lo que importa."
 - "Déjame demostrar a la dirección o al cliente que estamos protegidos, con métricas."
+- "Ayúdame a cumplir lo que exige SUDEBAN (pentest anual, cifrado) y a tener evidencia si hay que denunciar ante el CICPC."
 **Use cases:**
 - MSP que quiere vender un servicio de seguridad gestionada a su cartera sin montar un SOC.
 - Empresa que ya usa Wazuh pero no tiene capacidad de vigilarlo ni de responder.
@@ -43,7 +45,8 @@
 **Emotional tension:** Miedo a que la brecha ya esté ocurriendo sin que nadie lo vea; cansancio por alertas.
 
 ## Competitive Landscape
-**Direct:** MDR y SOC gestionados comerciales (p. ej. Arctic Wolf, Huntress, Sophos MDR, Blumira) — orientados a mercado anglosajón y con stacks propietarios; menos adaptados a MSPs hispanohablantes que ya usan herramientas open source.
+**Direct (Venezuela):** Ionia Consult, Ovnicom, APT Tecnología y Sistemas, Binaria, Ciberseguridad Venezuela, Delta Protect — ver docs/marketing/estrategia-venezuela.md §5.
+**Direct (internacional):** MDR y SOC gestionados comerciales (p. ej. Arctic Wolf, Huntress, Sophos MDR, Blumira) — orientados a mercado anglosajón y con stacks propietarios; menos adaptados a MSPs hispanohablantes que ya usan herramientas open source.
 **Secondary:** Operar Wazuh/TheHive/DefectDojo por cuenta propia — sin consola unificada, sin multi-tenancy real, sin métricas automáticas.
 **Indirect:** Contratar un SOC interno o no hacer nada y confiar en el antivirus.
 
@@ -90,7 +93,7 @@
 
 ## Brand Voice
 **Tone:** Profesional y técnico sin jerga vacía.
-**Style:** Directo, frases cortas, datos concretos. Español neutro; inglés internacional en `/en`.
+**Style:** Directo, frases cortas, datos concretos. Español con referencias venezolanas (pago móvil, SUDEBAN, CICPC); inglés internacional en `/en`. Citar siempre la fuente de cualquier cifra o norma.
 **Personality:** Fiable, técnico, cercano, transparente.
 **Name:** Siempre "CiberEm".
 
@@ -111,9 +114,10 @@
 **Current metrics:** Sin datos; la analítica se activa al pegar el ID de GA4.
 
 ## Site
-- es: https://ciberem.com · /soc-como-servicio · /mdr · /soc-para-msp · /preguntas-frecuentes
-- en: https://ciberem.com/en · /en/soc-as-a-service · /en/mdr · /en/soc-for-msps · /en/faq
+- es: https://ciberem.com · /ciberseguridad-venezuela · /soc-como-servicio · /mdr · /soc-para-msp · /preguntas-frecuentes
+- en: https://ciberem.com/en · /en/cybersecurity-venezuela · /en/soc-as-a-service · /en/mdr · /en/soc-for-msps · /en/faq
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v2 (2026-09-26) — Venezuela pasa a mercado prioritario: ICP, competencia local, JTBD de cumplimiento SUDEBAN/CICPC y voz con referencias venezolanas.
 - v1 (2026-09-26) — Initial context, auto-drafted from site content and landing-data.md.

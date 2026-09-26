@@ -10,7 +10,8 @@ Documento maestro de contexto del proyecto. **Debe actualizarse en cada cambio r
 - **Producto:** **CiberEm** — plataforma SOC (detección, investigación y respuesta ante amenazas) para empresas y MSPs.
 - **Marca:** siempre **CiberEm** (no "CyberEM"). Única excepción: la URL externa de Calendly (`contact-cyberem`).
 - **Dominio público:** `https://ciberem.com`, desplegado en **Vercel** como sitio estático (sin adapter). `www.ciberem.com` redirige 301 al apex (`vercel.json`).
-- **Tipo:** Sitio estático bilingüe: español por defecto en `/`, inglés en `/en`. Landing + 4 páginas pilar + privacidad por idioma (12 URLs).
+- **Mercado prioritario:** **Venezuela** (luego Latinoamérica). La portada en español, `og:locale es_VE`, el `areaServed` del schema (`SERVICE_AREA` en `site.config.ts`) y la guía `/ciberseguridad-venezuela` lo reflejan. Estrategia en `docs/marketing/estrategia-venezuela.md`.
+- **Tipo:** Sitio estático bilingüe: español por defecto en `/`, inglés en `/en`. Landing + 5 páginas pilar + privacidad por idioma (14 URLs).
 - **Framework:** [Astro](https://docs.astro.build) 4.x
 - **Lenguaje:** TypeScript (modo strict)
 - **Gestor de paquetes:** **pnpm** (obligatorio, ver `packageManager` en `package.json`)
@@ -21,14 +22,15 @@ Documento maestro de contexto del proyecto. **Debe actualizarse en cada cambio r
 - **SEO:** `BaseLayout` emite canonical, hreflang es/en/x-default, Open Graph, Twitter y un `@graph` JSON-LD (Organization, WebSite y, según la página, Service, FAQPage, BreadcrumbList). `assertSeoLengths` rompe el build si un título pasa de 60 caracteres o una descripción sale de 120-160. Sitemap con `@astrojs/sitemap`, `robots.txt` abierto a bots de IA, `llms.txt`, `og-image.png` y `logo.png`. URLs sin barra final (`trailingSlash: 'never'` + `build.format: 'file'` + `cleanUrls` en Vercel).
 - **Analítica:** GA4 y verificación de Search Console se activan rellenando `seo.analytics.ga4Id` y `seo.analytics.searchConsoleToken` en ambos archivos de contenido. Vacío = desactivado. GA4 solo carga en build de producción.
 - **Marketing:** contexto de producto en `.agents/product-marketing.md` (lo leen los skills de marketing) y plan de 90 días en `docs/marketing/`.
-- **Estado actual:** Landing de CiberEm con 6 features / 7 bloques, 4 páginas pilar (SOC como servicio, MDR, SOC para MSP, FAQ) y privacidad, todo en es/en. Sin `TODO` pendientes en `src/`.
+- **Estado actual:** Landing de CiberEm con 6 features / 7 bloques, 5 páginas pilar (guía de ciberseguridad en Venezuela, SOC como servicio, MDR, SOC para MSP, FAQ) y privacidad, todo en es/en. Las páginas pilar admiten `updated` (fecha visible) y `sources` (fuentes citadas); todo dato o norma publicado debe llevar su fuente. Sin `TODO` pendientes en `src/`.
 
 ### 1.0 Rutas
 
 | Clave (`RouteKey`) | es | en | Página |
 | --- | --- | --- | --- |
 | `home` | `/` | `/en` | `pages/index.astro`, `pages/en/index.astro` |
-| `soc-service` | `/soc-como-servicio` | `/en/soc-as-a-service` | `pages/[pillar].astro`, `pages/en/[pillar].astro` |
+| `venezuela` | `/ciberseguridad-venezuela` | `/en/cybersecurity-venezuela` | `pages/[pillar].astro`, `pages/en/[pillar].astro` |
+| `soc-service` | `/soc-como-servicio` | `/en/soc-as-a-service` | idem |
 | `mdr` | `/mdr` | `/en/mdr` | idem |
 | `msp` | `/soc-para-msp` | `/en/soc-for-msps` | idem |
 | `faq` | `/preguntas-frecuentes` | `/en/faq` | idem |
@@ -109,7 +111,7 @@ landing-soc/
 │   │   ├── 2026-06-17-cyberem-content-pivot-design.md #   - Pivote de contenido (histórico, marca anterior)
 │   │   └── 2026-09-26-seo-posicionamiento-design.md   #   - SEO técnico, bilingüe, pilares y plan
 │   ├── superpowers/plans/        # Planes de implementación
-│   └── marketing/                # Plan de SEO y posicionamiento a 90 días + baselines GEO
+│   └── marketing/                # Plan general, estrategia Venezuela y baselines GEO
 ├── landing-data.md               # Brief de marketing original (posicionamiento, personas, flujo). Referencia, no se importa.
 ├── src/
 │   ├── data/                     # [TIPO] SOURCE OF TRUTH — todo el contenido del sitio
@@ -121,7 +123,7 @@ landing-soc/
 │   │       └── en.ts             #     pillars, legal, footer). Mismo tipo en ambos idiomas.
 │   ├── pages/                    # [TIPO] Rutas (cada archivo = una URL). Requerido por Astro.
 │   │   ├── index.astro           #   - Landing es
-│   │   ├── [pillar].astro        #   - 4 pilares es (getStaticPaths desde el contenido)
+│   │   ├── [pillar].astro        #   - 5 pilares es (getStaticPaths desde el contenido)
 │   │   ├── privacidad.astro
 │   │   └── en/                   #   - index.astro, [pillar].astro, privacy.astro
 │   ├── layouts/                  # [TIPO] Layouts compartidos (HTML base, wrappers)
@@ -151,7 +153,7 @@ landing-soc/
 │   │   ├── differentiators/Differentiators.astro    # #diferenciadores
 │   │   ├── team/Team.astro                          # #equipo (fotos + LinkedIn)
 │   │   ├── cta/Cta.astro                            # #contacto (CTA → Calendly)
-│   │   ├── pillar/PillarPage.astro                  # página pilar: hero + secciones + FAQ + relacionados
+│   │   ├── pillar/PillarPage.astro                  # página pilar: hero + fecha + secciones + FAQ + fuentes + relacionados
 │   │   └── legal/LegalPage.astro                    # política de privacidad
 │   ├── styles/                   # [TIPO] Estilos globales y tokens
 │   │   └── global.css            #   - @import de fuentes, variables CSS (surfaces, brand, severidad,
@@ -273,7 +275,9 @@ pnpm astro add <pkg>    # Añadir integraciones / adapters de Astro
 - [ ] Menú móvil: por debajo de 880px el nav se oculta; el footer mantiene todos los enlaces.
 - [ ] Definir la URL real de "Ver Plataforma" (hoy `/#solucion`).
 - [ ] Decidir si se eliminan `Card.astro`, `Badge.astro` y `SectionHeading.astro` (sin uso desde el pivote a CiberEm).
-- [ ] Backlog de contenido (blog, comparativas, casos): ver `docs/marketing/estrategia-seo-posicionamiento.md`.
+- [ ] Revisar la guía de Venezuela cada 3 meses (fecha `updated`, incidentes y normas nuevas, en especial si se sanciona la Ley de Ciberseguridad).
+- [ ] Dirección o área de servicio, teléfono/WhatsApp y RIF en Venezuela: habilitan Google Business Profile y `address` en el schema.
+- [ ] Backlog de contenido (blog, comparativas, casos): ver `docs/marketing/estrategia-seo-posicionamiento.md` y `estrategia-venezuela.md` §3.
 
 **Resueltos:** adapter de despliegue (Vercel estático), datos reales del equipo, meta tags OG/Twitter, decisión Tailwind (CSS plano), `site` real, `og-image.png`, `robots.txt`, sitemap, JSON-LD, hreflang, redirect www, versión en inglés, páginas pilar, marca CiberEm.
 
