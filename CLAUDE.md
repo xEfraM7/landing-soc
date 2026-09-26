@@ -18,11 +18,13 @@ Documento maestro de contexto del proyecto. **Debe actualizarse en cada cambio r
 - **Estilos:** CSS plano con variables CSS en `src/styles/global.css` (scoped styles por componente vía `<style>` de Astro). **Sin Tailwind, sin GSAP.**
 - **Aesthetic direction:** Dark `zinc-950` (#09090b) + acento rojo-coral (#ff3241). Tipografía Geist Variable (display y body) + JetBrains Mono (datos), layouts max-w 1152px, secciones py-20, patrones border-grid + tarjetas + glows.
 - **Source of truth:** **todo el copy vive en `src/data/content/es.ts` y `src/data/content/en.ts`**, ambos tipados por `SiteContent` (`src/data/site.types.ts`). Los componentes obtienen su slice con `useSiteContent(Astro)` de `@utils/i18n`; nunca importan un idioma concreto ni llevan texto hardcodeado.
-- **Conversión:** el CTA final "Agendar una reunión" enlaza a Calendly (`CALENDLY_URL` en `src/data/site.config.ts`). Cada clic envía el evento GA4 `demo_click` cuando la analítica está activa. No hay formulario ni backend.
+- **Conversión:** el CTA final "Agendar una reunión" enlaza a Calendly (`CALENDLY_URL`) y "Escríbenos por WhatsApp" a `WHATSAPP_URL` (ambos en `src/data/site.config.ts`, junto a `CONTACT_PHONE` y `HEADQUARTERS`). Cada clic envía el evento GA4 `demo_click` o `whatsapp_click` cuando la analítica está activa. No hay formulario ni backend.
+- **Planes:** la sección `#planes` muestra Plan Max y Plan Max+ **sin precios** (decisión del negocio: cotización en USD). No publicar importes ni porcentajes de descuento en el sitio, `llms.txt` ni el repo; el PDF de planes no se versiona.
+- **Ubicación:** base en Acarigua, Portuguesa; atención remota, sin dirección de calle. El schema Organization lleva `address` (ciudad/estado/país) y `telephone`.
 - **SEO:** `BaseLayout` emite canonical, hreflang es/en/x-default, Open Graph, Twitter y un `@graph` JSON-LD (Organization, WebSite y, según la página, Service, FAQPage, BreadcrumbList). `assertSeoLengths` rompe el build si un título pasa de 60 caracteres o una descripción sale de 120-160. Sitemap con `@astrojs/sitemap`, `robots.txt` abierto a bots de IA, `llms.txt`, `og-image.png` y `logo.png`. URLs sin barra final (`trailingSlash: 'never'` + `build.format: 'file'` + `cleanUrls` en Vercel).
 - **Analítica:** GA4 y verificación de Search Console se activan rellenando `seo.analytics.ga4Id` y `seo.analytics.searchConsoleToken` en ambos archivos de contenido. Vacío = desactivado. GA4 solo carga en build de producción.
 - **Marketing:** contexto de producto en `.agents/product-marketing.md` (lo leen los skills de marketing) y plan de 90 días en `docs/marketing/`.
-- **Estado actual:** Landing de CiberEm con 6 features / 7 bloques, 5 páginas pilar (guía de ciberseguridad en Venezuela, SOC como servicio, MDR, SOC para MSP, FAQ) y privacidad, todo en es/en. Las páginas pilar admiten `updated` (fecha visible) y `sources` (fuentes citadas); todo dato o norma publicado debe llevar su fuente. Sin `TODO` pendientes en `src/`.
+- **Estado actual:** Landing de CiberEm con 7 features / 8 bloques, 5 páginas pilar (guía de ciberseguridad en Venezuela, SOC como servicio, MDR, SOC para MSP, FAQ) y privacidad, todo en es/en. Las páginas pilar admiten `updated` (fecha visible) y `sources` (fuentes citadas); todo dato o norma publicado debe llevar su fuente. Sin `TODO` pendientes en `src/`.
 
 ### 1.0 Rutas
 
@@ -47,8 +49,9 @@ Los slugs de pilares viven en el contenido (`pillars[key].slug`). Las rutas inte
 | 3 | Nuestra Solución (3 pilares) | `#solucion` | (mismo componente) | `solution` |
 | 4 | Pensado para los cuatro perfiles (grid 4) | `#perfiles` | `features/personas/Personas.astro` | `personas` |
 | 5 | Diferenciadores (border-grid, 6 numerados) | `#diferenciadores` | `features/differentiators/Differentiators.astro` | `differentiators` |
-| 6 | Conócenos + Acerca de nosotros + tarjetas de equipo | `#equipo` | `features/team/Team.astro` | `team` |
-| 7 | CTA final con glows | `#contacto` | `features/cta/Cta.astro` | `cta` |
+| 6 | Planes (Max y Max+, sin precios) + ventajas | `#planes` | `features/plans/Plans.astro` | `plans` |
+| 7 | Conócenos + Acerca de nosotros + tarjetas de equipo | `#equipo` | `features/team/Team.astro` | `team` |
+| 8 | CTA final con glows | `#contacto` | `features/cta/Cta.astro` | `cta` |
 
 Header (pill flotante con menú "Servicios" solo CSS y selector ES/EN) y Footer (3 columnas: Plataforma, Servicios, Empresa) consumen `nav`, `brand` y `footer`. Los enlaces a anclas usan `/#ancla` para funcionar también desde las páginas pilar; `smooth-scroll.ts` aplica un offset de 80px por el header. La sección Solución enlaza cada pilar a su página pilar.
 
@@ -151,6 +154,7 @@ landing-soc/
 │   │   ├── problem-solution/ProblemSolution.astro   # #problema + #solucion (pilares enlazan a páginas pilar)
 │   │   ├── personas/Personas.astro                  # #perfiles
 │   │   ├── differentiators/Differentiators.astro    # #diferenciadores
+│   │   ├── plans/Plans.astro                        # #planes (sin precios)
 │   │   ├── team/Team.astro                          # #equipo (fotos + LinkedIn)
 │   │   ├── cta/Cta.astro                            # #contacto (CTA → Calendly)
 │   │   ├── pillar/PillarPage.astro                  # página pilar: hero + fecha + secciones + FAQ + fuentes + relacionados
@@ -276,7 +280,8 @@ pnpm astro add <pkg>    # Añadir integraciones / adapters de Astro
 - [ ] Definir la URL real de "Ver Plataforma" (hoy `/#solucion`).
 - [ ] Decidir si se eliminan `Card.astro`, `Badge.astro` y `SectionHeading.astro` (sin uso desde el pivote a CiberEm).
 - [ ] Revisar la guía de Venezuela cada 3 meses (fecha `updated`, incidentes y normas nuevas, en especial si se sanciona la Ley de Ciberseguridad).
-- [ ] Dirección o área de servicio, teléfono/WhatsApp y RIF en Venezuela: habilitan Google Business Profile y `address` en el schema.
+- [ ] RIF y razón social: faltan para gremios, facturación y `legalName` real en el schema (hoy `legalName` = "CiberEm").
+- [ ] Google Business Profile como negocio de área de servicio (Acarigua, dirección oculta) con el teléfono +58 414 5599785.
 - [ ] Backlog de contenido (blog, comparativas, casos): ver `docs/marketing/estrategia-seo-posicionamiento.md` y `estrategia-venezuela.md` §3.
 
 **Resueltos:** adapter de despliegue (Vercel estático), datos reales del equipo, meta tags OG/Twitter, decisión Tailwind (CSS plano), `site` real, `og-image.png`, `robots.txt`, sitemap, JSON-LD, hreflang, redirect www, versión en inglés, páginas pilar, marca CiberEm.

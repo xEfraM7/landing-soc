@@ -1,10 +1,11 @@
 # CiberEm
 
-> CiberEm es una empresa de ciberseguridad enfocada en Venezuela y Latinoamérica. Opera una plataforma SOC (Security Operations Center) con monitoreo 24/7 para empresas y MSPs: detección, investigación y respuesta ante amenazas desde una sola consola. Integra Wazuh (SIEM/EDR), TheHive/Cortex (casos), DefectDojo (vulnerabilidades) y GreyNoise (enriquecimiento de IOC); mapea alertas a MITRE ATT&CK; multi-tenant con RBAC de 4 roles y auditoría completa. Se ofrece como SOC como servicio y MDR, con atención en español. Sitio en español (por defecto) e inglés (/en).
+> CiberEm es una empresa de ciberseguridad con base en Acarigua, estado Portuguesa (Venezuela), que atiende en remoto a empresas de todo el país y de Latinoamérica. Opera una plataforma SOC (Security Operations Center) con monitoreo 24/7 para empresas y MSPs: detección, investigación y respuesta ante amenazas desde una sola consola. Integra Wazuh (SIEM/EDR), TheHive/Cortex (casos), DefectDojo (vulnerabilidades) y GreyNoise (enriquecimiento de IOC); mapea alertas a MITRE ATT&CK; multi-tenant con RBAC de 4 roles y auditoría completa. Se ofrece como SOC como servicio y MDR, con atención en español. Planes: Plan Max (SOC 24/7, gestión de vulnerabilidades, 1 pentest anual) y Plan Max+ (además, 3 pentests al año y hardening); precios en USD bajo cotización. Sitio en español (por defecto) e inglés (/en).
 
 ## Páginas (es)
 
 - [Inicio](https://ciberem.com/): empresa de ciberseguridad y SOC en Venezuela
+- [Planes](https://ciberem.com/#planes): Plan Max y Plan Max+
 - [Ciberseguridad en Venezuela: guía para empresas](https://ciberem.com/ciberseguridad-venezuela): leyes vigentes (Ley Especial contra los Delitos Informáticos, Ley de Infogobierno, normas SUDEBAN), ataques recientes, fraudes comunes, SUSCERTE, VenCERT y CICPC
 - [SOC como servicio](https://ciberem.com/soc-como-servicio): qué incluye, para quién es, cómo empezamos
 - [MDR](https://ciberem.com/mdr): detección con MITRE ATT&CK, respuesta activa, métricas MTTD/MTTC/MTTR
@@ -25,3 +26,5 @@
 ## Contacto / Contact
 
 - Demo (30 min): https://calendly.com/contact-cyberem/30min
+- WhatsApp / teléfono: +58 414 5599785 (https://wa.me/584145599785)
+- Ubicación: Acarigua, Portuguesa, Venezuela (atención remota)

@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v2
+**Document version:** v3
 **Last updated:** 2026-09-26
 
 ## Product Overview
@@ -8,7 +8,8 @@
 **What it does:** Unifica Wazuh (SIEM/EDR), TheHive/Cortex (gestión de casos y analizadores), DefectDojo (vulnerabilidades) y GreyNoise (enriquecimiento de IOC). Mapea cada alerta a MITRE ATT&CK, gestiona casos en Kanban con SLA automático y ejecuta respuestas activas desde el caso. Es multi-tenant con RBAC de 4 roles y auditoría completa.
 **Product category:** Plataforma SOC / MDR (Managed Detection and Response) / SOC como servicio. Búsquedas: "SOC como servicio", "MDR", "SOC para MSP", "SOC multi-tenant".
 **Product type:** SaaS B2B + servicio gestionado.
-**Business model:** Por definir públicamente. Hoy la conversión es una demo de 30 minutos en Calendly. No hay precios publicados (ver Open decisions en el plan).
+**Business model:** Suscripción mensual en USD con dos planes: Plan Max (SOC 24/7, gestión de vulnerabilidades, 1 pentest anual) y Plan Max+ (además, 3 pentests al año y hardening). Descuento por pago anual y tarifa protegida mientras el cliente siga. Los precios no se publican: se cotizan. Conversión: demo en Calendly o WhatsApp.
+**Location:** Acarigua, estado Portuguesa (Venezuela). Atención remota a todo el país. Sin RIF todavía.
 
 ## Target Audience
 **Target market:** Venezuela primero; Latinoamérica después. El inglés (`/en`) sirve a multinacionales con operaciones en Venezuela.
@@ -98,7 +99,7 @@
 **Name:** Siempre "CiberEm".
 
 ## Proof Points
-**Metrics:** 4 integraciones (Wazuh, TheHive/Cortex, DefectDojo, GreyNoise); 6 acciones de respuesta activa; 5 estados de caso; 4 roles RBAC; SLA desde 15 minutos para críticos.
+**Metrics:** Pentest anual incluido desde el plan base (encaja con la exigencia de SUDEBAN a la banca); 4 integraciones (Wazuh, TheHive/Cortex, DefectDojo, GreyNoise); 6 acciones de respuesta activa; 5 estados de caso; 4 roles RBAC; SLA desde 15 minutos para críticos.
 **Customers:** Ninguno público todavía.
 **Testimonials:** Ninguno todavía.
 **Value themes:**
@@ -110,7 +111,7 @@
 
 ## Goals
 **Business goal:** Conseguir los primeros clientes de pago (MSPs y empresas) a través de demos.
-**Conversion action:** Agendar demo de 30 minutos (Calendly). Evento GA4 `demo_click`.
+**Conversion action:** Agendar demo de 30 minutos (Calendly, evento `demo_click`) o escribir por WhatsApp +58 414 5599785 (evento `whatsapp_click`).
 **Current metrics:** Sin datos; la analítica se activa al pegar el ID de GA4.
 
 ## Site
@@ -119,5 +120,6 @@
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v3 (2026-09-26) — Planes Max y Max+ (sin precios públicos), ubicación Acarigua y WhatsApp como segundo canal de conversión.
 - v2 (2026-09-26) — Venezuela pasa a mercado prioritario: ICP, competencia local, JTBD de cumplimiento SUDEBAN/CICPC y voz con referencias venezolanas.
 - v1 (2026-09-26) — Initial context, auto-drafted from site content and landing-data.md.

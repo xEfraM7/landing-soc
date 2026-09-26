@@ -1,4 +1,6 @@
 import {
+  CONTACT_PHONE,
+  HEADQUARTERS,
   SERVICE_AREA,
   SITE_URL,
   type FaqItem,
@@ -37,7 +39,16 @@ export const buildOrganizationJsonLd = (content: SiteContent) => ({
   legalName: content.organization.legalName,
   // Desambigua la marca frente a otras entidades llamadas "Ciberem".
   description: content.footer.tagline,
-  knowsAbout: ['Security Operations Center', 'Managed Detection and Response', 'MITRE ATT&CK'],
+  knowsAbout: [
+    'Security Operations Center',
+    'Managed Detection and Response',
+    'Vulnerability management',
+    'Penetration testing',
+    'System hardening',
+    'MITRE ATT&CK',
+  ],
+  address: HEADQUARTERS,
+  telephone: CONTACT_PHONE,
   areaServed: SERVICE_AREA,
   url: SITE_URL,
   logo: absoluteUrl('/logo.png'),
@@ -46,6 +57,7 @@ export const buildOrganizationJsonLd = (content: SiteContent) => ({
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'sales',
+    telephone: CONTACT_PHONE,
     url: content.organization.contactUrl,
     availableLanguage: ['es', 'en'],
   },

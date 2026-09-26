@@ -6,6 +6,7 @@ import Hero from '@features/hero/Hero.astro';
 import ProblemSolution from '@features/problem-solution/ProblemSolution.astro';
 import Personas from '@features/personas/Personas.astro';
 import Differentiators from '@features/differentiators/Differentiators.astro';
+import Plans from '@features/plans/Plans.astro';
 import Team from '@features/team/Team.astro';
 import Cta from '@features/cta/Cta.astro';
 import { useSiteContent } from '@utils/i18n';
@@ -25,6 +26,7 @@ const { locale, content } = useSiteContent(Astro);
   <ProblemSolution />
   <Personas />
   <Differentiators />
+  <Plans />
   <Team />
   <Cta />
   <Footer slot="footer" />

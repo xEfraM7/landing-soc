@@ -1,0 +1,210 @@
+---
+import Container from '@components/ui/Container.astro';
+import Button from '@components/ui/Button.astro';
+import Icon from '@components/ui/Icon.astro';
+import { localizePath, useSiteContent } from '@utils/i18n';
+
+const { locale, content } = useSiteContent(Astro);
+const { eyebrow, heading, lead, featuredLabel, items, perks, cta } = content.plans;
+---
+
+<section id="planes" class="plans" aria-labelledby="plans-title">
+  <Container>
+    <header class="plans__head">
+      <span class="eyebrow-pill">
+        <span class="eyebrow-pill__dot"></span>
+        {eyebrow}
+      </span>
+      <h2 id="plans-title" class="plans__title">
+        <span class="text-gradient">{heading}</span>
+      </h2>
+      <p class="plans__lead">{lead}</p>
+    </header>
+
+    <div class="plans__grid">
+      {items.map((plan) => (
+        <article class:list={['plan', { 'plan--featured': plan.featured }]} data-reveal>
+          {plan.featured && <span class="plan__badge">{featuredLabel}</span>}
+          <h3 class="plan__name">{plan.name}</h3>
+          <p class="plan__summary">{plan.summary}</p>
+          {plan.includesLabel && <p class="plan__includes">{plan.includesLabel}</p>}
+          <ul class="plan__features" role="list">
+            {plan.features.map((feature) => (
+              <li>
+                <span class="plan__check" aria-hidden="true"><Icon name="check" size={16} /></span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <p class="plan__ideal">{plan.idealFor}</p>
+          <Button
+            href={localizePath(cta.href, locale)}
+            variant={plan.featured ? 'primary' : 'secondary'}
+            size="md"
+            iconAfter="arrow-right"
+          >
+            {cta.label}
+          </Button>
+        </article>
+      ))}
+    </div>
+
+    <div class="plans__perks">
+      {perks.map((perk) => (
+        <div class="perk">
+          <h3 class="perk__title">{perk.title}</h3>
+          <p class="perk__body">{perk.body}</p>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<style>
+  .plans {
+    padding-block: var(--section-pad-y);
+  }
+
+  .plans__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .plans__title {
+    margin: 0.75rem 0 0;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .plans__lead {
+    color: var(--fg-default);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 40rem;
+  }
+
+  .plans__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 920px;
+    margin: 3rem auto 0;
+  }
+
+  @media (min-width: 760px) {
+    .plans__grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 2rem 1.75rem;
+    border: 1px solid var(--border-neutral-800);
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+  }
+
+  .plan--featured {
+    border-color: var(--brand-500);
+    box-shadow: 0 0 40px var(--brand-glow-soft);
+  }
+
+  .plan__badge {
+    position: absolute;
+    top: -0.75rem;
+    right: 1.5rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: var(--radius-pill);
+    background: var(--brand-500);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  .plan__name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--fg-strong);
+  }
+
+  .plan__summary,
+  .plan__ideal {
+    color: var(--fg-default);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .plan__includes {
+    color: var(--fg-strong);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .plan__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 1;
+  }
+
+  .plan__features li {
+    display: flex;
+    gap: 0.6rem;
+    color: var(--fg-default);
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .plan__check {
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    color: var(--brand-500);
+  }
+
+  .plan__ideal {
+    color: var(--fg-muted);
+    font-size: 0.875rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-neutral-800);
+    width: 100%;
+  }
+
+  .plans__perks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 920px;
+    margin: 2rem auto 0;
+  }
+
+  @media (min-width: 760px) {
+    .plans__perks { grid-template-columns: 1fr 1fr; }
+  }
+
+  .perk__title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--fg-strong);
+    margin-bottom: 0.4rem;
+  }
+
+  .perk__body {
+    color: var(--fg-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+</style>

@@ -157,6 +157,32 @@ export interface DifferentiatorsContent {
   items: DifferentiatorItem[];
 }
 
+export interface PlanItem {
+  name: string;
+  summary: string;
+  /** Texto previo a la lista, p. ej. "Incluye todo lo del Plan Max, además de:". */
+  includesLabel?: string;
+  features: string[];
+  idealFor: string;
+  featured?: boolean;
+}
+
+export interface PlanPerk {
+  title: string;
+  body: string;
+}
+
+/** Planes sin precios: el precio se da en la cotización. */
+export interface PlansContent {
+  eyebrow: string;
+  heading: string;
+  lead: string;
+  featuredLabel: string;
+  items: PlanItem[];
+  perks: PlanPerk[];
+  cta: Cta;
+}
+
 export interface TeamMember {
   name: string;
   role: string;
@@ -205,6 +231,7 @@ export interface SiteContent {
   solution: SolutionContent;
   personas: PersonasContent;
   differentiators: DifferentiatorsContent;
+  plans: PlansContent;
   team: TeamContent;
   cta: CtaContent;
   pillars: Record<PillarKey, PillarPageContent>;

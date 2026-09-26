@@ -1,4 +1,4 @@
-import { CALENDLY_URL } from '../site.config';
+import { CALENDLY_URL, WHATSAPP_URL } from '../site.config';
 import type { SiteContent } from '../site.types';
 
 const LINKEDIN_MAURIZIO = 'https://www.linkedin.com/in/maurizio-cucina-50899a232/';
@@ -32,6 +32,7 @@ export const en: SiteContent = {
     links: [
       { label: 'Solution', href: '/#solucion' },
       { label: 'Roles', href: '/#perfiles' },
+      { label: 'Plans', href: '/#planes' },
       { label: 'Team', href: '/#equipo' },
     ],
     servicesLabel: 'Services',
@@ -176,6 +177,49 @@ export const en: SiteContent = {
     ],
   },
 
+  plans: {
+    eyebrow: 'Plans',
+    heading: 'Cybersecurity plans for your business',
+    lead: '24/7 SOC monitoring, vulnerability management and penetration testing as a monthly service. We send you a quote in USD based on the size of your infrastructure.',
+    featuredLabel: 'Most complete',
+    items: [
+      {
+        name: 'Max Plan',
+        summary: 'Continuous protection and monitoring to keep your business secure.',
+        features: [
+          '24/7 SOC: continuous security monitoring and threat detection.',
+          'Vulnerability management: identification, tracking and prioritization.',
+          '1 pentest per year: security assessment through controlled penetration testing.',
+        ],
+        idealFor:
+          'Ideal for companies that want continuous protection and a periodic assessment of their security posture.',
+      },
+      {
+        name: 'Max+ Plan',
+        summary: 'More frequent assessments and a hardened security infrastructure.',
+        includesLabel: 'Everything in the Max Plan, plus:',
+        features: [
+          '3 pentests per year: one penetration test every 4 months.',
+          'Hardening: configuration and hardening of servers and systems to reduce the attack surface.',
+        ],
+        idealFor:
+          'Ideal for companies that need more frequent assessments and ongoing hardening of their systems.',
+        featured: true,
+      },
+    ],
+    perks: [
+      {
+        title: 'Annual commitment discount',
+        body: 'Choose annual billing and get a discount on the total cost of the service.',
+      },
+      {
+        title: 'Your rate is locked in',
+        body: 'As long as you stay with us you keep your contracted rate and get every new capability we add, with no price increase.',
+      },
+    ],
+    cta: { label: 'Request a quote', href: '/#contacto' },
+  },
+
   team: {
     eyebrow: 'Who we are',
     heading: 'Meet the team',
@@ -208,7 +252,7 @@ export const en: SiteContent = {
     heading: 'Protect your business with managed detection and response',
     lead: 'Request a demo and see how CiberEm unifies monitoring, investigation and response in a single platform.',
     primaryCta: { label: 'Book a meeting', href: CALENDLY_URL },
-    secondaryCta: { label: 'See the Platform', href: '/#solucion' },
+    secondaryCta: { label: 'Message us on WhatsApp', href: WHATSAPP_URL },
   },
 
   pillars: {
@@ -678,7 +722,12 @@ export const en: SiteContent = {
         {
           question: 'Does CiberEm serve companies in Venezuela?',
           answer:
-            'Yes. Venezuela is our priority market. CiberEm runs a remote SOC with 24/7 monitoring for companies and MSPs in Venezuela and Latin America, with support in Spanish and English and no need to build a SOC on your premises.',
+            'Yes. Venezuela is our priority market. CiberEm is based in Acarigua, Portuguesa state, and runs a remote SOC with 24/7 monitoring for companies and MSPs across the country and Latin America, with support in Spanish and English and no need to build a SOC on your premises.',
+        },
+        {
+          question: 'What plans does CiberEm offer?',
+          answer:
+            'Two monthly plans. The Max Plan includes a 24/7 SOC, vulnerability management and 1 pentest per year. The Max+ Plan adds 3 pentests per year (one every 4 months) and hardening of servers and systems. Annual billing gets you a discount and locks in your rate for as long as you stay with us. Quotes are sent in USD based on your infrastructure.',
         },
         {
           question: 'Which tools does CiberEm integrate with?',
@@ -782,6 +831,7 @@ export const en: SiteContent = {
         links: [
           { label: 'Solution', href: '/#solucion' },
           { label: 'Roles', href: '/#perfiles' },
+          { label: 'Plans', href: '/#planes' },
           { label: 'Differentiators', href: '/#diferenciadores' },
           { label: 'Team', href: '/#equipo' },
         ],
@@ -800,6 +850,7 @@ export const en: SiteContent = {
         heading: 'Company',
         links: [
           { label: 'Request a Demo', href: '/#contacto' },
+          { label: 'WhatsApp', href: WHATSAPP_URL },
           { label: 'Privacy Policy', href: '/privacy' },
         ],
       },

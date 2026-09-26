@@ -1,4 +1,4 @@
-import { CALENDLY_URL } from '../site.config';
+import { CALENDLY_URL, WHATSAPP_URL } from '../site.config';
 import type { SiteContent } from '../site.types';
 
 const LINKEDIN_MAURIZIO = 'https://www.linkedin.com/in/maurizio-cucina-50899a232/';
@@ -32,6 +32,7 @@ export const es: SiteContent = {
     links: [
       { label: 'Solución', href: '/#solucion' },
       { label: 'Perfiles', href: '/#perfiles' },
+      { label: 'Planes', href: '/#planes' },
       { label: 'Equipo', href: '/#equipo' },
     ],
     servicesLabel: 'Servicios',
@@ -177,6 +178,49 @@ export const es: SiteContent = {
     ],
   },
 
+  plans: {
+    eyebrow: 'Planes',
+    heading: 'Planes de ciberseguridad para tu empresa',
+    lead: 'Monitoreo SOC 24/7, gestión de vulnerabilidades y pruebas de penetración en un servicio mensual. Te enviamos la cotización en USD según el tamaño de tu infraestructura.',
+    featuredLabel: 'Más completo',
+    items: [
+      {
+        name: 'Plan Max',
+        summary: 'Protección y monitoreo continuo para mantener tu empresa segura.',
+        features: [
+          'SOC 24/7: monitoreo continuo de seguridad y detección de amenazas.',
+          'Gestión de vulnerabilidades: identificación, seguimiento y priorización.',
+          '1 pentest anual: evaluación de seguridad mediante pruebas de penetración controladas.',
+        ],
+        idealFor:
+          'Ideal para empresas que buscan protección continua y una evaluación periódica de su postura de seguridad.',
+      },
+      {
+        name: 'Plan Max+',
+        summary: 'Más evaluaciones y refuerzo de la infraestructura de seguridad.',
+        includesLabel: 'Incluye todo lo del Plan Max, además de:',
+        features: [
+          '3 pentests al año: una prueba de penetración cada 4 meses.',
+          'Hardening: configuración y refuerzo de servidores y sistemas para reducir la superficie de ataque.',
+        ],
+        idealFor:
+          'Ideal para empresas que necesitan evaluaciones más frecuentes y un fortalecimiento continuo de sus sistemas.',
+        featured: true,
+      },
+    ],
+    perks: [
+      {
+        title: 'Descuento por compromiso anual',
+        body: 'Si eliges el pago anual, obtienes un descuento sobre el costo total del servicio.',
+      },
+      {
+        title: 'Tu tarifa queda protegida',
+        body: 'Mientras sigas con nosotros mantienes la tarifa contratada y recibes las nuevas capacidades que incorporemos sin pagar aumentos.',
+      },
+    ],
+    cta: { label: 'Solicitar cotización', href: '/#contacto' },
+  },
+
   team: {
     eyebrow: 'Quiénes somos',
     heading: 'Conócenos',
@@ -209,7 +253,7 @@ export const es: SiteContent = {
     heading: 'Protege tu negocio con detección y respuesta gestionada',
     lead: 'Solicita una demo y descubre cómo CiberEm unifica el monitoreo, la investigación y la respuesta en una sola plataforma.',
     primaryCta: { label: 'Agendar una reunión', href: CALENDLY_URL },
-    secondaryCta: { label: 'Ver Plataforma', href: '/#solucion' },
+    secondaryCta: { label: 'Escríbenos por WhatsApp', href: WHATSAPP_URL },
   },
 
   pillars: {
@@ -681,7 +725,12 @@ export const es: SiteContent = {
         {
           question: '¿CiberEm presta servicio a empresas en Venezuela?',
           answer:
-            'Sí. Venezuela es nuestro mercado prioritario. CiberEm opera un SOC remoto con monitoreo 24/7 para empresas y MSPs en Venezuela y Latinoamérica, con atención en español y sin necesidad de instalar un SOC en tus oficinas.',
+            'Sí. Venezuela es nuestro mercado prioritario. CiberEm tiene su base en Acarigua, estado Portuguesa, y opera un SOC remoto con monitoreo 24/7 para empresas y MSPs de todo el país y de Latinoamérica, con atención en español y sin necesidad de instalar un SOC en tus oficinas.',
+        },
+        {
+          question: '¿Qué planes ofrece CiberEm?',
+          answer:
+            'Dos planes mensuales. El Plan Max incluye SOC 24/7, gestión de vulnerabilidades y 1 pentest anual. El Plan Max+ añade 3 pentests al año (uno cada 4 meses) y hardening de servidores y sistemas. Con pago anual obtienes un descuento y mantienes tu tarifa mientras sigas con nosotros. La cotización se envía en USD según tu infraestructura.',
         },
         {
           question: '¿Con qué herramientas se integra CiberEm?',
@@ -785,6 +834,7 @@ export const es: SiteContent = {
         links: [
           { label: 'Solución', href: '/#solucion' },
           { label: 'Perfiles', href: '/#perfiles' },
+          { label: 'Planes', href: '/#planes' },
           { label: 'Diferenciadores', href: '/#diferenciadores' },
           { label: 'Equipo', href: '/#equipo' },
         ],
@@ -803,6 +853,7 @@ export const es: SiteContent = {
         heading: 'Empresa',
         links: [
           { label: 'Solicitar Demo', href: '/#contacto' },
+          { label: 'WhatsApp', href: WHATSAPP_URL },
           { label: 'Política de privacidad', href: '/privacidad' },
         ],
       },
