@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.ciberem.com" }],
+      "destination": "https://ciberem.com/$1",
+      "permanent": true
+    }
+  ]
+}
